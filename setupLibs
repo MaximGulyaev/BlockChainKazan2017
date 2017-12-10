@@ -1,0 +1,7 @@
+#!/bin/bash
+apt install python3-pyqt5
+sudo apt-get install python-setuptools
+pip3 install -U setuptools
+pip3 install -r req
+
+exit 0

@@ -1,0 +1,4 @@
+#!/bin/bash
+python3 main.py
+sudo kill -9 $(sudo lsof -t -i:9001)
+
