@@ -29,19 +29,19 @@ class network:
         :return:
         '''
         #try:
-            dict = {
-                'type' : type,
-                'data' : data
-            }
-            print('send:')
-            print(addres)
-            print(dict)
+        dict = {
+            'type' : type,
+            'data' : data
+        }
+        print('send:')
+        print(addres)
+        print(dict)
 
-            bytesData = json.dumps(dict)
-            sock = socket.socket()
-            sock.connect((addres, 9090))
-            sock.send(bytesData.encode())
-            sock.close()
+        bytesData = json.dumps(dict)
+        sock = socket.socket()
+        sock.connect((addres, 9090))
+        sock.send(bytesData.encode())
+        sock.close()
 
        # except:
          #   return None
@@ -55,11 +55,11 @@ class network:
         :return:
         '''
         #try:
-            print('send:')
-            print(data)
-            addreses = self.getNetwork()
-            for addr in addreses:
-                self.sendMessage(data,type,addr[0])
+        print('send:')
+        print(data)
+        addreses = self.getNetwork()
+        for addr in addreses:
+            self.sendMessage(data,type,addr[0])
         #except:
         #    return None
 
