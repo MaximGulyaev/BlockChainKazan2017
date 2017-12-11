@@ -229,9 +229,12 @@ class network:
             data = None
             type = 'length'
             for addr in addreses:
-                if self.processingStep == 0:
-                    self.sendMessage(data, type, addr[0])
-                    time.sleep(20)
+                try:
+                    if self.processingStep == 0:
+                        self.sendMessage(data, type, addr[0])
+                        time.sleep(20)
+                except:
+                    pass
         return False
 
 
