@@ -192,7 +192,7 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
 
     def pb_auth_Login_clicked(self):
         privateKey = self.getPrivateKeyFromFile(self.lbl_auth_pathToSecretKey.text())
-        if (privateKey == None):
+        if not (privateKey):
             return False
 
         if (self.accountSystemClass.authorization(privateKey)):
