@@ -25,6 +25,8 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
     _threadListener.start()
     _threadMiner = threading.Thread(name="Miner", target=CblockChain.startMine)
     _threadMiner.start()
+    _threadLenChecker = threading.Thread(name="LebChecker", target=Cnetwork.lenCheckerNeighbourhood)
+    _threadLenChecker.start()
 
     _EventInfochoseIndex = None
     _ChangeEventChoseIndex = None

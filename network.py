@@ -15,9 +15,9 @@ class network:
         Initialization class  works with network.
         :param blockchain: class Blockchain
         '''
-       # self.receiveMessage()
+        self.lastIndex = 0
+        self.processingStep = 0
         self.blockchain = blockchain
-        #self.sendMessage('Hello','addUser','127.0.0.1')
 
     def sendMessage(self, data, type, addres):
         '''
@@ -49,6 +49,7 @@ class network:
     def sendMessageAll(self,data,type):
         '''
         This method send message to all addreses in db
+        Args:
         :param self:
         :param data: data
         :param type: messages's type( types are identified consts.typeNetQuery)
@@ -106,7 +107,7 @@ class network:
         '''
         This method adding address in db.addres
         :param self:
-        :param addres: user's network addreses
+        :param address: user's network addresses
         :return:
         '''
         try:
@@ -122,9 +123,9 @@ class network:
 
     def getNetwork(self):
         '''
-        This method return all addreses in network
+        This method return all addresses in network
         :param self:
-        :return: rows from db.addres
+        :return: rows from db.address
         '''
         try:
             conn = sqlite3.connect('resourse/db.sqlite')
@@ -165,10 +166,13 @@ class network:
                 countBlock = data
                 mylen = self.blockchain.getLengthChain()
                 if (countBlock == mylen):
-                    pass
+                    self.processingStep = 0
+                    return False
                 if (countBlock < mylen):
-                    pass
+                    self.processingStep = 0
+                    return False
                 if (countBlock > mylen):
+                    self.processingStep = 1
                     self.sendMessage(None, consts.typeNetQuery.get('fullChain'), addres)
 
         if (type == consts.typeNetQuery.get('fullChain')):
@@ -179,8 +183,10 @@ class network:
             else:
                 HashList = self.blockchain.compareBlockChainWithNet(data)
                 if HashList == False:
-                    pass
+                    self.processingStep = 0
+                    return False
                 else:
+                    self.processingStep = 2
                     self.sendMessage(HashList, consts.typeNetQuery.get('SendHashChain'), addres)
                 return
         if (type == consts.typeNetQuery.get('SendHashChain')):
@@ -196,8 +202,10 @@ class network:
                 return False
             else:
                 BlockList = data
+                self.processingStep = 3
                 for element in BlockList:
                     self.blockchain.addNewBlockFromNet(element)
+                self.processingStep = 0
 
         if (type == consts.typeNetQuery.get('eqChain')):
             #цепочка одинаковая у всех - делать ничего не надо
@@ -215,7 +223,16 @@ class network:
 
 
 
-
+    def lenCheckerNeighbourhood(self):
+        while True:
+            addreses = self.getNetwork()
+            data = None
+            type = 'length'
+            for addr in addreses:
+                if self.processingStep == 0:
+                    self.sendMessage(data, type, addr[0])
+                    time.sleep(20)
+        return False
 
 
 #receiveMessage()
