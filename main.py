@@ -50,6 +50,8 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         self.pb_mainLogOut.clicked.connect(self.Show_authList)
         self.pb_registration_GoToAuth.clicked.connect(self.Show_authList)
         self.pb_main_Exit.clicked.connect(self.close)
+        self.pb_main_Exit_2.clicked.connect(self.close)
+        self.pb_main_Exit_3.clicked.connect(self.close)
         self.pb_menu_aboutAccount.clicked.connect(self.change_Menu)
         self.pb_menu_eventInfo.clicked.connect(self.change_Menu)
         self.pb_menu_createEvent.clicked.connect(self.change_Menu)
@@ -83,6 +85,8 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         self.pb_request_confirmRequest.clicked.connect(self.pb_request_confirmRequest_clicked)
 
         self.pb_menu_StartMine.clicked.connect(self.pb_menu_StartMine_clicked)
+
+
 
         self.MainPages.setCurrentIndex(0)
 

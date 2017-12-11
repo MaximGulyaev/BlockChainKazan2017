@@ -48,7 +48,7 @@
      </size>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="pg_authorisation">
      <widget class="QPushButton" name="pb_auth_Login">
@@ -141,6 +141,19 @@
       </property>
       <property name="text">
        <string>/home/arthur/Git_folder/PrivateKey_0</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_main_Exit_2">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>550</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Выйти</string>
       </property>
      </widget>
     </widget>
@@ -264,6 +277,19 @@
       </property>
       <property name="text">
        <string>Авторизация</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pb_main_Exit_3">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>550</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Выйти</string>
       </property>
      </widget>
     </widget>
