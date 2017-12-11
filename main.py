@@ -63,7 +63,7 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         self.cb_eventInfo_ChoseEvent.currentIndexChanged.connect(self.cb_eventInfo_ChoseEvent_currentIndexChanged)
         self.cb_changeEvent_ChoseEvent.currentIndexChanged.connect(self.cb_changeEvent_ChoseEvent_currentIndexChanged)
         self.pb_EventInfo_getExpertList.clicked.connect(self.pb_EventInfo_getExpertList_clicked)
-        self.pb_EventInfo_getUserList.clicked.connect(self.pb_EventInfo_getUserList_clicked)
+        self.pb_EventInfo_getUserList.clicked.connect(self.pb_EventInfos_getUserList_clicked)
         self.pb_createEvent_getExpertList.clicked.connect(self.pb_createEvent_getExpertList_clicked)
         self.pb_createEvent_getUserList.clicked.connect(self.pb_createEvent_getUserList_clicked)
         self.pb_createEvent_addUer.clicked.connect(self.pb_createEvent_addUer_clicked)
