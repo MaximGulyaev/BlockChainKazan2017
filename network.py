@@ -9,22 +9,25 @@ import time
 #import Block_chain
 #import receivedMessagesParser
 
-'''
-1- новая транзакций
-#2- новый блок
-#3- опросить соседей на длину их цепочки
-#4- запросить всю цепочку у соседей
-#5- (как-то свериться с цепочкой соседей и, возможно, запросить только те блоки, с которых началось различие)
-#6- все запросы касательно добавления нового члена в сеть(новый айпи, дать список существующих айпи, запросить список существующих айпи)
-Это все есть в consts.typeNetQuery
-'''
 class network:
     def __init__(self,blockchain):
+        '''
+        Initialization class  works with network.
+        :param blockchain: class Blockchain
+        '''
        # self.receiveMessage()
         self.blockchain = blockchain
         #self.sendMessage('Hello','addUser','127.0.0.1')
 
     def sendMessage(self, data, type, addres):
+        '''
+        This method send message to user  by  network address
+        :param self:
+        :param data: data
+        :param type: messages's type( types are identified consts.typeNetQuery)
+        :param addres: network address
+        :return:
+        '''
         #try:
             dict = {
                 'type' : type,
@@ -44,6 +47,13 @@ class network:
          #   return None
 
     def sendMessageAll(self,data,type):
+        '''
+        This method send message to all addreses in db
+        :param self:
+        :param data: data
+        :param type: messages's type( types are identified consts.typeNetQuery)
+        :return:
+        '''
         #try:
             print('send:')
             print(data)
@@ -55,6 +65,11 @@ class network:
 
 
     def receiveMessage(self):
+        '''
+        This method reseive messages(from all users in network) port : 9090
+        :param self:
+        :return:
+        '''
         while True:
             sock = socket.socket()
             sock.bind(('', 9090))
@@ -86,8 +101,14 @@ class network:
                 finally:
                     conn.close()
 
-    #Кинул сюда запрос,чтобы каждый раз адаптер сюда не засылать
+
     def addAddres(self, addres):
+        '''
+        This method adding address in db.addres
+        :param self:
+        :param addres: user's network addreses
+        :return:
+        '''
         try:
             print(addres)
             conn = sqlite3.connect('resourse/db.sqlite')
@@ -100,6 +121,11 @@ class network:
             return None
 
     def getNetwork(self):
+        '''
+        This method return all addreses in network
+        :param self:
+        :return: rows from db.addres
+        '''
         try:
             conn = sqlite3.connect('resourse/db.sqlite')
             cursor = conn.cursor()
@@ -113,10 +139,16 @@ class network:
             return None
 
 
-    def parserAndRunQuery(self,dictioary):
-        type = dictioary.get('type')
-        data = dictioary.get('data')
-        addres = dictioary.get('sender')
+    def parserAndRunQuery(self, dictionary):
+        '''
+        This method parse received messages, analyze and work with messages(Type in message - appropriate handler)
+        :param self:
+        :param dictionary: is message(type dictionary)
+        :return:
+        '''
+        type = dictionary.get('type')
+        data = dictionary.get('data')
+        addres = dictionary.get('sender')
         if (type == consts.typeNetQuery.get('transaction')):
             self.blockchain.addNewTransactFromNet(data)
             return
@@ -188,4 +220,4 @@ class network:
 
 #receiveMessage()
 #sendMessage('2312312314215',1,'10.121.6.179')
-network('dsfsdf')
+#network('dsfsdf')
