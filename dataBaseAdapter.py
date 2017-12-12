@@ -779,8 +779,7 @@ class dataBaseAdapter:
         #try:
             conn = sqlite3.connect('resourse/db.sqlite')
             cursor = conn.cursor()
-            cursor.execute("SELECT * FROM transactionInBlock"
-                           "WHERE idBlock = (?)", (idBlock,))
+            cursor.execute("SELECT * FROM transactionInBlock WHERE idBlock = ?", (idBlock,))
             rows = cursor.fetchall()
             cursor.close()
             conn.close()

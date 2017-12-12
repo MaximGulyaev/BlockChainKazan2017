@@ -153,7 +153,7 @@ class Blockchain:
 
             if not (block['idBlock'] == LastBlockId + 1):
                 return False
-            if not (block['previousBlockHash'] == LastBlockHash):
+            if not (str(block['previousBlockHash']) == str(LastBlockHash)):
                 return False
             TransactInBlockList = block['transactionList']
             if len(TransactInBlockList) <= 1:
@@ -508,6 +508,7 @@ class Blockchain:
 
         CreateTime = blockOrig['time']
         for element in blockOrig['transactionList']:
+            element['idBlock'] = blockOrig['idBlock']
             self.ParseNewTrasnactionFromBlock(element, CreateTime)
 
         block = copy.deepcopy(blockOrig)
@@ -606,13 +607,13 @@ class Blockchain:
             for element in transactTupleList:
                 transaction = {
                     'idTransaction': element[0],
-                    'type': element[1],
-                    'data': element[2],
-                    'publicKey': element[3],
-                    'hash': element[4],
-                    'signature': element[5],
-                    'address': element[6],
-                    'idBlock': element[7]
+                    'type': element[2],
+                    'data': element[3],
+                    'publicKey': element[4],
+                    'hash': element[5],
+                    'signature': element[6],
+                    'address': element[7],
+                    'idBlock': element[1]
                 }
                 transactDictList.append(transaction)
 
