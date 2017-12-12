@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="352b823e-0a8f-4306-a9d6-8440f078aed4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/Block_chain.py" afterPath="$PROJECT_DIR$/Block_chain.py" />
-      <change beforePath="$PROJECT_DIR$/network.py" afterPath="$PROJECT_DIR$/network.py" />
       <change beforePath="$PROJECT_DIR$/resourse/db.sqlite" afterPath="$PROJECT_DIR$/resourse/db.sqlite" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
@@ -17,7 +16,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Block_chain$run.coverage" NAME="run Coverage Results" MODIFIED="1512550132151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Block_chain$Block_chain.coverage" NAME="Block_chain Coverage Results" MODIFIED="1512112447963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/BlockChainKazan2017$main.coverage" NAME="main Coverage Results" MODIFIED="1513086607966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BlockChainKazan2017$main.coverage" NAME="main Coverage Results" MODIFIED="1513088522345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Block_chain$dataBaseAdapter.coverage" NAME="dataBaseAdapter Coverage Results" MODIFIED="1511978334959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Block_chain$network.coverage" NAME="network Coverage Results" MODIFIED="1512553355806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BlockChainKazan2017$BlockChainKazan2017.coverage" NAME="BlockChainKazan2017 Coverage Results" MODIFIED="1513068404718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -45,8 +44,8 @@
       <file leaf-file-name="Block_chain.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Block_chain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="429" column="16" lean-forward="true" selection-start-line="429" selection-start-column="16" selection-end-line="429" selection-end-column="16" />
+            <state relative-caret-position="445">
+              <caret line="554" column="0" lean-forward="true" selection-start-line="554" selection-start-column="0" selection-end-line="554" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -808,48 +807,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Block_chain.py</url>
-          <line>193</line>
+          <line>197</line>
           <option name="timeStamp" value="105" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Block_chain.py</url>
-          <line>187</line>
+          <line>191</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Block_chain.py</url>
-          <line>535</line>
+          <line>539</line>
           <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Block_chain.py</url>
-          <line>552</line>
+          <line>556</line>
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Block_chain.py</url>
-          <line>540</line>
+          <line>544</line>
           <option name="timeStamp" value="121" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Block_chain.py</url>
-          <line>537</line>
+          <line>541</line>
           <option name="timeStamp" value="122" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Block_chain.py</url>
-          <line>543</line>
+          <line>547</line>
           <option name="timeStamp" value="123" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Block_chain.py</url>
-          <line>553</line>
+          <line>557</line>
           <option name="timeStamp" value="124" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Block_chain.py</url>
-          <line>430</line>
-          <option name="timeStamp" value="126" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1766,8 +1760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Block_chain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="429" column="16" lean-forward="true" selection-start-line="429" selection-start-column="16" selection-end-line="429" selection-end-column="16" />
+        <state relative-caret-position="445">
+          <caret line="554" column="0" lean-forward="true" selection-start-line="554" selection-start-column="0" selection-end-line="554" selection-end-column="0" />
           <folding />
         </state>
       </provider>

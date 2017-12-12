@@ -180,7 +180,11 @@ class Blockchain:
                 if type(element['data']) == str:
                     element['data'] = json.loads(element['data'])
 
-            for element in TransactInBlockList:
+            Transact = copy.deepcopy(TransactInBlockList)
+            for element in Transact:
+                element.pop('idTransaction', None)
+                element.pop('idBlock', None)
+                element.pop('hash', None)
                 string += json.dumps(element, sort_keys=True)
 
             l = hashlib.sha256((string + str(block['nonce'])).encode()).hexdigest()
