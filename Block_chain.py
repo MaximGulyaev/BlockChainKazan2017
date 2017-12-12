@@ -427,7 +427,11 @@ class Blockchain:
         string += str(createTime)
         string += Complexity
 
-        for element in UncTransact:
+        Transact = copy.deepcopy(UncTransact)
+        for element in Transact:
+            element.pop('idTransaction', None)
+            element.pop('idBlock', None)
+            element.pop('hash', None)
             string += json.dumps(element, sort_keys=True)
 
         nonce = 0
@@ -539,9 +543,11 @@ class Blockchain:
         if CAccountingSystem.CAccountingSystem.publicKeyToAddress(pubKey) != Address:
             return False
         signature = Transact['signature']
-        Transact.pop('signature')
-        Transact.pop('idBlock')
+        Transact.pop('signature', None)
+        Transact.pop('idBlock', None)
         Transact['publicKey'] = Transact['publicKey']
+        if type(Transact['data']) == str:
+            Transact['data'] = json.loads(Transact['data'])
 
         string = json.dumps(Transact, sort_keys=True)
         if not (CAccountingSystem.CAccountingSystem.checkSignature(pubKey, string, signature)):

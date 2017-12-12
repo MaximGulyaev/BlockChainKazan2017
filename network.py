@@ -207,6 +207,12 @@ class network:
                 BlockList = data
                 self.processingStep = 3
                 for element in BlockList:
+                    for trans in element['transactionList']:
+                        trans.pop('idBlock', None)
+                        trans.pop('idTransaction', None)
+                        trans.pop('hash', None)
+
+
                     self.blockchain.addNewBlockFromNet(element)
                 self.processingStep = 0
 
