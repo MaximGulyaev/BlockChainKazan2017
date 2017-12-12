@@ -204,7 +204,16 @@ class network:
                 BlockList = data
                 self.processingStep = 3
                 for element in BlockList:
-                    self.blockchain.addNewBlockFromNet(element)
+                    elementList = {
+                        'idBlock': element[0],
+                        'previousBlockHash': element[1],
+                        'hash': element[2],
+                        'timestamp': element[3],
+                        'count': element[4],
+                        'complexity': element[5],
+                        'nonce': element[6],
+                    }
+                    self.blockchain.addNewBlockFromNet(elementList)
                 self.processingStep = 0
 
         if (type == consts.typeNetQuery.get('eqChain')):
@@ -227,11 +236,12 @@ class network:
         while True:
             addreses = self.getNetwork()
             data = None
-            type = 'length'
+            type = consts.typeNetQuery.get('length')
             for addr in addreses:
                 try:
                     if self.processingStep == 0:
                         self.sendMessage(data, type, addr[0])
+                        self.processingStep == 1
                         time.sleep(20)
                 except:
                     pass

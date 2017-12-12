@@ -689,7 +689,7 @@ class dataBaseAdapter:
             cursor.execute("SELECT * FROM Block "
                            "WHERE hash = ('%s')"
                            %(hash))
-            curBlock = cursor.fetchone()[0]
+            curBlock = cursor.fetchone()
             cursor.close()
             conn.close()
             return curBlock
@@ -772,5 +772,18 @@ class dataBaseAdapter:
             cursor.close()
             conn.close()
             return consts.successfulAddNewUser
+        except:
+            return None
+
+    def getTransactByIdBlock(self, idBlock):
+        try:
+            conn = sqlite3.connect('resourse/db.sqlite')
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM transactionInBlock"
+                           "WHERE idBlock = (?)", (idBlock,))
+            rows = cursor.fetchall()
+            cursor.close()
+            conn.close()
+            return rows
         except:
             return None

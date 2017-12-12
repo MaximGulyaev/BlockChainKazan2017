@@ -21,7 +21,9 @@ typeNetQuery = {
     'eqChain' : 51,
     'notEqChain' : 52,
     'addUser' : 6,
-    'error' : 7
+    'error' : 7,
+    'SendHashChain': 8,
+    'SendBlockList': 9,
 }
 
 eventsColumns = {

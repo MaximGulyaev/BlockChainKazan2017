@@ -563,13 +563,23 @@ class Blockchain:
         return length
 
     def compareBlockChainWithNet(self, hashChain):
-        MyHashChain = self.dataBaseAdapt.getHashChain()
+        MyHashChainTuple = self.dataBaseAdapt.getHashChain()
+        MyHashChain = []
+        for element in MyHashChainTuple:
+            MyHashChain.append(list(element))
+
         differentHashChain = []
-        for element in hashChain:
-            if hashChain == MyHashChain:
+        for i in range(len(MyHashChain)-1):
+            if hashChain[i] == MyHashChain[i]:
                 pass
-            if hashChain != MyHashChain:
-                differentHashChain.append(element)
+            if hashChain[i] != MyHashChain[i]:
+                differentHashChain.append(hashChain[i])
+        if len(MyHashChain) < len(hashChain):
+            i = len(MyHashChain) + 1
+            while i <= len(hashChain):
+                differentHashChain.append(hashChain[i-1])
+                i += 1
+
         if len(differentHashChain):
             return differentHashChain
         else:
@@ -578,7 +588,30 @@ class Blockchain:
     def getBlockListByHashList(self, hashChain):
         blockList = []
         for element in hashChain:
-            blockList.append(self.dataBaseAdapt.getBlockByHash(element))
+            block = self.dataBaseAdapt.getBlockByHash(element[0])
+            transactTupleList = self.dataBaseAdapt.getTransactByIdBlock(block[consts.createTableBlock('idBlock')])
+            transactDictList = []
+            for element in transactTupleList:
+                transaction = {
+                    'idTransaction': element[0],
+                    'type': element[1],
+                    'data': element[2],
+                    'publicKey': element[3],
+                    'hash': element[4],
+                    'signature': element[5],
+                    'address': element[6],
+                    'idBlock': element[7]
+                }
+                transactDictList.append(transaction)
+
+            self.createBlock(transactDictList, block[consts.BlockColumns.get('nonce')],
+                             block[consts.BlockColumns.get('idBlock')], block[consts.BlockColumns.get('hash')],
+                             block[consts.BlockColumns.get('previousBlockHash')],
+                             block[consts.BlockColumns.get('time')], block[consts.BlockColumns.get('complexity')])
+
+
+
+
         return blockList
 
 
