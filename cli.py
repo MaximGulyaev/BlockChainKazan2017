@@ -5,11 +5,13 @@ import os
 import json
 import rsa
 
+
 import Block_chain
 import CAccountingSystem
 import network
 import dataBaseAdapter
 import consts
+
 
 def getPrivateKeyFromFile(fname):
     try:
@@ -25,18 +27,18 @@ def getPrivateKeyFromFile(fname):
         PrivateKey = rsa.PrivateKey(n,e,d,p,q)
         return (PrivateKey)
     except Exception as e:
-        print("Внимание", "Неправильный путь до ключа")
+        print("Attention", "Error in file pathча")
         return False
 
 class Cli(cmd.Cmd):
     accountSystemClass = None
-    dataBaseAdapter = None
+    dataBaseAdapt = None
     CblockChain = None
     Cnetwork = None
     isAuth = False
 
     def __init__(self):
-        cmd.Cmd.__init__(self)
+        cmd.Cmd.__init__(self,'\t')
         self.dataBaseAdapt = dataBaseAdapter.dataBaseAdapter()
         self.accountSystemClass = CAccountingSystem.CAccountingSystem(self.dataBaseAdapt)
         self.CblockChain = Block_chain.Blockchain()
@@ -46,18 +48,6 @@ class Cli(cmd.Cmd):
         self.intro  = "Добро пожаловать\nДля справки наберите 'help'"
         self.doc_header ="Доступные команды (для справки по конкретной команде наберите 'help _команда_')"
 
-    def do_hello(self, args):
-        user = self.dataBaseAdapt.getUserById('1')
-        print(user)
-
-        if (len(args) == None):
-            print('sdfsdfsdfsdf')
-        else:
-            args = args.split()[0]
-            print(args)
-        """hello - выводит 'hello world' на экран"""
-
-        print ('hello world')
 
     def default(self, line):
         '''
@@ -68,11 +58,6 @@ class Cli(cmd.Cmd):
         '''
         print ('Error in command. See help')
 
-    def do_getAllEvents(self, args):
-        #print('Введите свое имя')
-        name = input('Введите свое имя')
-        #print (name)
-        #print (args)
 
     def do_login(self, args):
         '''
@@ -218,7 +203,7 @@ class Cli(cmd.Cmd):
     def do_downgrade(self,args):
         '''
          Handler command downgrade. The expert advances another expert on the decline
-
+         Needed input arguments. Example : 'downgrade 999' 999 is idUser
          :param argv: id user
          :return: message and unconfirmedTransaction in db
          '''
@@ -236,7 +221,7 @@ class Cli(cmd.Cmd):
                     status = 'User'
                     if (user[consts.usersColumns.get('isExpert')] == 1):
                         status = 'Expert'
-                    currentUser = '==================\nUserId : {0}\nUsername : {1}\n Birthday : {2}\n Status :{3}\n Organization :{4}\n'\
+                    currentUser = '==================\nUserId : {0}\nUsername : {1}\nBirthday : {2}\nStatus :{3}\nOrganization :{4}\n'\
                         .format(user[consts.usersColumns.get('idUser')], user[consts.usersColumns.get('name')], user[consts.usersColumns.get('birthday')], status, user[consts.usersColumns.get('organization')] )
                     print(currentUser)
                     symbol = input('Are you sure you want to demote this user?y/n')
@@ -343,7 +328,38 @@ class Cli(cmd.Cmd):
         else:
             print("Please login to net")
 
+    def do_getAllUsers(self,args):
+        '''
+        Handler command getAllUsers. User received list with all user
+
+        :param args: args:no usable(but it's features cmd lib)
+        :return: list with all users in network
+        '''
+        if (self.isAuth):
+            userList = self.dataBaseAdapt.getUserList()
+            if (len(userList) == 0):
+                print('no users')
+            else:
+                for user in userList:
+                    status = 'User'
+                    if (user[consts.usersColumns.get('isExpert')] == 1):
+                        status = 'Expert'
+                    currentUser = '==================\nUserId : {0}\nUsername : {1}\nBirthday : {2}\nStatus :{3}\nOrganization :{4}\n' \
+                        .format(user[consts.usersColumns.get('idUser')], user[consts.usersColumns.get('name')],
+                                user[consts.usersColumns.get('birthday')], status,
+                                user[consts.usersColumns.get('organization')])
+                    print(currentUser)
+        else:
+            print("Please login to net")
+
+
     def do_exit(self, line):
+        '''
+        Exit of program. No parametrs
+
+        :param line:no usable(but it's features cmd lib)
+        :return:
+        '''
         exit(0)
 
 if __name__ == "__main__":
