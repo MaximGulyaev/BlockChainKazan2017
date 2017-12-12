@@ -604,13 +604,10 @@ class Blockchain:
                 }
                 transactDictList.append(transaction)
 
-            self.createBlock(transactDictList, block[consts.BlockColumns.get('nonce')],
+            blockList.append(self.createBlock(transactDictList, block[consts.BlockColumns.get('nonce')],
                              block[consts.BlockColumns.get('idBlock')], block[consts.BlockColumns.get('hash')],
                              block[consts.BlockColumns.get('previousBlockHash')],
-                             block[consts.BlockColumns.get('time')], block[consts.BlockColumns.get('complexity')])
-
-
-
+                             block[consts.BlockColumns.get('time')], block[consts.BlockColumns.get('complexity')]))
 
         return blockList
 
