@@ -50,7 +50,13 @@ class Cli(cmd.Cmd):
         print ('hello world')
 
     def default(self, line):
-        print ('Несуществующая команда')
+        '''
+        Handler command, when not in list command
+
+        :param line: no usable(but it's features cmd lib)
+        :return: message with Error
+        '''
+        print ('Error in command. See help')
 
     def do_addUser(self, args):
         #print('Введите свое имя')
@@ -59,6 +65,13 @@ class Cli(cmd.Cmd):
         #print (args)
 
     def do_login(self, args):
+        '''
+        Handler command login. It's user logging
+
+        :param args: no usable(but it's features cmd lib)
+        this module asks path to user Private key
+        :return: user enter to your account or Error
+        '''
         pathToPrivateKey = input('Please enter path to file with your private key:\n ')
         privateKey = getPrivateKeyFromFile(pathToPrivateKey)
         if not (privateKey):
@@ -73,12 +86,23 @@ class Cli(cmd.Cmd):
             print("Attention", "User not exist")
 
     def do_logout(self,args):
+        '''
+        Handler command logout. User logout from account
+
+        :param args: no usable(but it's features cmd lib)
+        :return: user out from account
+        '''
         self.accountSystemClass.logout()
         print("Attention", "You are logout ")
         self.prompt = "(not auth)> "
         self.isAuth = False
 
     def generatePrivateKey(self):
+        '''
+        This method generate private key for user
+
+        :return: absolute path to file with private key
+        '''
         privateKey = self.accountSystemClass.generateKey()
         s = 0
         stat = True
@@ -99,6 +123,12 @@ class Cli(cmd.Cmd):
         return absolutePathToFile
 
     def do_createNewUser(self,argv):
+        '''
+        Handler command createNewUser. User passes registration procedure
+
+        :param argv:no usable(but it's features cmd lib)
+        :return: user create account. User's account
+        '''
         Transaction = {}
         datadict = {}
         datadict['organization'] = input('Input your orhanization')
@@ -123,6 +153,12 @@ class Cli(cmd.Cmd):
                                             "system will not confirm your registration")
 
     def getPrivateKeyFromFile(self, fname):
+        '''
+        This method return private key read from file
+
+        :param fname: it's name file = path to file
+        :return: private key from file or False(Error)
+        '''
         try:
             f = open(fname, 'r')
             l = f.readlines()
@@ -135,8 +171,38 @@ class Cli(cmd.Cmd):
             PrivateKey = rsa.PrivateKey(n,e,d,p,q)
             return (PrivateKey)
         except:
-            QMessageBox.about(self, "Внимание", "Неправильный путь до ключа")
+            print("Attention", "Error in file path")
             return False
+
+    def do_doExpert(self,argv):
+        '''
+        Handler command doExpert. User raises his rank to an expert
+
+        :param argv:no usable(but it's features cmd lib)
+        :return: message and unconfirmedTransaction in db
+        '''
+        if (self.isAuth):
+            print(self, "Attention",
+                              "You apply for a Status Change to the 'Expert' status. "\
+                              "The application will be reviewed by experts within 24 hours" + \
+                              "the time for which the application is added to the chain."\
+                                      "If after this time your status does not change, "\
+                                      "then the application denied.")
+            Transaction = {}
+            dict = {}
+            dict['address'] = self.accountSystemClass.account['Address']
+            Transaction['address'] = self.accountSystemClass.account['Address']
+            Transaction['type'] = 1
+            Transaction['data'] = dict
+            Transaction['publicKey'] = self.accountSystemClass.publicKeyToString(self.accountSystemClass.account['PublicKey'])
+            string = json.dumps(Transaction, sort_keys = True)
+            signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
+            Transaction['signature'] = signature
+            if not (self.CblockChain.addNewTransactFromUser(Transaction)):
+                print("Error", "Something went wrong")
+        else:
+            print("Please login to net")
+
 
     def do_exit(self, line):
         exit(0)
