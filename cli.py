@@ -243,6 +243,36 @@ class Cli(cmd.Cmd):
         else:
             print("Please login to net")
 
+    def do_createTransaction(self,args):
+        if (self.isAuth):
+            Transaction = {}
+            datadict = {}
+            datadict['name'] = input('Enter the name of event')
+            datadict['date'] = input('Enter the date event')
+            datadict['competence'] = input('Enter the competence event')
+            datadict['rating'] = input('Enter the raiting event')
+            datadict['info'] = input('Enter event details')
+            datadict['users'] = self._EventCreateUserList
+            autor = self.dataBaseAdapt.getUser(self.accountSystemClass.account['Address'])
+            if not (autor in self._EventCreateExpertList):
+                self._EventCreateExpertList.append(autor)
+            datadict['experts'] = self._EventCreateExpertList
+
+            Transaction['data'] = datadict
+            Transaction['address'] = self.accountSystemClass.account['Address']
+            Transaction['type'] = 5
+            Transaction['publicKey'] = self.accountSystemClass.publicKeyToString(
+                self.accountSystemClass.account['PublicKey'])
+
+            string = json.dumps(Transaction, sort_keys=True)
+            signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
+            Transaction['signature'] = signature
+            if not (self.CblockChain.addNewTransactFromUser(Transaction)):
+                QMessageBox.about(self, "Внимание", "Артур, что-то не так")
+        else:
+            print("Please login to net")
+
+
     def do_confirm(self,args):
         if (self.isAuth):
             if (len(args) < 2):
@@ -367,5 +397,5 @@ if __name__ == "__main__":
     try:
         cli.cmdloop()
     except KeyboardInterrupt:
-        print ('завершение сеанса...')
+        print ('Exit')
 
