@@ -801,6 +801,5 @@ class dataBaseAdapter:
                     if (event != None):
                         listEvent.append(event)
             return listEvent
-        except Exception as e:
-            print(e)
+        except :
             return None
