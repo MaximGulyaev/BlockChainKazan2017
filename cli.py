@@ -214,6 +214,12 @@ class Cli(cmd.Cmd):
             print("Please login to net")
 
     def do_downgrade(self,args):
+        '''
+         Handler command downgrade. The expert advances another expert on the decline
+
+         :param argv: id user
+         :return: message and unconfirmedTransaction in db
+         '''
         if (self.isAuth):
             if( len(args) == 0):
                 print("Error", "Needed input arguments. Example : 'downgrade 999' ")
