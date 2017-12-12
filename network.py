@@ -39,10 +39,13 @@ class network:
 
         bytesData = json.dumps(dict)
         sock = socket.socket()
-        sock.connect((addres, 9090))
-        sock.send(bytesData.encode())
-        sock.close()
-
+        try:
+            sock.connect((addres, 9090))
+            sock.send(bytesData.encode())
+            sock.close()
+        except:
+            sock.close()
+            pass
        # except:
          #   return None
 
@@ -204,16 +207,7 @@ class network:
                 BlockList = data
                 self.processingStep = 3
                 for element in BlockList:
-                    elementList = {
-                        'idBlock': element[0],
-                        'previousBlockHash': element[1],
-                        'hash': element[2],
-                        'timestamp': element[3],
-                        'count': element[4],
-                        'complexity': element[5],
-                        'nonce': element[6],
-                    }
-                    self.blockchain.addNewBlockFromNet(elementList)
+                    self.blockchain.addNewBlockFromNet(element)
                 self.processingStep = 0
 
         if (type == consts.typeNetQuery.get('eqChain')):

@@ -776,7 +776,7 @@ class dataBaseAdapter:
             return None
 
     def getTransactByIdBlock(self, idBlock):
-        try:
+        #try:
             conn = sqlite3.connect('resourse/db.sqlite')
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM transactionInBlock"
@@ -785,5 +785,5 @@ class dataBaseAdapter:
             cursor.close()
             conn.close()
             return rows
-        except:
-            return None
+        #except:
+         #   return None

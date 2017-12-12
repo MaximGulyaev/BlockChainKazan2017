@@ -144,10 +144,12 @@ class Blockchain:
             self.addNewTransaction_CreateEvent(Transaction, CreateTime)
         if type == 6:
             self.addNewTransaction_ChangeEvent(Transaction, CreateTime)
+        if type == 10:
+            self.addNewTransaction_checkSingatureTransact(Transaction)
 
     def blockVerification(self, block):
             LastBlockId = self.dataBaseAdapt.getLastBlock()[consts.BlockColumns.get('idBlock')]
-            LastBlockHash = self.dataBaseAdapt.getLastBlock()[consts.BlockColumns.get('PrevBlockHash')]
+            LastBlockHash = self.dataBaseAdapt.getLastBlock()[consts.BlockColumns.get('hash')]
 
             if not (block['idBlock'] == LastBlockId + 1):
                 return False
@@ -389,7 +391,7 @@ class Blockchain:
         Address = CAccountingSystem.CAccountingSystem.publicKeyToAddress(self.PrivateKey)
         Complexity = self.determineComplexityHash(Address)
         LastBlockId = self.dataBaseAdapt.getLastBlock()[consts.BlockColumns.get('idBlock')]
-        LastBlockHash = self.dataBaseAdapt.getLastBlock()[consts.BlockColumns.get('PrevBlockHash')]
+        LastBlockHash = self.dataBaseAdapt.getLastBlock()[consts.BlockColumns.get('hash')]
         createTime = time.time()
 
         if (Complexity) == False:
@@ -589,7 +591,7 @@ class Blockchain:
         blockList = []
         for element in hashChain:
             block = self.dataBaseAdapt.getBlockByHash(element[0])
-            transactTupleList = self.dataBaseAdapt.getTransactByIdBlock(block[consts.createTableBlock('idBlock')])
+            transactTupleList = self.dataBaseAdapt.getTransactByIdBlock(block[consts.BlockColumns.get('idBlock')])
             transactDictList = []
             for element in transactTupleList:
                 transaction = {
@@ -606,8 +608,8 @@ class Blockchain:
 
             blockList.append(self.createBlock(transactDictList, block[consts.BlockColumns.get('nonce')],
                              block[consts.BlockColumns.get('idBlock')], block[consts.BlockColumns.get('hash')],
-                             block[consts.BlockColumns.get('previousBlockHash')],
-                             block[consts.BlockColumns.get('time')], block[consts.BlockColumns.get('complexity')]))
+                             block[consts.BlockColumns.get('PrevBlockHash')],
+                             block[consts.BlockColumns.get('timestamp')], block[consts.BlockColumns.get('complexity')]))
 
         return blockList
 
