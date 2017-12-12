@@ -268,7 +268,7 @@ class Cli(cmd.Cmd):
             signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
             Transaction['signature'] = signature
             if not (self.CblockChain.addNewTransactFromUser(Transaction)):
-                QMessageBox.about(self, "Внимание", "Артур, что-то не так")
+                print("Error", "Something went wrong")
         else:
             print("Please login to net")
 
