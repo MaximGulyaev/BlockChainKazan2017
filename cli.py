@@ -9,6 +9,7 @@ import Block_chain
 import CAccountingSystem
 import network
 import dataBaseAdapter
+import consts
 
 def getPrivateKeyFromFile(fname):
     try:
@@ -46,7 +47,16 @@ class Cli(cmd.Cmd):
         self.doc_header ="Доступные команды (для справки по конкретной команде наберите 'help _команда_')"
 
     def do_hello(self, args):
+        user = self.dataBaseAdapt.getUserById('1')
+        print(user)
+
+        if (len(args) == None):
+            print('sdfsdfsdfsdf')
+        else:
+            args = args.split()[0]
+            print(args)
         """hello - выводит 'hello world' на экран"""
+
         print ('hello world')
 
     def default(self, line):
@@ -203,6 +213,42 @@ class Cli(cmd.Cmd):
         else:
             print("Please login to net")
 
+    def do_downgrade(self,args):
+        if (self.isAuth):
+            if( len(args) == 0):
+                print("Error", "Needed input arguments. Example : 'downgrade 999' ")
+            else:
+                index = args.split()[0]
+
+                user = self.dataBaseAdapt.getUserById(index)
+
+                if ((user == None) or  len(user)== 0 ):
+                    print("Error", "User not found")
+                else:
+                    status = 'User'
+                    if (user[consts.usersColumns.get('isExpert')] == 1):
+                        status = 'Expert'
+                    currentUser = '==================\nUserId : {0}\nUsername : {1}\n Birthday : {2}\n Status :{3}\n Organization :{4}\n'\
+                        .format(user[consts.usersColumns.get('idUser')], user[consts.usersColumns.get('name')], user[consts.usersColumns.get('birthday')], status, user[consts.usersColumns.get('organization')] )
+                    print(currentUser)
+                    symbol = input('Are you sure you want to demote this user?y/n')
+                    if ((symbol == 'Y') or (symbol == 'y') or (symbol == 'д') or (symbol == 'Д')):
+                        Transaction = {}
+                        datadict = {}
+                        datadict['address'] = user[consts.usersColumns.get('addres')]
+                        Transaction['data'] = datadict
+                        Transaction['address'] = self.accountSystemClass.account['Address']
+                        Transaction['type'] = 2
+                        Transaction['publicKey'] = self.accountSystemClass.publicKeyToString(self.accountSystemClass.account['PublicKey'])
+                        string = json.dumps(Transaction, sort_keys = True)
+                        signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
+                        Transaction['signature'] = signature
+                        if not (self.CblockChain.addNewTransactFromUser(Transaction)):
+                            print("Error", "Something went wrong")
+                    else:
+                        print('He will thank you')
+        else:
+            print("Please login to net")
 
     def do_exit(self, line):
         exit(0)
