@@ -774,3 +774,33 @@ class dataBaseAdapter:
             return consts.successfulAddNewUser
         except:
             return None
+
+    def getEventForUser(self,role,id):
+        try:
+            conn = sqlite3.connect('resourse/db.sqlite')
+            cursor = conn.cursor()
+            cursor.execute("SELECT addres FROM users WHERE idUser = (?)",(id,))
+            userAddr = cursor.fetchone()[0]
+            cursor.execute("SELECT usersGroup FROM groups "
+                           "WHERE addres = (?) and typeGroup = (?)", (userAddr,role))
+            groupsUserList = cursor.fetchall()
+            listEvent = []
+            for groupUser in groupsUserList:
+                #0 - user, 1 - exp
+                if (role == 0):
+                    cursor.execute("SELECT * FROM event "
+                               "WHERE idUsersGroup = (?)",(groupUser[0],))
+                    event = cursor.fetchone()
+                    if (event != None):
+                        listEvent.append(event)
+
+                else:
+                    cursor.execute("SELECT * FROM event "
+                               "WHERE idExpertsGroup = (?)",(groupUser[0],))
+                    event = cursor.fetchone()
+                    if (event != None):
+                        listEvent.append(event)
+            return listEvent
+        except Exception as e:
+            print(e)
+            return None

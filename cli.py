@@ -68,7 +68,7 @@ class Cli(cmd.Cmd):
         '''
         print ('Error in command. See help')
 
-    def do_addUser(self, args):
+    def do_getAllEvents(self, args):
         #print('Введите свое имя')
         name = input('Введите свое имя')
         #print (name)
@@ -92,6 +92,8 @@ class Cli(cmd.Cmd):
             self.CblockChain.setPrivateKey(privateKey)
             self.prompt = "> "
             self.isAuth = True
+            name = self.accountSystemClass.account.get('Name')
+            print("Hello ", name)
         else:
             print("Attention", "User not exist")
 
@@ -222,7 +224,7 @@ class Cli(cmd.Cmd):
          '''
         if (self.isAuth):
             if( len(args) == 0):
-                print("Error", "Needed input arguments. Example : 'downgrade 999' ")
+                print("Error", "Needed input arguments. Example : 'downgrade 999'. 999 is idUser")
             else:
                 index = args.split()[0]
 
@@ -253,6 +255,55 @@ class Cli(cmd.Cmd):
                             print("Error", "Something went wrong")
                     else:
                         print('He will thank you')
+        else:
+            print("Please login to net")
+
+    def do_confirm(self,args):
+        if (self.isAuth):
+            if (len(args) < 2):
+                print("Error", "Needed input arguments. Example : 'confirm -e 9913' or 'confirm -u 1'.\n"
+                               "-e is event\n -u is user downgrade or user doExpert\n, numbers is appropriate id")
+            else:
+                Transaction = {}
+                datadict = {}
+                Transaction['address'] = self.accountSystemClass.account['Address']
+                Transaction['publicKey'] = self.accountSystemClass.publicKeyToString(
+                    self.accountSystemClass.account['PublicKey'])
+                typeQuerry = args.split()[0]
+                id = args.split()[1]
+                requestMode = 0
+                if (typeQuerry == '-e'):
+                    requestMode = 1
+                    #0 == -u
+                if (requestMode == 0):
+                    requestList = self.dataBaseAdapt.getRequestList()
+                    if (self.dataBaseAdapt.getRequestList() == None):
+                        return False
+
+                    Transaction['type'] = 3
+                    datadict['idRequest'] = requestList[id][
+                    consts.requestColumns.get('idRequest')]
+                    Transaction['data'] = datadict
+                    string = json.dumps(Transaction, sort_keys=True)
+                    signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
+                    Transaction['signature'] = signature
+                    if not (self.CblockChain.addNewTransactFromUser(Transaction)):
+                        print("Error", "Something went wrong")
+                if (requestMode == 1):
+                    requestList = self.dataBaseAdapt.getEventUpdateList()
+                    if (requestList == None):
+                        return False
+                    Transaction['type'] = 4
+                    datadict['updateIndex'] = requestList[id][
+                        consts.eventsUpdateColumns.get('updateIndex')]
+                    datadict['idEvent'] = requestList[id][
+                        consts.eventsUpdateColumns.get('idEvent')]
+                    Transaction['data'] = datadict
+                    string = json.dumps(Transaction, sort_keys=True)
+                    signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
+                    Transaction['signature'] = signature
+                    if not (self.CblockChain.addNewTransactFromUser(Transaction)):
+                        print("Error", "Something went wrong")
         else:
             print("Please login to net")
 
