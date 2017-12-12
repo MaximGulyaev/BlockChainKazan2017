@@ -307,6 +307,42 @@ class Cli(cmd.Cmd):
         else:
             print("Please login to net")
 
+    def do_getMyEvent(self,args):
+        '''
+        Handler command getMyEvent. User get list with your events,where he is expert and he is user
+
+        :param args:no usable(but it's features cmd lib)
+        :return: list with user event on console. No return value
+        '''
+        if (self.isAuth):
+            addrUser = self.accountSystemClass.account.get('Address')
+            list = self.dataBaseAdapt.getEventForUser(1,addrUser)
+            if (len(list) == 0):
+                print('Event as Expert : no events')
+            else:
+                print('Event as Expert')
+                for element in list:
+                    eventInfo = 'Name event : {0} \ndate : {1} \ncompetence : {2} \nraiting : {3} \ndata : {4}'.\
+                        format( element[consts.eventsColumns.get('name')],element[consts.eventsColumns.get('date')],
+                                element[consts.eventsColumns.get('competence')],element[consts.eventsColumns.get('raiting')],element[consts.eventsColumns.get('data')])
+                    print('==========================================================')
+                    print(eventInfo)
+            list = self.dataBaseAdapt.getEventForUser(0,addrUser)
+            print('==========================================================')
+            if (len(list) == 0):
+                print('Event as User : no events')
+            else:
+                print('Event as User')
+                for element in list:
+                    eventInfo = 'Name event : {0} \ndate : {1} \ncompetence : {2} \nraiting : {3} \n{4}'.\
+                        format( element[consts.eventsColumns.get('name')],element[consts.eventsColumns.get('date')],
+                                element[consts.eventsColumns.get('competence')],element[consts.eventsColumns.get('raiting')],element[consts.eventsColumns.get('data')])
+                    print('==========================================================')
+                    print(eventInfo)
+            print('==========================================================')
+        else:
+            print("Please login to net")
+
     def do_exit(self, line):
         exit(0)
 

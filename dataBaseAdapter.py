@@ -775,12 +775,12 @@ class dataBaseAdapter:
         except:
             return None
 
-    def getEventForUser(self,role,id):
+    def getEventForUser(self,role,userAddr):
         try:
             conn = sqlite3.connect('resourse/db.sqlite')
             cursor = conn.cursor()
-            cursor.execute("SELECT addres FROM users WHERE idUser = (?)",(id,))
-            userAddr = cursor.fetchone()[0]
+            #cursor.execute("SELECT addres FROM users WHERE idUser = (?)",(id,))
+            #userAddr = cursor.fetchone()[0]
             cursor.execute("SELECT usersGroup FROM groups "
                            "WHERE addres = (?) and typeGroup = (?)", (userAddr,role))
             groupsUserList = cursor.fetchall()
