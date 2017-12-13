@@ -800,6 +800,22 @@ class dataBaseAdapter:
                     event = cursor.fetchone()
                     if (event != None):
                         listEvent.append(event)
+            cursor.close()
+            conn.close()
             return listEvent
         except :
             return None
+
+
+    def getRequestListNonAccepted(self,quantityAcceptedNumb):
+        try:
+            conn = sqlite3.connect('resourse/db.sqlite')
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM request WHERE quantityAccepted < (?)",(quantityAcceptedNumb,))
+            rows = cursor.fetchall()
+            cursor.close()
+            conn.close()
+            return rows
+        except:
+            return None
+

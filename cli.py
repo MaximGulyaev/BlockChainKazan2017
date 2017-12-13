@@ -372,6 +372,13 @@ class Cli(cmd.Cmd):
 
 
     def do_changeEvent(self,args):
+        '''
+        Handler command changeEvent. The expert change event with the help of a question-answer form
+        As a parametr on calling idEvent. Example 'changeEvent 999'
+
+        :param args: idEvent
+        :return:
+        '''
         if(self.isAuth):
             if (self.accountSystemClass.account.get('isExpert') == 1):
                 if( len(args) == 0) or (len(args) > 1):
@@ -605,8 +612,10 @@ class Cli(cmd.Cmd):
             print(consts.erorLoginToNet)
 
     def do_confirm(self,args):
+        command = ('-u','-e','-v')
         if (self.isAuth):
-            if (len(args) < 2) and (len(args) > 2):
+            args = args.split()
+            if (len(args) == 0):
                 print("Error", "Needed input arguments. Example : 'confirm -e 9913' or 'confirm -u 1'.\n"
                                "-e is event\n -u is user downgrade or user doExpert\n, numbers is appropriate id")
             else:
@@ -615,46 +624,78 @@ class Cli(cmd.Cmd):
                 Transaction['address'] = self.accountSystemClass.account['Address']
                 Transaction['publicKey'] = self.accountSystemClass.publicKeyToString(
                     self.accountSystemClass.account['PublicKey'])
-                typeQuerry = args.split()[0]
-                id = args.split()[1]
-                requestMode = 0
-                if (typeQuerry == '-e') or (typeQuerry == '-u'):
-                    if (typeQuerry == '-e'):
-                        requestMode = 1
-                    if (requestMode == 0):
-                        requestList = self.dataBaseAdapt.getRequestList()
-                        if (self.dataBaseAdapt.getRequestList() == None):
-                            return False
 
+                if ((args[0] == '-u') and  len(args) == 2 and str(args[1]).isdigit()):
+                    psevdolist = [self.dataBaseAdapt.getRequestById(args[1])]
+                    self.outputRequest(psevdolist, 3)
+                    accept = input("Are you sure you want to confirm?Y/n ")
+                    accept = accept.upper()
+                    if (accept == 'Y'):
                         Transaction['type'] = 3
-                        datadict['idRequest'] = requestList[id][
-                        consts.requestColumns.get('idRequest')]
+                        datadict['idRequest'] = args[1]
                         Transaction['data'] = datadict
                         string = json.dumps(Transaction, sort_keys=True)
-                        signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
+                        signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'],
+                                                                            string)
                         Transaction['signature'] = signature
+                        print("Accepted")
                         if not (self.CblockChain.addNewTransactFromUser(Transaction)):
                             print("Error", "Something went wrong")
-                    if (requestMode == 1):
-                        requestList = self.dataBaseAdapt.getEventUpdateList()
-                        if (requestList == None):
-                            return False
-                        Transaction['type'] = 4
-                        datadict['updateIndex'] = requestList[id][
-                            consts.eventsUpdateColumns.get('updateIndex')]
-                        datadict['idEvent'] = requestList[id][
-                            consts.eventsUpdateColumns.get('idEvent')]
-                        Transaction['data'] = datadict
-                        string = json.dumps(Transaction, sort_keys=True)
-                        signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
-                        Transaction['signature'] = signature
-                        if not (self.CblockChain.addNewTransactFromUser(Transaction)):
-                            print(consts.errorSomethingWentWrong)
+
+                if ((args[0] == '-e') and  len(args) == 2 and str(args[1]).isdigit()):
+                    print('fsdfsd')
+
+                if ((args[0] == '-v') and (len(args) == 1)):
+                    usersReqList = self.dataBaseAdapt.getRequestListNonAccepted(3)
+                    self.outputRequest(usersReqList,3)
+
+                    requestList = self.dataBaseAdapt.getEventUpdateList()
+
+
+                    typeQuerry = args.split()[0]
+                    id = args.split()[1]
+                    requestMode = 0
+                    if (typeQuerry == '-e') or (typeQuerry == '-u'):
+                        if (typeQuerry == '-e'):
+                            requestMode = 1
+
+                        if (requestMode == 1):
+                            requestList = self.dataBaseAdapt.getEventUpdateList()
+                            if (requestList == None):
+                                return False
+                            Transaction['type'] = 4
+                            datadict['updateIndex'] = requestList[id][
+                                consts.eventsUpdateColumns.get('updateIndex')]
+                            datadict['idEvent'] = requestList[id][
+                                consts.eventsUpdateColumns.get('idEvent')]
+                            Transaction['data'] = datadict
+                            string = json.dumps(Transaction, sort_keys=True)
+                            signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
+                            Transaction['signature'] = signature
+                            if not (self.CblockChain.addNewTransactFromUser(Transaction)):
+                                print(consts.errorSomethingWentWrong)
                 else:
                     print("Error in parametrs","Needed input arguments. Example : 'confirm -e 9913' or 'confirm -u 1'.\n"
-                               "-e is event\n -u is user downgrade or user doExpert\n, numbers is appropriate id")
+                                   "-e is event\n -u is user downgrade or user doExpert\n, numbers is appropriate id")
         else:
             print(consts.erorLoginToNet)
+
+    def outputRequest(self,requestList, numAcceptNeeded):
+            for req in requestList:
+                Offerer = self.dataBaseAdapt.getUser(req[consts.requestColumns.get('addresFrom')])
+                Target = self.dataBaseAdapt.getUser(req[consts.requestColumns.get('addresTo')])
+                accepted = req[consts.requestColumns.get('quantityAccepted')]
+                typeReq = 'Downgrade'
+                if req[consts.requestColumns.get('typeRequest')] == 0:
+                    typeReq = 'Rise'
+
+                print('Request id {7}\nOfferer : {0}({1})\nTarget : {2}({3})\nType : {4}\nAccepted {5}/{6}'\
+                    .format(Offerer[consts.usersColumns.get('name')], Offerer[consts.usersColumns.get('idUser')],
+                                                                             Target[consts.usersColumns.get('name')], Target[consts.usersColumns.get('idUser')],
+                            typeReq,accepted,numAcceptNeeded,req[consts.requestColumns.get('idRequest')]
+                            ))
+
+    def outputEventUpdate(self, requestList, numAcceptNeeded):
 
     def do_getMyEvent(self,args):
         '''
