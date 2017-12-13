@@ -237,7 +237,6 @@ class network:
                     self.addAddres(row[0])
 
 
-
     def lenCheckerNeighbourhood(self):
         while True:
             addreses = self.getNetwork()

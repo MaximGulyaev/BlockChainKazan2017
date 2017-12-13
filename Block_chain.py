@@ -22,6 +22,7 @@ class Blockchain:
     CNetwork = None
     exitsChangeEventVresion = []
     _MineStat = 0
+    _ReloadFunction = None
 
     def __init__(self):
         pass
@@ -53,6 +54,8 @@ class Blockchain:
     def InitAddNetWork(self, NetClass):
         self.CNetwork = NetClass
         return True
+    def InitAddFunction(self, Reload):
+        self._ReloadFunction = Reload
 
     def addNewTransactFromNet(self, Transact):
         try:
@@ -646,11 +649,10 @@ class Blockchain:
         block = copy.deepcopy(blockOrig)
         block.pop('transactionList')
         self.dataBaseAdapt.addBlock(block['hash'],block['time'],47,block['complexity'],block['nonce'])
-        pass
+        self._ReloadFunction()
 
     def sendBlock(self, block):
         self.CNetwork.sendMessageAll(block,consts.typeNetQuery.get('block'))
-        pass
 
     def createAutorTransact(self):
         Address = CAccountingSystem.CAccountingSystem.publicKeyToAddress(self.PrivateKey)

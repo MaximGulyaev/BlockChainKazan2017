@@ -38,6 +38,7 @@ typeNetQuery = {
     'error' : 7,
     'SendHashChain': 8,
     'SendBlockList': 9,
+    'ShowMeNet': 10,
 }
 
 eventsColumns = {

@@ -65,6 +65,7 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         self.pb_menu_lower.clicked.connect(self.change_Menu)
         self.pb_mainLogOut.clicked.connect(self.change_Menu)
         self.pb_menu_UsersInfo.clicked.connect(self.change_Menu)
+        self.pushButton.clicked.connect(self.change_Menu)
 
         self.pb_generatePrivKey.clicked.connect(self.generatePrivateKey)
         self.pb_auth_choseFileWithKey.clicked.connect(self.pb_auth_choseFileWithKey_clicked)
@@ -157,6 +158,9 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
             return True
         if (btn_name == 'pb_menu_UsersInfo'):
             self.SW_menu.setCurrentIndex(6)
+            return True
+        if (btn_name == 'pushButton'):
+            self.SW_menu.setCurrentIndex(7)
             return True
 
     def LoadMenu(self):
@@ -396,7 +400,7 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
         Transaction['signature'] = signature
         if not (self.CblockChain.addNewTransactFromUser(Transaction)):
-            QMessageBox.about(self, "Внимание", "Артур, что-то не так")
+                QMessageBox.about(self, "Внимание", "Артур, что-то не так")
         # ToDo Транзакция добавляется
 
     def cb_eventInfo_ChoseEvent_currentIndexChanged(self):
@@ -631,7 +635,8 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
             self.CblockChain._MineStat = 0
 
 
-    def loadAllField(self):
+    def FirstStartLoad(self):
+        self.CblockChain.InitAddFunction(self.Load)
         self.cb_request_mode.addItem('"пользователи"')
         self.cb_request_mode.addItem('"мероприятия"')
 
@@ -643,16 +648,19 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         self.tw_lowerRequest_UserList.horizontalHeader().setStretchLastSection(True)
         self.tw_createEvent_addedUserList.horizontalHeader().setStretchLastSection(True)
         self.tw_UsersInfoList.horizontalHeader().setStretchLastSection(True)
+        self.Load()
+        return True
 
-
+    def Load(self):
         userList = self.dataBaseAdapt.getUserList()
+        self.clearTableWdiget(self.tw_UsersInfoList)
         self.fillUserTableWidget_id_name_organization_isExpert(self.tw_UsersInfoList, userList)
 
-
         userInfoList = self.dataBaseAdapt.getUserListByCriterion(1)
+        self.clearTableWdiget(self.tw_lowerRequest_UserList)
         self.fillUserTableWidget_id_name_organization(self.tw_lowerRequest_UserList, userInfoList)
+        self.cb_registr_choseFileWithPrivateKey.clear()
         self.cb_registr_choseFileWithPrivateKey.addItems(os.listdir('keys'))
-
 
         listEvent = []
         self._EventInfoShownListTuple = self.dataBaseAdapt.getEventList()
@@ -661,10 +669,12 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
                      str(element[consts.eventsColumns.get('name')]) + "  " + \
                      str(element[consts.eventsColumns.get('date')])
             listEvent.append(string)
+
+        self.cb_eventInfo_ChoseEvent.clear()
         self.cb_eventInfo_ChoseEvent.addItems(listEvent)
         self.cb_eventInfo_ChoseEvent_currentIndexChanged()
+        self.cb_changeEvent_ChoseEvent.clear()
         self.cb_changeEvent_ChoseEvent.addItems(listEvent)
-
 
         listOfAllRequests = []
         RequestList = self.dataBaseAdapt.getRequestList()
@@ -675,7 +685,6 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
                      str(element[consts.eventsUpdateColumns.get('date')])
             listOfAllRequests.append(string)
 
-        return True
 
     def fillUserTableWidget_id_name_organization(self,tableWidget, userInfoList):
 
@@ -748,7 +757,7 @@ if __name__ == "__main__":
     qtRectangle.moveCenter(centerPoint)
     ex.move(qtRectangle.topLeft())
     ex.wdgt_expertMenu.setVisible(False)
-    ex.loadAllField()
+    ex.FirstStartLoad()
 
 
 

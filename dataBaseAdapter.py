@@ -189,7 +189,7 @@ class dataBaseAdapter:
             return None
 
     def addEvent(self, creator, name, date, data, competence, rating, numOfExperts, expertsList, usersList,timestamp):
-        try:
+        #try:
             conn = sqlite3.connect('resourse/db.sqlite')
             cursor = conn.cursor()
             cursor.execute("SELECT * FROM users WHERE addres = ('%s')" % (creator))
@@ -217,8 +217,8 @@ class dataBaseAdapter:
             cursor.close()
             conn.close()
             return consts.successfulAddNewUser
-        except :
-            return None
+       # except :
+       #     return None
 
     def delEvent(self, creator, name, date, data, competence, rating, numOfExperts, expertsList, usersList,timestamp):
 
@@ -520,6 +520,7 @@ class dataBaseAdapter:
             return countExp
         #except:
         #    return None
+
     def delAccept(self, id, addrExp):
         conn = sqlite3.connect('resourse/db.sqlite')
         cursor = conn.cursor()
@@ -611,6 +612,10 @@ class dataBaseAdapter:
             cursor.execute("SELECT MAX(idGroup) FROM groups")
             idExpertsGroup = cursor.fetchone()[0] + 1
             idUsersGroup = idExpertsGroup + 1
+            idConfirmExpertGroup = idUsersGroup + 1
+            cursor.execute("SELECT * FROM groups WHERE usersGroup = (SELECT idExpertsGroup FROM event WHERE idEvent = ?)", (id,))
+
+            expertsListEvent = cursor.fetchall()
 
             for user in usersList:
                 cursor.execute("INSERT INTO groups (usersGroup,addres,typeGroup) "
@@ -620,15 +625,20 @@ class dataBaseAdapter:
                 cursor.execute("INSERT INTO groups (usersGroup,addres,typeGroup) "
                                "VALUES (?,?,?)",
                                (idExpertsGroup, expert[consts.usersColumns.get('addres')], 1))
+            for expert in expertsListEvent:
+                cursor.execute("INSERT INTO groups (usersGroup,addres,typeGroup,accept) "
+                               "VALUES (?,?,?,?)",
+                               (idConfirmExpertGroup, expert[consts.usersColumns.get('addres')], 1,0))
 
             if (updateIndex == None):
                 updateIndex = currentUpdateIndex + 1
             else:
                 updateIndex += 1
+
             cursor.execute("INSERT INTO eventUpdate "
-                           "(idEvent,name,data,date,competence,numOfExperts,idExpertsGroup,idUsersGroup,updateIndex,timestamp,version) "
-                           "VALUES (?,?,?,?,?,?,?,?,?,?,?)",
-                           (id, name,data, date, competence, numOfExperts, idExpertsGroup, idUsersGroup,updateIndex,timestamp,version))
+                           "(idEvent,name,data,date,competence,numOfExperts,idExpertsGroup,idUsersGroup,updateIndex,timestamp,version, idConfirmExpertGroup) "
+                           "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+                           (id, name,data, date, competence, numOfExperts, idExpertsGroup, idUsersGroup,updateIndex,timestamp,version, idConfirmExpertGroup))
             conn.commit()
             cursor.close()
             conn.close()
@@ -753,28 +763,30 @@ class dataBaseAdapter:
             return None
 
     def delAcceptUpdateEvent(self, id, UpdateIndex, addr):
-        conn = sqlite3.connect('resourse/db.sqlite')
-        cursor = conn.cursor()
-        cursor.execute("SELECT idExpertsGroup FROM eventUpdate "
-                       "WHERE idEvent = ('%s') AND updateIndex = ('%s')"
-                       % (id, UpdateIndex))
-        groupId = cursor.fetchone()[0]
-        cursor.execute("UPDATE groups SET accept = ?"
-                       "WHERE usersGroup = ? and addres = ?", (0, groupId, addr))
+        try:
+            conn = sqlite3.connect('resourse/db.sqlite')
+            cursor = conn.cursor()
+            cursor.execute("SELECT idExpertsGroup FROM eventUpdate "
+                           "WHERE idEvent = ('%s') AND updateIndex = ('%s')"
+                           % (id, UpdateIndex))
+            groupId = cursor.fetchone()[0]
+            cursor.execute("UPDATE groups SET accept = ?"
+                           "WHERE usersGroup = ? and addres = ?", (0, groupId, addr))
 
-        cursor.execute("SELECT COUNT(*) FROM groups "
-                       "WHERE usersGroup = ? and accept = 1 "
-                       ,(groupId, ))
-        countAgreement = cursor.fetchone()[0]
-        print(countAgreement)
-        cursor.execute("UPDATE eventUpdate SET numOfExperts = ?"
-                       "WHERE updateIndex = ? and idEvent = ?",
-                       (countAgreement, UpdateIndex, id))
-        conn.commit()
-        cursor.close()
-        conn.close()
-        return countAgreement
-
+            cursor.execute("SELECT COUNT(*) FROM groups "
+                           "WHERE usersGroup = ? and accept = 1 "
+                           ,(groupId, ))
+            countAgreement = cursor.fetchone()[0]
+            print(countAgreement)
+            cursor.execute("UPDATE eventUpdate SET numOfExperts = ?"
+                           "WHERE updateIndex = ? and idEvent = ?",
+                           (countAgreement, UpdateIndex, id))
+            conn.commit()
+            cursor.close()
+            conn.close()
+            return countAgreement
+        except:
+            return None
     def getUserById(self,userID):
         try:
             conn = sqlite3.connect('resourse/db.sqlite')
