@@ -943,6 +943,7 @@ class dataBaseAdapter:
         except:
             return None
 
+
     def getTransactByIdBlock(self, idBlock):
         #try:
             conn = sqlite3.connect('resourse/db.sqlite')
@@ -952,5 +953,70 @@ class dataBaseAdapter:
             cursor.close()
             conn.close()
             return rows
-        #except:
-         #   return None
+
+    def getEventForUser(self,role,userAddr):
+        try:
+            conn = sqlite3.connect('resourse/db.sqlite')
+            cursor = conn.cursor()
+            #cursor.execute("SELECT addres FROM users WHERE idUser = (?)",(id,))
+            #userAddr = cursor.fetchone()[0]
+            cursor.execute("SELECT usersGroup FROM groups "
+                           "WHERE addres = (?) and typeGroup = (?)", (userAddr,role))
+            groupsUserList = cursor.fetchall()
+            listEvent = []
+            for groupUser in groupsUserList:
+                #0 - user, 1 - exp
+                if (role == 0):
+                    cursor.execute("SELECT * FROM event "
+                               "WHERE idUsersGroup = (?)",(groupUser[0],))
+                    event = cursor.fetchone()
+                    if (event != None):
+                        listEvent.append(event)
+
+                else:
+                    cursor.execute("SELECT * FROM event "
+                               "WHERE idExpertsGroup = (?)",(groupUser[0],))
+                    event = cursor.fetchone()
+                    if (event != None):
+                        listEvent.append(event)
+            cursor.close()
+            conn.close()
+            return listEvent
+        except :
+            return None
+
+
+    def getRequestListNonAccepted(self,quantityAcceptedNumb):
+        try:
+            conn = sqlite3.connect('resourse/db.sqlite')
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM request WHERE quantityAccepted < (?)",(quantityAcceptedNumb,))
+            rows = cursor.fetchall()
+            cursor.close()
+            conn.close()
+            return rows
+        except:
+            return None
+
+    def getEventUpdateForUserUserAsExpert(self,addr):
+        try:
+            conn = sqlite3.connect('resourse/db.sqlite')
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM groups WHERE addres = (?) and typeGroup = (?)",(addr,1))
+            groups = cursor.fetchall()
+            listUpdate = []
+            for group in groups:
+                cursor.execute("SELECT Count(*) FROM groups WHERE idGroup = (?)", (group[consts.groupColumns.get('idGroup')],))
+                count = cursor.fetchone()[0]
+                cursor.execute("SELECT * FROM eventUpdate WHERE idExpertsGroup = (?) and numOfExperts < (?)", (group[consts.groupColumns.get('idGroup')],count))
+                eventUpd = cursor.fetchone()
+                if(eventUpd != None):
+                    listUpdate.append(eventUpd)
+            cursor.close()
+            conn.close()
+            return listUpdate
+        except Exception as e:
+            print(e)
+            return None
+
+

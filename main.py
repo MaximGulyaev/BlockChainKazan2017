@@ -272,9 +272,6 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
             QMessageBox.about(self, "Внимание", "Артур, что-то не так")
         # ToDo Транзакция добавляется
 
-    def pb_changeEvent_PushChangeEventRequest_clicked(self):
-        pass
-
     def pb_request_confirmRequest_clicked(self):
         Transaction = {}
         datadict = {}
