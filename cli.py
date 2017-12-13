@@ -4,7 +4,7 @@ import cmd
 import os
 import json
 import rsa
-
+import threading
 
 import Block_chain
 import CAccountingSystem
@@ -44,6 +44,12 @@ class Cli(cmd.Cmd):
         self.CblockChain = Block_chain.Blockchain()
         self.Cnetwork = network.network(self.CblockChain)
         self.CblockChain.InitAddNetWork(self.Cnetwork)
+        _threadListener = threading.Thread(name="Listen", target = self.Cnetwork.receiveMessage)
+        _threadListener.start()
+        _threadMiner = threading.Thread(name="Miner", target = self.CblockChain.startMine)
+        _threadMiner.start()
+        _threadLenChecker = threading.Thread(name="LebChecker", target = self.Cnetwork.lenCheckerNeighbourhood)
+        _threadLenChecker.start()
         self.prompt = "(not auth)> "
         self.intro  = "Welcome\nFor help enter 'help'"
         self.doc_header ="Available (for help on a specific command, enter 'help _command')"
@@ -79,6 +85,7 @@ class Cli(cmd.Cmd):
             self.isAuth = True
             name = self.accountSystemClass.account.get('Name')
             print("Hello ", name)
+            self.CblockChain._MineStat = 1
         else:
             print(consts.userNotExist)
 
@@ -89,6 +96,7 @@ class Cli(cmd.Cmd):
         :param args: no usable(but it's features cmd lib)
         :return: user out from account
         '''
+        self.CblockChain._MineStat = 0
         self.accountSystemClass.logout()
         print(consts.userLogoutAtt)
         self.prompt = "(not auth)> "
