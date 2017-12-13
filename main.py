@@ -28,6 +28,8 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
     _threadLenChecker = threading.Thread(name="LebChecker", target=Cnetwork.lenCheckerNeighbourhood)
     _threadLenChecker.start()
 
+
+
     _EventInfochoseIndex = None
     _ChangeEventChoseIndex = None
     _EventInfoShownListTuple = []
@@ -49,17 +51,21 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         self.setupUi(self)
         self.pb_auth_registration.clicked.connect(self.pb_register_clicked)
         self.pb_auth_Login.clicked.connect(self.pb_auth_Login_clicked)
-        self.pb_mainLogOut.clicked.connect(self.Show_authList)
+
         self.pb_registration_GoToAuth.clicked.connect(self.Show_authList)
         self.pb_main_Exit.clicked.connect(self.close)
         self.pb_main_Exit_2.clicked.connect(self.close)
         self.pb_main_Exit_3.clicked.connect(self.close)
+
         self.pb_menu_aboutAccount.clicked.connect(self.change_Menu)
         self.pb_menu_eventInfo.clicked.connect(self.change_Menu)
         self.pb_menu_createEvent.clicked.connect(self.change_Menu)
         self.pb_menu_changeEvent.clicked.connect(self.change_Menu)
         self.pb_menu_unconfirmedRequest.clicked.connect(self.change_Menu)
         self.pb_menu_lower.clicked.connect(self.change_Menu)
+        self.pb_mainLogOut.clicked.connect(self.change_Menu)
+        self.pb_menu_UsersInfo.clicked.connect(self.change_Menu)
+
         self.pb_generatePrivKey.clicked.connect(self.generatePrivateKey)
         self.pb_auth_choseFileWithKey.clicked.connect(self.pb_auth_choseFileWithKey_clicked)
         self.cb_eventInfo_ChoseEvent.currentIndexChanged.connect(self.cb_eventInfo_ChoseEvent_currentIndexChanged)
@@ -133,16 +139,25 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         btn_name = self.sender().objectName()
         if (btn_name == 'pb_menu_aboutAccount' and True):
             self.SW_menu.setCurrentIndex(0)
+            return True
         if (btn_name == 'pb_menu_eventInfo' and True):
             self.SW_menu.setCurrentIndex(1)
+            return True
         if (btn_name == 'pb_menu_createEvent' and True):
             self.SW_menu.setCurrentIndex(2)
+            return True
         if (btn_name == 'pb_menu_changeEvent' and True):
             self.SW_menu.setCurrentIndex(3)
+            return True
         if (btn_name == 'pb_menu_unconfirmedRequest' and True):
             self.SW_menu.setCurrentIndex(4)
+            return True
         if (btn_name == 'pb_menu_lower' and True):
             self.SW_menu.setCurrentIndex(5)
+            return True
+        if (btn_name == 'pb_menu_UsersInfo'):
+            self.SW_menu.setCurrentIndex(6)
+            return True
 
     def LoadMenu(self):
         if self.accountSystemClass.account['isExpert']:
@@ -353,14 +368,14 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
 
     def pb_changeEvent_getUserList_clicked(self):
         AllUserList = self.dataBaseAdapt.getUserList()
-        self.fillUserTableWidget(self.tw_changeEvent_UserList, AllUserList)
-        self.fillUserTableWidget(self.tw_changeEvent_addedUserList, self._ChangeEventUserList)
+        self.fillUserTableWidget_id_name_organization(self.tw_changeEvent_UserList, AllUserList)
+        self.fillUserTableWidget_id_name_organization(self.tw_changeEvent_addedUserList, self._ChangeEventUserList)
         self._ChangeEventChoseIndex = 0
 
     def pb_changeEvent_getExpertList_clicked(self):
         AllExpertList = self.dataBaseAdapt.getUserListByCriterion(1)
-        self.fillUserTableWidget(self.tw_changeEvent_UserList, AllExpertList)
-        self.fillUserTableWidget(self.tw_changeEvent_addedUserList, self._ChangeEventExpertsList)
+        self.fillUserTableWidget_id_name_organization(self.tw_changeEvent_UserList, AllExpertList)
+        self.fillUserTableWidget_id_name_organization(self.tw_changeEvent_addedUserList, self._ChangeEventExpertsList)
         self._ChangeEventChoseIndex = 1
 
     def pb_changeEvent_PushChangeEventRequest_clicked(self):
@@ -412,7 +427,7 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
                 FullUser = self.dataBaseAdapt.getUser(element[consts.groupColumns.get('addres')])
                 if (FullUser != None):
                     FullExpertList.append(FullUser)
-            self.fillUserTableWidget(self.tw_eventinfo_userlist, FullExpertList)
+            self.fillUserTableWidget_id_name_organization(self.tw_eventinfo_userlist, FullExpertList)
         except:
             pass
 
@@ -426,20 +441,20 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
                 if (FullUser != None):
                     FullUserList.append(FullUser)
 
-            self.fillUserTableWidget(self.tw_eventinfo_userlist, FullUserList)
+            self.fillUserTableWidget_id_name_organization(self.tw_eventinfo_userlist, FullUserList)
         except:
             pass
 
     def pb_createEvent_getExpertList_clicked(self):
         AllExpertList = self.dataBaseAdapt.getUserListByCriterion(1)
-        self.fillUserTableWidget(self.tw_createEvent_UserList, AllExpertList)
-        self.fillUserTableWidget(self.tw_createEvent_addedUserList, self._EventCreateExpertList)
+        self.fillUserTableWidget_id_name_organization(self.tw_createEvent_UserList, AllExpertList)
+        self.fillUserTableWidget_id_name_organization(self.tw_createEvent_addedUserList, self._EventCreateExpertList)
         self._EventInfochoseIndex = 1
 
     def pb_createEvent_getUserList_clicked(self):
         AllUserList = self.dataBaseAdapt.getUserListByCriterion(0)
-        self.fillUserTableWidget(self.tw_createEvent_UserList, AllUserList)
-        self.fillUserTableWidget(self.tw_createEvent_addedUserList, self._EventCreateUserList)
+        self.fillUserTableWidget_id_name_organization(self.tw_createEvent_UserList, AllUserList)
+        self.fillUserTableWidget_id_name_organization(self.tw_createEvent_addedUserList, self._EventCreateUserList)
         self._EventInfochoseIndex = 0
 
     def pb_createEvent_addUer_clicked(self):
@@ -630,10 +645,15 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         self.tw_eventinfo_userlist.horizontalHeader().setStretchLastSection(True)
         self.tw_lowerRequest_UserList.horizontalHeader().setStretchLastSection(True)
         self.tw_createEvent_addedUserList.horizontalHeader().setStretchLastSection(True)
+        self.tw_UsersInfoList.horizontalHeader().setStretchLastSection(True)
+
+
+        userList = self.dataBaseAdapt.getUserList()
+        self.fillUserTableWidget_id_name_organization_isExpert(self.tw_UsersInfoList, userList)
 
 
         userInfoList = self.dataBaseAdapt.getUserListByCriterion(1)
-        self.fillUserTableWidget(self.tw_lowerRequest_UserList, userInfoList)
+        self.fillUserTableWidget_id_name_organization(self.tw_lowerRequest_UserList, userInfoList)
         self.cb_registr_choseFileWithPrivateKey.addItems(os.listdir('keys'))
 
 
@@ -660,7 +680,7 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
 
         return True
 
-    def fillUserTableWidget(self,tableWidget, userInfoList):
+    def fillUserTableWidget_id_name_organization(self,tableWidget, userInfoList):
 
         i = 0
         if (len(userInfoList) == 0):
@@ -677,6 +697,31 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
                 element[consts.usersColumns.get('name')]))
             tableWidget.setItem(i, 2, PyQt5.QtWidgets.QTableWidgetItem(
                 element[consts.usersColumns.get('organization')]))
+            i += 1
+        tableWidget.resizeColumnsToContents()
+
+    def fillUserTableWidget_id_name_organization_isExpert(self,tableWidget, userInfoList):
+
+        i = 0
+        if (len(userInfoList) == 0):
+            tableWidget.setRowCount(0)
+            return False
+        if (userInfoList == None):
+            tableWidget.setRowCount(0)
+            return False
+        tableWidget.setRowCount(len(userInfoList))
+
+        tableWidget.setHorizontalHeaderLabels(["Id", "Full Name", "Organization", "Is Expert"])
+
+        for element in userInfoList:
+            tableWidget.setItem(i, 0, PyQt5.QtWidgets.QTableWidgetItem(
+                str(element[consts.usersColumns.get('idUser')])))
+            tableWidget.setItem(i, 1, PyQt5.QtWidgets.QTableWidgetItem(
+                element[consts.usersColumns.get('name')]))
+            tableWidget.setItem(i, 2, PyQt5.QtWidgets.QTableWidgetItem(
+                element[consts.usersColumns.get('organization')]))
+            tableWidget.setItem(i, 3, PyQt5.QtWidgets.QTableWidgetItem(
+                element[consts.usersColumns.get('isExpert')]))
             i += 1
         tableWidget.resizeColumnsToContents()
 

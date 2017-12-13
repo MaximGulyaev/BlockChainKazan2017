@@ -517,6 +517,14 @@ class Ui_MainWindow(object):
         self.tw_lowerRequest_UserList.setObjectName("tw_lowerRequest_UserList")
         self.tw_lowerRequest_UserList.verticalHeader().setVisible(False)
         self.SW_menu.addWidget(self.pg_lowerRequest)
+        self.pg_UsersInfo = QtWidgets.QWidget()
+        self.pg_UsersInfo.setObjectName("pg_UsersInfo")
+        self.tw_UsersInfoList = QtWidgets.QTableWidget(self.pg_UsersInfo)
+        self.tw_UsersInfoList.setGeometry(QtCore.QRect(10, 20, 571, 481))
+        self.tw_UsersInfoList.setRowCount(0)
+        self.tw_UsersInfoList.setColumnCount(3)
+        self.tw_UsersInfoList.setObjectName("tw_UsersInfoList")
+        self.SW_menu.addWidget(self.pg_UsersInfo)
         self.verticalWidget = QtWidgets.QWidget(self.pg_main)
         self.verticalWidget.setGeometry(QtCore.QRect(0, 0, 200, 600))
         self.verticalWidget.setObjectName("verticalWidget")
@@ -551,6 +559,9 @@ class Ui_MainWindow(object):
         self.pb_menu_lower = QtWidgets.QPushButton(self.wdgt_expertMenu)
         self.pb_menu_lower.setObjectName("pb_menu_lower")
         self.blyt_expertPanel.addWidget(self.pb_menu_lower)
+        self.pb_menu_UsersInfo = QtWidgets.QPushButton(self.wdgt_expertMenu)
+        self.pb_menu_UsersInfo.setObjectName("pb_menu_UsersInfo")
+        self.blyt_expertPanel.addWidget(self.pb_menu_UsersInfo)
         self.verticalLayout_2.addWidget(self.wdgt_expertMenu)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem1)
@@ -568,7 +579,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.MainPages.setCurrentIndex(0)
+        self.MainPages.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -673,17 +684,8 @@ class Ui_MainWindow(object):
         self.pb_menu_changeEvent.setText(_translate("MainWindow", "Изменит мероприятие"))
         self.pb_menu_unconfirmedRequest.setText(_translate("MainWindow", "Запросы"))
         self.pb_menu_lower.setText(_translate("MainWindow", "Заявка на разжалование"))
+        self.pb_menu_UsersInfo.setText(_translate("MainWindow", "Пользователи"))
         self.pb_menu_StartMine.setText(_translate("MainWindow", "Майнить"))
         self.pb_mainLogOut.setText(_translate("MainWindow", "Logout"))
         self.pb_main_Exit.setText(_translate("MainWindow", "Выйти"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
 

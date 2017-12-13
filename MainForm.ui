@@ -48,7 +48,7 @@
      </size>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="pg_authorisation">
      <widget class="QPushButton" name="pb_auth_Login">
@@ -1396,6 +1396,27 @@
         <column/>
        </widget>
       </widget>
+      <widget class="QWidget" name="pg_UsersInfo">
+       <widget class="QTableWidget" name="tw_UsersInfoList">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>571</width>
+          <height>481</height>
+         </rect>
+        </property>
+        <property name="rowCount">
+         <number>0</number>
+        </property>
+        <property name="columnCount">
+         <number>3</number>
+        </property>
+        <column/>
+        <column/>
+        <column/>
+       </widget>
+      </widget>
      </widget>
      <widget class="QWidget" name="verticalWidget" native="true">
       <property name="geometry">
@@ -1468,6 +1489,13 @@
            <widget class="QPushButton" name="pb_menu_lower">
             <property name="text">
              <string>Заявка на разжалование</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pb_menu_UsersInfo">
+            <property name="text">
+             <string>Пользователи</string>
             </property>
            </widget>
           </item>
