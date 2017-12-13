@@ -1,6 +1,14 @@
 import sqlite3
 
 
+
+userNotExist = "Attention. User not exist"
+userLogoutAtt = "Attention. You are logout"
+createUserAtt = "Attention. You sent a registration request. Please wait while one of the registered users system will not confirm your registration."
+errorInPath = "Attention. Error in file path"
+errorSomethingWentWrong = "Error Something went wrong"
+erorLoginToNet = "Please login to net"
+
 usersColumns = {
     'idUser' : 0,
     'addres' : 1,
@@ -212,3 +220,4 @@ CREATE TABLE Block(
   nonce datetime
 )
 '''
+

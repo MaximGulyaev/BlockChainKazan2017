@@ -45,8 +45,8 @@ class Cli(cmd.Cmd):
         self.Cnetwork = network.network(self.CblockChain)
         self.CblockChain.InitAddNetWork(self.Cnetwork)
         self.prompt = "(not auth)> "
-        self.intro  = "Добро пожаловать\nДля справки наберите 'help'"
-        self.doc_header ="Доступные команды (для справки по конкретной команде наберите 'help _команда_')"
+        self.intro  = "Welcome\nFor help enter 'help'"
+        self.doc_header ="Available (for help on a specific command, enter 'help _command')"
 
 
     def default(self, line):
@@ -80,7 +80,7 @@ class Cli(cmd.Cmd):
             name = self.accountSystemClass.account.get('Name')
             print("Hello ", name)
         else:
-            print("Attention", "User not exist")
+            print(consts.userNotExist)
 
     def do_logout(self,args):
         '''
@@ -90,7 +90,7 @@ class Cli(cmd.Cmd):
         :return: user out from account
         '''
         self.accountSystemClass.logout()
-        print("Attention", "You are logout ")
+        print(consts.userLogoutAtt)
         self.prompt = "(not auth)> "
         self.isAuth = False
 
@@ -145,9 +145,7 @@ class Cli(cmd.Cmd):
         if not (self.CblockChain.addNewTransactFromUser(Transaction)):
             print( "Error", "Something went wrong")
             return False
-        print("Attention", "You sent a registration request. "
-                                            "Please wait while one of the registered users "
-                                            "system will not confirm your registration")
+        print(consts.createUserAtt)
 
     def getPrivateKeyFromFile(self, fname):
         '''
@@ -168,7 +166,7 @@ class Cli(cmd.Cmd):
             PrivateKey = rsa.PrivateKey(n,e,d,p,q)
             return (PrivateKey)
         except:
-            print("Attention", "Error in file path")
+            print(consts.errorInPath)
             return False
 
     def do_doExpert(self,argv):
@@ -179,7 +177,7 @@ class Cli(cmd.Cmd):
         :return: message and unconfirmedTransaction in db
         '''
         if (self.isAuth):
-            print(self, "Attention",
+            print( "Attention",
                               "You apply for a Status Change to the 'Expert' status. "\
                               "The application will be reviewed by experts within 24 hours" + \
                               "the time for which the application is added to the chain."\
@@ -196,9 +194,9 @@ class Cli(cmd.Cmd):
             signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
             Transaction['signature'] = signature
             if not (self.CblockChain.addNewTransactFromUser(Transaction)):
-                print("Error", "Something went wrong")
+                print(consts.errorSomethingWentWrong)
         else:
-            print("Please login to net")
+            print(consts.erorLoginToNet)
 
     def do_downgrade(self,args):
         '''
@@ -237,11 +235,11 @@ class Cli(cmd.Cmd):
                         signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
                         Transaction['signature'] = signature
                         if not (self.CblockChain.addNewTransactFromUser(Transaction)):
-                            print("Error", "Something went wrong")
+                            print(consts.errorSomethingWentWrong)
                     else:
                         print('He will thank you')
         else:
-            print("Please login to net")
+            print(consts.erorLoginToNet)
 
     def do_createTransaction(self,args):
         if (self.isAuth):
@@ -268,9 +266,9 @@ class Cli(cmd.Cmd):
             signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
             Transaction['signature'] = signature
             if not (self.CblockChain.addNewTransactFromUser(Transaction)):
-                print("Error", "Something went wrong")
+                print(consts.errorSomethingWentWrong)
         else:
-            print("Please login to net")
+            print(consts.erorLoginToNet)
 
 
     def do_confirm(self,args):
@@ -318,9 +316,9 @@ class Cli(cmd.Cmd):
                     signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
                     Transaction['signature'] = signature
                     if not (self.CblockChain.addNewTransactFromUser(Transaction)):
-                        print("Error", "Something went wrong")
+                        print(consts.errorSomethingWentWrong)
         else:
-            print("Please login to net")
+            print(consts.erorLoginToNet)
 
     def do_getMyEvent(self,args):
         '''
@@ -356,7 +354,7 @@ class Cli(cmd.Cmd):
                     print(eventInfo)
             print('==========================================================')
         else:
-            print("Please login to net")
+            print(consts.erorLoginToNet)
 
     def do_getAllUsers(self,args):
         '''
@@ -380,7 +378,7 @@ class Cli(cmd.Cmd):
                                 user[consts.usersColumns.get('organization')])
                     print(currentUser)
         else:
-            print("Please login to net")
+            print(consts.erorLoginToNet)
 
 
     def do_exit(self, line):
