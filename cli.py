@@ -649,7 +649,8 @@ class Cli(cmd.Cmd):
                     usersReqList = self.dataBaseAdapt.getRequestListNonAccepted(3)
                     self.outputRequest(usersReqList,3)
 
-                    requestList = self.dataBaseAdapt.getEventUpdateList()
+                    eventUpdList = self.dataBaseAdapt.getEventUpdateForUserUserAsExpert(self.accountSystemClass.account.get('Address'))
+                    self.outputEventUpdate(eventUpdList)
 
 
                     typeQuerry = args.split()[0]
@@ -695,7 +696,33 @@ class Cli(cmd.Cmd):
                             typeReq,accepted,numAcceptNeeded,req[consts.requestColumns.get('idRequest')]
                             ))
 
-    def outputEventUpdate(self, requestList, numAcceptNeeded):
+    def outputEventUpdate(self, eventUpdateList):
+            for evUp in eventUpdateList:
+                resultPrint = 'Changes List =========================================\n'
+                resultPrint += 'idUpdateEvent : ' + str(evUp[consts.eventsUpdateColumns.get('idUnconfirmedUpdate')]) + '\n'
+                resultPrint += 'idUpdateEvent : ' + str(evUp[consts.eventsUpdateColumns.get('idEvent')]) + '\n'
+
+                name = evUp[consts.eventsUpdateColumns.get('name')]
+                if(name != None) and (name != ''):
+                    resultPrint += 'Event title : ' + evUp[consts.eventsUpdateColumns.get('name')] + '\n'
+
+                data = evUp[consts.eventsUpdateColumns.get('data')]
+                if (data != None) and (data != ''):
+                    resultPrint += 'Data : ' + evUp[consts.eventsUpdateColumns.get('name')] + '\n'
+
+                date = evUp[consts.eventsUpdateColumns.get('date')]
+                if (date != None) and (date != ''):
+                    resultPrint += 'Date : ' + evUp[consts.eventsUpdateColumns.get('name')] + '\n'
+
+                competence = evUp[consts.eventsUpdateColumns.get('competence')]
+                if (competence != None) and (date != ''):
+                    resultPrint += 'Competence :' + evUp[consts.eventsUpdateColumns.get('name')] + '\n'
+                print(resultPrint)
+
+
+
+
+
 
     def do_getMyEvent(self,args):
         '''

@@ -819,3 +819,25 @@ class dataBaseAdapter:
         except:
             return None
 
+    def getEventUpdateForUserUserAsExpert(self,addr):
+        try:
+            conn = sqlite3.connect('resourse/db.sqlite')
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM groups WHERE addres = (?) and typeGroup = (?)",(addr,1))
+            groups = cursor.fetchall()
+            listUpdate = []
+            for group in groups:
+                cursor.execute("SELECT Count(*) FROM groups WHERE idGroup = (?)", (group[consts.groupColumns.get('idGroup')],))
+                count = cursor.fetchone()[0]
+                cursor.execute("SELECT * FROM eventUpdate WHERE idExpertsGroup = (?) and numOfExperts < (?)", (group[consts.groupColumns.get('idGroup')],count))
+                eventUpd = cursor.fetchone()
+                if(eventUpd != None):
+                    listUpdate.append(eventUpd)
+            cursor.close()
+            conn.close()
+            return listUpdate
+        except Exception as e:
+            print(e)
+            return None
+
+
