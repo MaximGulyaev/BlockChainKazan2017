@@ -11,6 +11,7 @@ erorLoginToNet = "Please login to net"
 addUser = "User added"
 notAddUser = "User not added"
 userNotExpert = "Error. User isn't expert"
+errorNotPermission = "Not permission for you"
 
 usersColumns = {
     'idUser' : 0,
