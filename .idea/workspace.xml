@@ -1,0 +1,1720 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/cli.py" description="            symbol = input(&quot;Do you want add user?Y..." line="257" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="352b823e-0a8f-4306-a9d6-8440f078aed4" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/cli.py" afterPath="$PROJECT_DIR$/cli.py" />
+      <change beforePath="$PROJECT_DIR$/consts.py" afterPath="$PROJECT_DIR$/consts.py" />
+      <change beforePath="$PROJECT_DIR$/resourse/db.sqlite" afterPath="$PROJECT_DIR$/resourse/db.sqlite" />
+    </list>
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/BlockChainKazan2017$run.coverage" NAME="run Coverage Results" MODIFIED="1513085676858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Block_chain$run.coverage" NAME="run Coverage Results" MODIFIED="1512550132151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Block_chain$Block_chain.coverage" NAME="Block_chain Coverage Results" MODIFIED="1512112447963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/BlockChainKazan2017$main.coverage" NAME="main Coverage Results" MODIFIED="1513017739186" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Block_chain$dataBaseAdapter.coverage" NAME="dataBaseAdapter Coverage Results" MODIFIED="1511978334959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BlockChainKazan2017$cli.coverage" NAME="cli Coverage Results" MODIFIED="1513149354538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Block_chain$network.coverage" NAME="network Coverage Results" MODIFIED="1512553355806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="BlockChainKazan2017" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Block_chain.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Block_chain.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="network.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/network.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="489">
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding>
+                <element signature="e#24#37#0" expanded="true" />
+                <marker date="1513062432427" expanded="true" signature="3200:3241" ph="INSERT INTO addres... " />
+                <marker date="1513062432427" expanded="true" signature="3666:3698" ph="SELECT addre... addres" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cmd.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/cmd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="10" column="78" lean-forward="false" selection-start-line="10" selection-start-column="78" selection-end-line="10" selection-end-column="78" />
+              <folding>
+                <element signature="e#23#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CAccountingSystem.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CAccountingSystem.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dataBaseAdapter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dataBaseAdapter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="13243">
+              <caret line="783" column="47" lean-forward="false" selection-start-line="783" selection-start-column="47" selection-end-line="783" selection-end-column="47" />
+              <folding>
+                <marker date="1513084668853" expanded="true" signature="1268:1389" ph="INSERT INTO users... " />
+                <marker date="1513084668853" expanded="true" signature="1814:1855" ph="SELECT * FRO... users" />
+                <marker date="1513084668853" expanded="true" signature="2229:2272" ph="SELECT * FRO... users" />
+                <marker date="1513084668853" expanded="true" signature="2639:2680" ph="SELECT * FRO... users" />
+                <marker date="1513084668853" expanded="true" signature="3033:3052" ph="SELECT * FRO... users" />
+                <marker date="1513084668853" expanded="true" signature="3401:3452" ph="UPDATE users... " />
+                <marker date="1513084668853" expanded="true" signature="3492:3533" ph="SELECT * FRO... users" />
+                <marker date="1513084668853" expanded="true" signature="3942:3993" ph="UPDATE users... " />
+                <marker date="1513084668853" expanded="true" signature="4033:4074" ph="SELECT * FRO... users" />
+                <marker date="1513084668853" expanded="true" signature="4478:4519" ph="SELECT * FRO... users" />
+                <marker date="1513084668853" expanded="true" signature="4900:4989" ph="INSERT INTO groups... " />
+                <marker date="1513084668853" expanded="true" signature="5400:5464" ph="DELETE FROM groups... " />
+                <marker date="1513084668853" expanded="true" signature="5825:5867" ph="SELECT * FRO... users" />
+                <marker date="1513084668853" expanded="true" signature="6362:6403" ph="SELECT * FRO... users" />
+                <marker date="1513084668853" expanded="true" signature="6543:6574" ph="SELECT MAX(i... groups" />
+                <marker date="1513084668853" expanded="true" signature="6866:7093" ph="INSERT INTO event... " />
+                <marker date="1513084668853" expanded="true" signature="7290:7396" ph="INSERT INTO groups... " />
+                <marker date="1513084668853" expanded="true" signature="7562:7668" ph="INSERT INTO groups... " />
+                <marker date="1513084668853" expanded="true" signature="8108:8233" ph="SELECT * FRO... groups" />
+                <marker date="1513084668853" expanded="true" signature="8179:8232" ph="SELECT idUse... event" />
+                <marker date="1513084668853" expanded="true" signature="8579:8706" ph="SELECT * FRO... groups" />
+                <marker date="1513084668853" expanded="true" signature="8650:8705" ph="SELECT idExp... event" />
+                <marker date="1513084668853" expanded="true" signature="9055:9168" ph="UPDATE event... " />
+                <marker date="1513084668853" expanded="true" signature="9515:9557" ph="SELECT * FRO... event" />
+                <marker date="1513084668853" expanded="true" signature="9886:9905" ph="SELECT * FRO... event" />
+                <marker date="1513084668853" expanded="true" signature="10345:10400" ph="SELECT idExp... event" />
+                <marker date="1513084668853" expanded="true" signature="10490:10534" ph="DELETE FROM groups... " />
+                <marker date="1513084668853" expanded="true" signature="10630:10740" ph="INSERT INTO groups... " />
+                <marker date="1513084668853" expanded="true" signature="10908:10961" ph="SELECT idUse... event" />
+                <marker date="1513084668853" expanded="true" signature="11051:11095" ph="DELETE FROM groups... " />
+                <marker date="1513084668853" expanded="true" signature="11187:11297" ph="INSERT INTO groups... " />
+                <marker date="1513084668853" expanded="true" signature="11457:11510" ph="UPDATE event... " />
+                <marker date="1513084668853" expanded="true" signature="11589:11642" ph="UPDATE event... " />
+                <marker date="1513084668853" expanded="true" signature="11722:11775" ph="UPDATE event... " />
+                <marker date="1513084668853" expanded="true" signature="11861:11920" ph="UPDATE event... " />
+                <marker date="1513084668853" expanded="true" signature="12008:12064" ph="UPDATE event... " />
+                <marker date="1513084668853" expanded="true" signature="12154:12215" ph="UPDATE event... " />
+                <marker date="1513084668853" expanded="true" signature="12268:12365" ph="UPDATE event... " />
+                <marker date="1513084668853" expanded="true" signature="12723:12791" ph="SELECT users... groups" />
+                <marker date="1513084668853" expanded="true" signature="12932:13040" ph="SELECT * FRO... event" />
+                <marker date="1513084668853" expanded="true" signature="13421:13452" ph="SELECT MAX(i... groups" />
+                <marker date="1513084668853" expanded="true" signature="13536:13683" ph="INSERT INTO request... " />
+                <marker date="1513084668853" expanded="true" signature="13792:13894" ph="INSERT INTO groups... " />
+                <marker date="1513084668853" expanded="true" signature="14295:14326" ph="SELECT MAX(i... groups" />
+                <marker date="1513084668853" expanded="true" signature="14509:14656" ph="INSERT INTO request... " />
+                <marker date="1513084668853" expanded="true" signature="14776:14878" ph="INSERT INTO groups... " />
+                <marker date="1513084668853" expanded="true" signature="15258:15279" ph="SELECT * FRO... request" />
+                <marker date="1513084668853" expanded="true" signature="15620:15720" ph="SELECT * FRO... request" />
+                <marker date="1513084668853" expanded="true" signature="16092:16165" ph="SELECT * FRO... request" />
+                <marker date="1513084668853" expanded="true" signature="16535:16630" ph="SELECT idCon... request" />
+                <marker date="1513084668853" expanded="true" signature="16714:16818" ph="SELECT Count... groups" />
+                <marker date="1513084668853" expanded="true" signature="16947:17051" ph="UPDATE groups... " />
+                <marker date="1513084668853" expanded="true" signature="17128:17234" ph="INSERT INTO groups... " />
+                <marker date="1513084668853" expanded="true" signature="17324:17407" ph="SELECT Count... groups" />
+                <marker date="1513084668853" expanded="true" signature="17523:17621" ph="UPDATE request... " />
+                <marker date="1513084668853" expanded="true" signature="18000:18120" ph="INSERT INTO unconfirmedTransaction... " />
+                <marker date="1513084668853" expanded="true" signature="18533:18576" ph="SELECT COUNT... unconfirmedTransaction" />
+                <marker date="1513084668853" expanded="true" signature="18908:18944" ph="SELECT * FRO... unconfirmedTransaction" />
+                <marker date="1513084668853" expanded="true" signature="19273:19366" ph="DELETE FROM unconfirmedTransaction... " />
+                <marker date="1513084668853" expanded="true" signature="19787:19881" ph="SELECT versi... event" />
+                <marker date="1513084668853" expanded="true" signature="20018:20125" ph="SELECT MAX(u... eventUpdate" />
+                <marker date="1513084668853" expanded="true" signature="20218:20249" ph="SELECT MAX(i... groups" />
+                <marker date="1513084668853" expanded="true" signature="20420:20517" ph="INSERT INTO groups... " />
+                <marker date="1513084668853" expanded="true" signature="20683:20780" ph="INSERT INTO groups... " />
+                <marker date="1513084668853" expanded="true" signature="21049:21270" ph="INSERT INTO eventUpdate... " />
+                <marker date="1513084668853" expanded="true" signature="21758:21901" ph="SELECT * FRO... groups" />
+                <marker date="1513084668853" expanded="true" signature="21829:21900" ph="SELECT idUse... eventUpdate" />
+                <marker date="1513084668853" expanded="true" signature="22253:22398" ph="SELECT * FRO... groups" />
+                <marker date="1513084668853" expanded="true" signature="22324:22397" ph="SELECT idExp... eventUpdate" />
+                <marker date="1513084668853" expanded="true" signature="22735:22760" ph="SELECT * FRO... eventUpdate" />
+                <marker date="1513084668853" expanded="true" signature="23096:23199" ph="SELECT * FRO... eventUpdate" />
+                <marker date="1513084668853" expanded="true" signature="23594:23710" ph="SELECT idExp... eventUpdate" />
+                <marker date="1513084668853" expanded="true" signature="23831:23939" ph="UPDATE groups... " />
+                <marker date="1513084668853" expanded="true" signature="23992:24090" ph="SELECT COUNT... groups" />
+                <marker date="1513084668853" expanded="true" signature="24211:24332" ph="UPDATE eventUpdate... " />
+                <marker date="1513084668853" expanded="true" signature="24714:24785" ph="SELECT * FRO... users" />
+                <marker date="1513084668853" expanded="true" signature="25116:25157" ph="INSERT INTO addres... " />
+                <marker date="1513084668853" expanded="true" signature="25449:25475" ph="SELECT COUNT... Block" />
+                <marker date="1513084668853" expanded="true" signature="25552:25624" ph="SELECT * FRO... Block" />
+                <marker date="1513084668853" expanded="true" signature="25993:26019" ph="SELECT COUNT... Block" />
+                <marker date="1513084668853" expanded="true" signature="26104:26179" ph="SELECT hash Block" />
+                <marker date="1513084668853" expanded="true" signature="26562:26631" ph="SELECT * FRO... Block" />
+                <marker date="1513084668853" expanded="true" signature="27078:27225" ph="INSERT INTO Block... " />
+                <marker date="1513084668853" expanded="true" signature="27638:27660" ph="SELECT hash Block" />
+                <marker date="1513084668853" expanded="true" signature="28050:28176" ph="INSERT INTO transactionInBlock... " />
+                <marker date="1513084668853" expanded="true" signature="28594:28633" ph="SELECT COUNT... transactionInBlock" />
+                <marker date="1513084668853" expanded="true" signature="28962:28994" ph="SELECT * FRO... transactionInBlock" />
+                <marker date="1513084668853" expanded="true" signature="29320:29409" ph="DELETE FROM transactionInBlock... " />
+                <marker date="1513084668853" expanded="true" signature="29763:29787" ph="SELECT * FRO... users" />
+                <marker date="1513084668853" expanded="true" signature="29763:29805" ph="SELECT * FRO... users" />
+                <marker date="1513084668853" expanded="true" signature="29763:29806" ph="SELECT * FRO... users" />
+                <marker date="1513084668853" expanded="true" signature="29763:29807" ph="SELECT * FRO... usersWHE" />
+                <marker date="1513084668853" expanded="true" signature="29888:29966" ph="SELECT * FRO... groups" />
+                <marker date="1513084668853" expanded="true" signature="29888:29986" ph="SELECT users... groups" />
+                <marker date="1513084668853" expanded="true" signature="30228:30306" ph="SELECT * FRO... event" />
+                <marker date="1513084668853" expanded="true" signature="30236:30306" ph="DELETE FROM transactionInBlock... " />
+                <marker date="1513084668853" expanded="true" signature="30518:30598" ph="SELECT * FRO... event" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cc94406d-e03e-4e63-baff-14baef0a5eb3/console.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="383">
+              <caret line="452" column="60" lean-forward="false" selection-start-line="452" selection-start-column="53" selection-end-line="452" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cli.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cli.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="329" column="35" lean-forward="true" selection-start-line="329" selection-start-column="35" selection-end-line="329" selection-end-column="35" />
+              <folding>
+                <element signature="e#46#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="consts.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/consts.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="42" />
+              <folding>
+                <marker date="1513147737194" expanded="true" signature="2064:2251" ph="CREATE TABLE... users" />
+                <marker date="1513147737194" expanded="true" signature="2281:2381" ph="CREATE TABLE... addres" />
+                <marker date="1513147737194" expanded="true" signature="2411:2566" ph="CREATE TABLE... groups" />
+                <marker date="1513147737194" expanded="true" signature="2597:2801" ph="CREATE TABLE... request" />
+                <marker date="1513147737194" expanded="true" signature="2847:3048" ph="CREATE TABLE... unconfirmedTransaction" />
+                <marker date="1513147737194" expanded="true" signature="3090:3302" ph="CREATE TABLE... transactionInBlock" />
+                <marker date="1513147737194" expanded="true" signature="3331:3623" ph="CREATE TABLE... event" />
+                <marker date="1513147737194" expanded="true" signature="3658:4016" ph="CREATE TABLE... eventUpdate" />
+                <marker date="1513147737194" expanded="true" signature="4045:4215" ph="CREATE TABLE... Block" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getEve</find>
+      <find>del</find>
+      <find>event</find>
+      <find>addAcc</find>
+      <find>a</find>
+      <find>author</find>
+      <find>logout</find>
+      <find>genera</find>
+      <find>ex</find>
+      <find>registration</find>
+      <find>login</find>
+      <find>getPri</find>
+      <find>status</find>
+      <find>getAll</find>
+      <find>Createe</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/dataBase.py" />
+        <option value="$PROJECT_DIR$/rollOutDB.py" />
+        <option value="$PROJECT_DIR$/resourse/helper.py" />
+        <option value="$PROJECT_DIR$/helper.py" />
+        <option value="$PROJECT_DIR$/sendData.py" />
+        <option value="$PROJECT_DIR$/receivedMessagesParser.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d4295fad-49aa-4cbc-ae19-923bd572c29c/console.sql" />
+        <option value="$PROJECT_DIR$/../docs/source/conf.py" />
+        <option value="$PROJECT_DIR$/network.py" />
+        <option value="$PROJECT_DIR$/dataBaseAdapter.py" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/consts.py" />
+        <option value="$PROJECT_DIR$/cli.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="465" />
+    <option name="y" value="56" />
+    <option name="width" value="1612" />
+    <option name="height" value="860" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="BlockChainKazan2017" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlockChainKazan2017" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/maxim/BlockChain/Block_chain/rollOutDB.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.cli">
+    <configuration name="BlockChainKazan2017" type="PythonConfigurationType" factoryName="Python" singleton="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BlockChainKazan2017" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/try.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Block_chain" type="PythonConfigurationType" factoryName="Python" singleton="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Block_chain" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/try.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Block_chain" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="cli" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BlockChainKazan2017" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cli.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="dataBaseAdapter" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Block_chain" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dataBaseAdapter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\admin\AppData\Local\Programs\Python\Python36-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BlockChainKazan2017" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="network" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Block_chain" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/network.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\User\AppData\Local\Programs\Python\Python36-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BlockChainKazan2017" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="Block_chain" />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BlockChainKazan2017" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BlockChainKazan2017" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="BlockChainKazan2017" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Block_chain" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Block_chain" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Block_chain" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Block_chain" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Block_chain" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="Python.Block_chain" />
+      <item index="1" class="java.lang.String" itemvalue="Python.BlockChainKazan2017" />
+      <item index="2" class="java.lang.String" itemvalue="Python.dataBaseAdapter" />
+      <item index="3" class="java.lang.String" itemvalue="Python.run" />
+      <item index="4" class="java.lang.String" itemvalue="Python.network" />
+      <item index="5" class="java.lang.String" itemvalue="Python.main" />
+      <item index="6" class="java.lang.String" itemvalue="Python.cli" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.cli" />
+        <item index="1" class="java.lang.String" itemvalue="Python.run" />
+        <item index="2" class="java.lang.String" itemvalue="Python.main" />
+        <item index="3" class="java.lang.String" itemvalue="Python.network" />
+        <item index="4" class="java.lang.String" itemvalue="Python.dataBaseAdapter" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\User\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="352b823e-0a8f-4306-a9d6-8440f078aed4" name="Default" comment="" />
+      <created>1511872742256</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1511872742256</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.075520836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.050520834" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3938754" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25801283" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/helper.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/network.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/network.py</url>
+          <line>102</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>216</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/cli.py</url>
+          <line>364</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="60" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding>
+            <element signature="e#23#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataBaseAdapter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1513084668853" expanded="true" signature="1268:1389" ph="INSERT INTO users... " />
+            <marker date="1513084668853" expanded="true" signature="1814:1855" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="2229:2272" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="2639:2680" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3033:3052" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3401:3452" ph="UPDATE users... " />
+            <marker date="1513084668853" expanded="true" signature="3492:3533" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3942:3993" ph="UPDATE users... " />
+            <marker date="1513084668853" expanded="true" signature="4033:4074" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="4478:4519" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="4900:4989" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="5400:5464" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="5825:5867" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="6362:6403" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="6543:6574" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="6866:7093" ph="INSERT INTO event... " />
+            <marker date="1513084668853" expanded="true" signature="7290:7396" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="7562:7668" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="8108:8233" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="8179:8232" ph="SELECT idUse... event" />
+            <marker date="1513084668853" expanded="true" signature="8579:8706" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="8650:8705" ph="SELECT idExp... event" />
+            <marker date="1513084668853" expanded="true" signature="9055:9168" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="9515:9557" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="9886:9905" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="10345:10400" ph="SELECT idExp... event" />
+            <marker date="1513084668853" expanded="true" signature="10490:10534" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="10630:10740" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="10908:10961" ph="SELECT idUse... event" />
+            <marker date="1513084668853" expanded="true" signature="11051:11095" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="11187:11297" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="11457:11510" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11589:11642" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11722:11775" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11861:11920" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12008:12064" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12154:12215" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12268:12365" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12723:12791" ph="SELECT users... groups" />
+            <marker date="1513084668853" expanded="true" signature="12932:13040" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="13421:13452" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="13536:13683" ph="INSERT INTO request... " />
+            <marker date="1513084668853" expanded="true" signature="13792:13894" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="14295:14326" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="14509:14656" ph="INSERT INTO request... " />
+            <marker date="1513084668853" expanded="true" signature="14776:14878" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="15258:15279" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="15620:15720" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="16092:16165" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="16535:16630" ph="SELECT idCon... request" />
+            <marker date="1513084668853" expanded="true" signature="16714:16818" ph="SELECT Count... groups" />
+            <marker date="1513084668853" expanded="true" signature="16947:17051" ph="UPDATE groups... " />
+            <marker date="1513084668853" expanded="true" signature="17128:17234" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="17324:17407" ph="SELECT Count... groups" />
+            <marker date="1513084668853" expanded="true" signature="17523:17621" ph="UPDATE request... " />
+            <marker date="1513084668853" expanded="true" signature="18000:18120" ph="INSERT INTO unconfirmedTransaction... " />
+            <marker date="1513084668853" expanded="true" signature="18533:18576" ph="SELECT COUNT... unconfirmedTransaction" />
+            <marker date="1513084668853" expanded="true" signature="18908:18944" ph="SELECT * FRO... unconfirmedTransaction" />
+            <marker date="1513084668853" expanded="true" signature="19273:19366" ph="DELETE FROM unconfirmedTransaction... " />
+            <marker date="1513084668853" expanded="true" signature="19787:19881" ph="SELECT versi... event" />
+            <marker date="1513084668853" expanded="true" signature="20018:20125" ph="SELECT MAX(u... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="20218:20249" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="20420:20517" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="20683:20780" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="21049:21270" ph="INSERT INTO eventUpdate... " />
+            <marker date="1513084668853" expanded="true" signature="21758:21901" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="21829:21900" ph="SELECT idUse... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="22253:22398" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="22324:22397" ph="SELECT idExp... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="22735:22760" ph="SELECT * FRO... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23096:23199" ph="SELECT * FRO... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23594:23710" ph="SELECT idExp... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23831:23939" ph="UPDATE groups... " />
+            <marker date="1513084668853" expanded="true" signature="23992:24090" ph="SELECT COUNT... groups" />
+            <marker date="1513084668853" expanded="true" signature="24211:24332" ph="UPDATE eventUpdate... " />
+            <marker date="1513084668853" expanded="true" signature="24714:24785" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="25116:25157" ph="INSERT INTO addres... " />
+            <marker date="1513084668853" expanded="true" signature="25449:25475" ph="SELECT COUNT... Block" />
+            <marker date="1513084668853" expanded="true" signature="25552:25624" ph="SELECT * FRO... Block" />
+            <marker date="1513084668853" expanded="true" signature="25993:26019" ph="SELECT COUNT... Block" />
+            <marker date="1513084668853" expanded="true" signature="26104:26179" ph="SELECT hash Block" />
+            <marker date="1513084668853" expanded="true" signature="26562:26631" ph="SELECT * FRO... Block" />
+            <marker date="1513084668853" expanded="true" signature="27078:27225" ph="INSERT INTO Block... " />
+            <marker date="1513084668853" expanded="true" signature="27638:27660" ph="SELECT hash Block" />
+            <marker date="1513084668853" expanded="true" signature="28050:28176" ph="INSERT INTO transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="28594:28633" ph="SELECT COUNT... transactionInBlock" />
+            <marker date="1513084668853" expanded="true" signature="28962:28994" ph="SELECT * FRO... transactionInBlock" />
+            <marker date="1513084668853" expanded="true" signature="29320:29409" ph="DELETE FROM transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="29763:29787" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29805" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29806" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29807" ph="SELECT * FRO... usersWHE" />
+            <marker date="1513084668853" expanded="true" signature="29888:29966" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="29888:29986" ph="SELECT users... groups" />
+            <marker date="1513084668853" expanded="true" signature="30228:30306" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="30236:30306" ph="DELETE FROM transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="30518:30598" ph="SELECT * FRO... event" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataBaseAdapter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1513084668853" expanded="true" signature="1268:1389" ph="INSERT INTO users... " />
+            <marker date="1513084668853" expanded="true" signature="1814:1855" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="2229:2272" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="2639:2680" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3033:3052" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3401:3452" ph="UPDATE users... " />
+            <marker date="1513084668853" expanded="true" signature="3492:3533" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3942:3993" ph="UPDATE users... " />
+            <marker date="1513084668853" expanded="true" signature="4033:4074" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="4478:4519" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="4900:4989" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="5400:5464" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="5825:5867" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="6362:6403" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="6543:6574" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="6866:7093" ph="INSERT INTO event... " />
+            <marker date="1513084668853" expanded="true" signature="7290:7396" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="7562:7668" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="8108:8233" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="8179:8232" ph="SELECT idUse... event" />
+            <marker date="1513084668853" expanded="true" signature="8579:8706" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="8650:8705" ph="SELECT idExp... event" />
+            <marker date="1513084668853" expanded="true" signature="9055:9168" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="9515:9557" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="9886:9905" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="10345:10400" ph="SELECT idExp... event" />
+            <marker date="1513084668853" expanded="true" signature="10490:10534" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="10630:10740" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="10908:10961" ph="SELECT idUse... event" />
+            <marker date="1513084668853" expanded="true" signature="11051:11095" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="11187:11297" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="11457:11510" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11589:11642" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11722:11775" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11861:11920" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12008:12064" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12154:12215" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12268:12365" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12723:12791" ph="SELECT users... groups" />
+            <marker date="1513084668853" expanded="true" signature="12932:13040" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="13421:13452" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="13536:13683" ph="INSERT INTO request... " />
+            <marker date="1513084668853" expanded="true" signature="13792:13894" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="14295:14326" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="14509:14656" ph="INSERT INTO request... " />
+            <marker date="1513084668853" expanded="true" signature="14776:14878" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="15258:15279" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="15620:15720" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="16092:16165" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="16535:16630" ph="SELECT idCon... request" />
+            <marker date="1513084668853" expanded="true" signature="16714:16818" ph="SELECT Count... groups" />
+            <marker date="1513084668853" expanded="true" signature="16947:17051" ph="UPDATE groups... " />
+            <marker date="1513084668853" expanded="true" signature="17128:17234" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="17324:17407" ph="SELECT Count... groups" />
+            <marker date="1513084668853" expanded="true" signature="17523:17621" ph="UPDATE request... " />
+            <marker date="1513084668853" expanded="true" signature="18000:18120" ph="INSERT INTO unconfirmedTransaction... " />
+            <marker date="1513084668853" expanded="true" signature="18533:18576" ph="SELECT COUNT... unconfirmedTransaction" />
+            <marker date="1513084668853" expanded="true" signature="18908:18944" ph="SELECT * FRO... unconfirmedTransaction" />
+            <marker date="1513084668853" expanded="true" signature="19273:19366" ph="DELETE FROM unconfirmedTransaction... " />
+            <marker date="1513084668853" expanded="true" signature="19787:19881" ph="SELECT versi... event" />
+            <marker date="1513084668853" expanded="true" signature="20018:20125" ph="SELECT MAX(u... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="20218:20249" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="20420:20517" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="20683:20780" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="21049:21270" ph="INSERT INTO eventUpdate... " />
+            <marker date="1513084668853" expanded="true" signature="21758:21901" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="21829:21900" ph="SELECT idUse... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="22253:22398" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="22324:22397" ph="SELECT idExp... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="22735:22760" ph="SELECT * FRO... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23096:23199" ph="SELECT * FRO... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23594:23710" ph="SELECT idExp... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23831:23939" ph="UPDATE groups... " />
+            <marker date="1513084668853" expanded="true" signature="23992:24090" ph="SELECT COUNT... groups" />
+            <marker date="1513084668853" expanded="true" signature="24211:24332" ph="UPDATE eventUpdate... " />
+            <marker date="1513084668853" expanded="true" signature="24714:24785" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="25116:25157" ph="INSERT INTO addres... " />
+            <marker date="1513084668853" expanded="true" signature="25449:25475" ph="SELECT COUNT... Block" />
+            <marker date="1513084668853" expanded="true" signature="25552:25624" ph="SELECT * FRO... Block" />
+            <marker date="1513084668853" expanded="true" signature="25993:26019" ph="SELECT COUNT... Block" />
+            <marker date="1513084668853" expanded="true" signature="26104:26179" ph="SELECT hash Block" />
+            <marker date="1513084668853" expanded="true" signature="26562:26631" ph="SELECT * FRO... Block" />
+            <marker date="1513084668853" expanded="true" signature="27078:27225" ph="INSERT INTO Block... " />
+            <marker date="1513084668853" expanded="true" signature="27638:27660" ph="SELECT hash Block" />
+            <marker date="1513084668853" expanded="true" signature="28050:28176" ph="INSERT INTO transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="28594:28633" ph="SELECT COUNT... transactionInBlock" />
+            <marker date="1513084668853" expanded="true" signature="28962:28994" ph="SELECT * FRO... transactionInBlock" />
+            <marker date="1513084668853" expanded="true" signature="29320:29409" ph="DELETE FROM transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="29763:29787" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29805" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29806" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29807" ph="SELECT * FRO... usersWHE" />
+            <marker date="1513084668853" expanded="true" signature="29888:29966" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="29888:29986" ph="SELECT users... groups" />
+            <marker date="1513084668853" expanded="true" signature="30228:30306" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="30236:30306" ph="DELETE FROM transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="30518:30598" ph="SELECT * FRO... event" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d4295fad-49aa-4cbc-ae19-923bd572c29c/console.sql" />
+    <entry file="dbDummy://dbtable:/89ec967c/d4295fad-49aa-4cbc-ae19-923bd572c29c/request" />
+    <entry file="file://$PROJECT_DIR$/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1470">
+          <caret line="98" column="14" lean-forward="false" selection-start-line="98" selection-start-column="14" selection-end-line="98" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/89ec967c/d4295fad-49aa-4cbc-ae19-923bd572c29c/groups" />
+    <entry file="file://$PROJECT_DIR$/dataBaseAdapter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1513084668853" expanded="true" signature="1268:1389" ph="INSERT INTO users... " />
+            <marker date="1513084668853" expanded="true" signature="1814:1855" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="2229:2272" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="2639:2680" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3033:3052" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3401:3452" ph="UPDATE users... " />
+            <marker date="1513084668853" expanded="true" signature="3492:3533" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3942:3993" ph="UPDATE users... " />
+            <marker date="1513084668853" expanded="true" signature="4033:4074" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="4478:4519" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="4900:4989" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="5400:5464" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="5825:5867" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="6362:6403" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="6543:6574" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="6866:7093" ph="INSERT INTO event... " />
+            <marker date="1513084668853" expanded="true" signature="7290:7396" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="7562:7668" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="8108:8233" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="8179:8232" ph="SELECT idUse... event" />
+            <marker date="1513084668853" expanded="true" signature="8579:8706" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="8650:8705" ph="SELECT idExp... event" />
+            <marker date="1513084668853" expanded="true" signature="9055:9168" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="9515:9557" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="9886:9905" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="10345:10400" ph="SELECT idExp... event" />
+            <marker date="1513084668853" expanded="true" signature="10490:10534" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="10630:10740" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="10908:10961" ph="SELECT idUse... event" />
+            <marker date="1513084668853" expanded="true" signature="11051:11095" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="11187:11297" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="11457:11510" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11589:11642" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11722:11775" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11861:11920" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12008:12064" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12154:12215" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12268:12365" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12723:12791" ph="SELECT users... groups" />
+            <marker date="1513084668853" expanded="true" signature="12932:13040" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="13421:13452" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="13536:13683" ph="INSERT INTO request... " />
+            <marker date="1513084668853" expanded="true" signature="13792:13894" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="14295:14326" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="14509:14656" ph="INSERT INTO request... " />
+            <marker date="1513084668853" expanded="true" signature="14776:14878" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="15258:15279" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="15620:15720" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="16092:16165" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="16535:16630" ph="SELECT idCon... request" />
+            <marker date="1513084668853" expanded="true" signature="16714:16818" ph="SELECT Count... groups" />
+            <marker date="1513084668853" expanded="true" signature="16947:17051" ph="UPDATE groups... " />
+            <marker date="1513084668853" expanded="true" signature="17128:17234" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="17324:17407" ph="SELECT Count... groups" />
+            <marker date="1513084668853" expanded="true" signature="17523:17621" ph="UPDATE request... " />
+            <marker date="1513084668853" expanded="true" signature="18000:18120" ph="INSERT INTO unconfirmedTransaction... " />
+            <marker date="1513084668853" expanded="true" signature="18533:18576" ph="SELECT COUNT... unconfirmedTransaction" />
+            <marker date="1513084668853" expanded="true" signature="18908:18944" ph="SELECT * FRO... unconfirmedTransaction" />
+            <marker date="1513084668853" expanded="true" signature="19273:19366" ph="DELETE FROM unconfirmedTransaction... " />
+            <marker date="1513084668853" expanded="true" signature="19787:19881" ph="SELECT versi... event" />
+            <marker date="1513084668853" expanded="true" signature="20018:20125" ph="SELECT MAX(u... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="20218:20249" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="20420:20517" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="20683:20780" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="21049:21270" ph="INSERT INTO eventUpdate... " />
+            <marker date="1513084668853" expanded="true" signature="21758:21901" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="21829:21900" ph="SELECT idUse... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="22253:22398" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="22324:22397" ph="SELECT idExp... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="22735:22760" ph="SELECT * FRO... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23096:23199" ph="SELECT * FRO... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23594:23710" ph="SELECT idExp... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23831:23939" ph="UPDATE groups... " />
+            <marker date="1513084668853" expanded="true" signature="23992:24090" ph="SELECT COUNT... groups" />
+            <marker date="1513084668853" expanded="true" signature="24211:24332" ph="UPDATE eventUpdate... " />
+            <marker date="1513084668853" expanded="true" signature="24714:24785" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="25116:25157" ph="INSERT INTO addres... " />
+            <marker date="1513084668853" expanded="true" signature="25449:25475" ph="SELECT COUNT... Block" />
+            <marker date="1513084668853" expanded="true" signature="25552:25624" ph="SELECT * FRO... Block" />
+            <marker date="1513084668853" expanded="true" signature="25993:26019" ph="SELECT COUNT... Block" />
+            <marker date="1513084668853" expanded="true" signature="26104:26179" ph="SELECT hash Block" />
+            <marker date="1513084668853" expanded="true" signature="26562:26631" ph="SELECT * FRO... Block" />
+            <marker date="1513084668853" expanded="true" signature="27078:27225" ph="INSERT INTO Block... " />
+            <marker date="1513084668853" expanded="true" signature="27638:27660" ph="SELECT hash Block" />
+            <marker date="1513084668853" expanded="true" signature="28050:28176" ph="INSERT INTO transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="28594:28633" ph="SELECT COUNT... transactionInBlock" />
+            <marker date="1513084668853" expanded="true" signature="28962:28994" ph="SELECT * FRO... transactionInBlock" />
+            <marker date="1513084668853" expanded="true" signature="29320:29409" ph="DELETE FROM transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="29763:29787" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29805" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29806" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29807" ph="SELECT * FRO... usersWHE" />
+            <marker date="1513084668853" expanded="true" signature="29888:29966" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="29888:29986" ph="SELECT users... groups" />
+            <marker date="1513084668853" expanded="true" signature="30228:30306" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="30236:30306" ph="DELETE FROM transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="30518:30598" ph="SELECT * FRO... event" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" column="16" lean-forward="false" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/89ec967c/d4295fad-49aa-4cbc-ae19-923bd572c29c/event" />
+    <entry file="dbDummy://dbtable:/89ec967c/d4295fad-49aa-4cbc-ae19-923bd572c29c/groups" />
+    <entry file="dbDummy://dbtable:/89ec967c/d4295fad-49aa-4cbc-ae19-923bd572c29c/users" />
+    <entry file="file://$PROJECT_DIR$/consts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="11" lean-forward="false" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataBaseAdapter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1513084668853" expanded="true" signature="1268:1389" ph="INSERT INTO users... " />
+            <marker date="1513084668853" expanded="true" signature="1814:1855" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="2229:2272" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="2639:2680" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3033:3052" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3401:3452" ph="UPDATE users... " />
+            <marker date="1513084668853" expanded="true" signature="3492:3533" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3942:3993" ph="UPDATE users... " />
+            <marker date="1513084668853" expanded="true" signature="4033:4074" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="4478:4519" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="4900:4989" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="5400:5464" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="5825:5867" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="6362:6403" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="6543:6574" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="6866:7093" ph="INSERT INTO event... " />
+            <marker date="1513084668853" expanded="true" signature="7290:7396" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="7562:7668" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="8108:8233" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="8179:8232" ph="SELECT idUse... event" />
+            <marker date="1513084668853" expanded="true" signature="8579:8706" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="8650:8705" ph="SELECT idExp... event" />
+            <marker date="1513084668853" expanded="true" signature="9055:9168" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="9515:9557" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="9886:9905" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="10345:10400" ph="SELECT idExp... event" />
+            <marker date="1513084668853" expanded="true" signature="10490:10534" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="10630:10740" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="10908:10961" ph="SELECT idUse... event" />
+            <marker date="1513084668853" expanded="true" signature="11051:11095" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="11187:11297" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="11457:11510" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11589:11642" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11722:11775" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11861:11920" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12008:12064" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12154:12215" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12268:12365" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12723:12791" ph="SELECT users... groups" />
+            <marker date="1513084668853" expanded="true" signature="12932:13040" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="13421:13452" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="13536:13683" ph="INSERT INTO request... " />
+            <marker date="1513084668853" expanded="true" signature="13792:13894" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="14295:14326" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="14509:14656" ph="INSERT INTO request... " />
+            <marker date="1513084668853" expanded="true" signature="14776:14878" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="15258:15279" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="15620:15720" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="16092:16165" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="16535:16630" ph="SELECT idCon... request" />
+            <marker date="1513084668853" expanded="true" signature="16714:16818" ph="SELECT Count... groups" />
+            <marker date="1513084668853" expanded="true" signature="16947:17051" ph="UPDATE groups... " />
+            <marker date="1513084668853" expanded="true" signature="17128:17234" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="17324:17407" ph="SELECT Count... groups" />
+            <marker date="1513084668853" expanded="true" signature="17523:17621" ph="UPDATE request... " />
+            <marker date="1513084668853" expanded="true" signature="18000:18120" ph="INSERT INTO unconfirmedTransaction... " />
+            <marker date="1513084668853" expanded="true" signature="18533:18576" ph="SELECT COUNT... unconfirmedTransaction" />
+            <marker date="1513084668853" expanded="true" signature="18908:18944" ph="SELECT * FRO... unconfirmedTransaction" />
+            <marker date="1513084668853" expanded="true" signature="19273:19366" ph="DELETE FROM unconfirmedTransaction... " />
+            <marker date="1513084668853" expanded="true" signature="19787:19881" ph="SELECT versi... event" />
+            <marker date="1513084668853" expanded="true" signature="20018:20125" ph="SELECT MAX(u... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="20218:20249" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="20420:20517" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="20683:20780" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="21049:21270" ph="INSERT INTO eventUpdate... " />
+            <marker date="1513084668853" expanded="true" signature="21758:21901" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="21829:21900" ph="SELECT idUse... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="22253:22398" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="22324:22397" ph="SELECT idExp... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="22735:22760" ph="SELECT * FRO... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23096:23199" ph="SELECT * FRO... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23594:23710" ph="SELECT idExp... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23831:23939" ph="UPDATE groups... " />
+            <marker date="1513084668853" expanded="true" signature="23992:24090" ph="SELECT COUNT... groups" />
+            <marker date="1513084668853" expanded="true" signature="24211:24332" ph="UPDATE eventUpdate... " />
+            <marker date="1513084668853" expanded="true" signature="24714:24785" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="25116:25157" ph="INSERT INTO addres... " />
+            <marker date="1513084668853" expanded="true" signature="25449:25475" ph="SELECT COUNT... Block" />
+            <marker date="1513084668853" expanded="true" signature="25552:25624" ph="SELECT * FRO... Block" />
+            <marker date="1513084668853" expanded="true" signature="25993:26019" ph="SELECT COUNT... Block" />
+            <marker date="1513084668853" expanded="true" signature="26104:26179" ph="SELECT hash Block" />
+            <marker date="1513084668853" expanded="true" signature="26562:26631" ph="SELECT * FRO... Block" />
+            <marker date="1513084668853" expanded="true" signature="27078:27225" ph="INSERT INTO Block... " />
+            <marker date="1513084668853" expanded="true" signature="27638:27660" ph="SELECT hash Block" />
+            <marker date="1513084668853" expanded="true" signature="28050:28176" ph="INSERT INTO transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="28594:28633" ph="SELECT COUNT... transactionInBlock" />
+            <marker date="1513084668853" expanded="true" signature="28962:28994" ph="SELECT * FRO... transactionInBlock" />
+            <marker date="1513084668853" expanded="true" signature="29320:29409" ph="DELETE FROM transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="29763:29787" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29805" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29806" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29807" ph="SELECT * FRO... usersWHE" />
+            <marker date="1513084668853" expanded="true" signature="29888:29966" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="29888:29986" ph="SELECT users... groups" />
+            <marker date="1513084668853" expanded="true" signature="30228:30306" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="30236:30306" ph="DELETE FROM transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="30518:30598" ph="SELECT * FRO... event" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataBaseAdapter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1513084668853" expanded="true" signature="1268:1389" ph="INSERT INTO users... " />
+            <marker date="1513084668853" expanded="true" signature="1814:1855" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="2229:2272" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="2639:2680" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3033:3052" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3401:3452" ph="UPDATE users... " />
+            <marker date="1513084668853" expanded="true" signature="3492:3533" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3942:3993" ph="UPDATE users... " />
+            <marker date="1513084668853" expanded="true" signature="4033:4074" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="4478:4519" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="4900:4989" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="5400:5464" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="5825:5867" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="6362:6403" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="6543:6574" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="6866:7093" ph="INSERT INTO event... " />
+            <marker date="1513084668853" expanded="true" signature="7290:7396" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="7562:7668" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="8108:8233" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="8179:8232" ph="SELECT idUse... event" />
+            <marker date="1513084668853" expanded="true" signature="8579:8706" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="8650:8705" ph="SELECT idExp... event" />
+            <marker date="1513084668853" expanded="true" signature="9055:9168" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="9515:9557" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="9886:9905" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="10345:10400" ph="SELECT idExp... event" />
+            <marker date="1513084668853" expanded="true" signature="10490:10534" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="10630:10740" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="10908:10961" ph="SELECT idUse... event" />
+            <marker date="1513084668853" expanded="true" signature="11051:11095" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="11187:11297" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="11457:11510" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11589:11642" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11722:11775" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11861:11920" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12008:12064" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12154:12215" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12268:12365" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12723:12791" ph="SELECT users... groups" />
+            <marker date="1513084668853" expanded="true" signature="12932:13040" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="13421:13452" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="13536:13683" ph="INSERT INTO request... " />
+            <marker date="1513084668853" expanded="true" signature="13792:13894" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="14295:14326" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="14509:14656" ph="INSERT INTO request... " />
+            <marker date="1513084668853" expanded="true" signature="14776:14878" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="15258:15279" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="15620:15720" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="16092:16165" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="16535:16630" ph="SELECT idCon... request" />
+            <marker date="1513084668853" expanded="true" signature="16714:16818" ph="SELECT Count... groups" />
+            <marker date="1513084668853" expanded="true" signature="16947:17051" ph="UPDATE groups... " />
+            <marker date="1513084668853" expanded="true" signature="17128:17234" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="17324:17407" ph="SELECT Count... groups" />
+            <marker date="1513084668853" expanded="true" signature="17523:17621" ph="UPDATE request... " />
+            <marker date="1513084668853" expanded="true" signature="18000:18120" ph="INSERT INTO unconfirmedTransaction... " />
+            <marker date="1513084668853" expanded="true" signature="18533:18576" ph="SELECT COUNT... unconfirmedTransaction" />
+            <marker date="1513084668853" expanded="true" signature="18908:18944" ph="SELECT * FRO... unconfirmedTransaction" />
+            <marker date="1513084668853" expanded="true" signature="19273:19366" ph="DELETE FROM unconfirmedTransaction... " />
+            <marker date="1513084668853" expanded="true" signature="19787:19881" ph="SELECT versi... event" />
+            <marker date="1513084668853" expanded="true" signature="20018:20125" ph="SELECT MAX(u... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="20218:20249" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="20420:20517" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="20683:20780" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="21049:21270" ph="INSERT INTO eventUpdate... " />
+            <marker date="1513084668853" expanded="true" signature="21758:21901" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="21829:21900" ph="SELECT idUse... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="22253:22398" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="22324:22397" ph="SELECT idExp... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="22735:22760" ph="SELECT * FRO... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23096:23199" ph="SELECT * FRO... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23594:23710" ph="SELECT idExp... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23831:23939" ph="UPDATE groups... " />
+            <marker date="1513084668853" expanded="true" signature="23992:24090" ph="SELECT COUNT... groups" />
+            <marker date="1513084668853" expanded="true" signature="24211:24332" ph="UPDATE eventUpdate... " />
+            <marker date="1513084668853" expanded="true" signature="24714:24785" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="25116:25157" ph="INSERT INTO addres... " />
+            <marker date="1513084668853" expanded="true" signature="25449:25475" ph="SELECT COUNT... Block" />
+            <marker date="1513084668853" expanded="true" signature="25552:25624" ph="SELECT * FRO... Block" />
+            <marker date="1513084668853" expanded="true" signature="25993:26019" ph="SELECT COUNT... Block" />
+            <marker date="1513084668853" expanded="true" signature="26104:26179" ph="SELECT hash Block" />
+            <marker date="1513084668853" expanded="true" signature="26562:26631" ph="SELECT * FRO... Block" />
+            <marker date="1513084668853" expanded="true" signature="27078:27225" ph="INSERT INTO Block... " />
+            <marker date="1513084668853" expanded="true" signature="27638:27660" ph="SELECT hash Block" />
+            <marker date="1513084668853" expanded="true" signature="28050:28176" ph="INSERT INTO transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="28594:28633" ph="SELECT COUNT... transactionInBlock" />
+            <marker date="1513084668853" expanded="true" signature="28962:28994" ph="SELECT * FRO... transactionInBlock" />
+            <marker date="1513084668853" expanded="true" signature="29320:29409" ph="DELETE FROM transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="29763:29787" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29805" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29806" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29807" ph="SELECT * FRO... usersWHE" />
+            <marker date="1513084668853" expanded="true" signature="29888:29966" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="29888:29986" ph="SELECT users... groups" />
+            <marker date="1513084668853" expanded="true" signature="30228:30306" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="30236:30306" ph="DELETE FROM transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="30518:30598" ph="SELECT * FRO... event" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/89ec967c/896debb2-54e4-41af-a535-430c08bbddf7/Block" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/896debb2-54e4-41af-a535-430c08bbddf7/console.sql" />
+    <entry file="dbDummy://dbtable:/89ec967c/896debb2-54e4-41af-a535-430c08bbddf7/users" />
+    <entry file="dbDummy://dbtable:/89ec967c/896debb2-54e4-41af-a535-430c08bbddf7/groups" />
+    <entry file="dbDummy://dbtable:/89ec967c/d4295fad-49aa-4cbc-ae19-923bd572c29c/event" />
+    <entry file="dbDummy://dbtable:/89ec967c/d4295fad-49aa-4cbc-ae19-923bd572c29c/users" />
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="973" column="0" lean-forward="false" selection-start-line="973" selection-start-column="0" selection-end-line="973" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/89ec967c/d4295fad-49aa-4cbc-ae19-923bd572c29c/groups" />
+    <entry file="dbDummy://dbtable:/89ec967c/d4295fad-49aa-4cbc-ae19-923bd572c29c/request" />
+    <entry file="file://$PROJECT_DIR$/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/receivedMessagesParser.py" />
+    <entry file="dbDummy://dbtable:/89ec967c/d4295fad-49aa-4cbc-ae19-923bd572c29c/addres" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d4295fad-49aa-4cbc-ae19-923bd572c29c/console.sql" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3c1c96a5-d714-43de-9624-96d8b074f35b/console.sql" />
+    <entry file="file://$USER_HOME$/Downloads/doxypypy-0.8.8.6.tar/dist/doxypypy-0.8.8.6/setup.py" />
+    <entry file="file://$PROJECT_DIR$/../rest-sphinx-example-master/game.py" />
+    <entry file="file://$PROJECT_DIR$/../rest-sphinx-example-master/docs/conf.py" />
+    <entry file="file://$PROJECT_DIR$/../docs/source/conf.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/threading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="863" column="0" lean-forward="false" selection-start-line="863" selection-start-column="0" selection-end-line="863" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MainForm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9792">
+          <caret line="576" column="26" lean-forward="false" selection-start-line="576" selection-start-column="21" selection-end-line="576" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Block_chain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/cc94406d-e03e-4e63-baff-14baef0a5eb3/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="78" lean-forward="false" selection-start-line="10" selection-start-column="78" selection-end-line="10" selection-end-column="78" />
+          <folding>
+            <element signature="e#23#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CAccountingSystem.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dataBaseAdapter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13243">
+          <caret line="783" column="47" lean-forward="false" selection-start-line="783" selection-start-column="47" selection-end-line="783" selection-end-column="47" />
+          <folding>
+            <marker date="1513084668853" expanded="true" signature="1268:1389" ph="INSERT INTO users... " />
+            <marker date="1513084668853" expanded="true" signature="1814:1855" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="2229:2272" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="2639:2680" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3033:3052" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3401:3452" ph="UPDATE users... " />
+            <marker date="1513084668853" expanded="true" signature="3492:3533" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="3942:3993" ph="UPDATE users... " />
+            <marker date="1513084668853" expanded="true" signature="4033:4074" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="4478:4519" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="4900:4989" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="5400:5464" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="5825:5867" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="6362:6403" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="6543:6574" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="6866:7093" ph="INSERT INTO event... " />
+            <marker date="1513084668853" expanded="true" signature="7290:7396" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="7562:7668" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="8108:8233" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="8179:8232" ph="SELECT idUse... event" />
+            <marker date="1513084668853" expanded="true" signature="8579:8706" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="8650:8705" ph="SELECT idExp... event" />
+            <marker date="1513084668853" expanded="true" signature="9055:9168" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="9515:9557" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="9886:9905" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="10345:10400" ph="SELECT idExp... event" />
+            <marker date="1513084668853" expanded="true" signature="10490:10534" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="10630:10740" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="10908:10961" ph="SELECT idUse... event" />
+            <marker date="1513084668853" expanded="true" signature="11051:11095" ph="DELETE FROM groups... " />
+            <marker date="1513084668853" expanded="true" signature="11187:11297" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="11457:11510" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11589:11642" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11722:11775" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="11861:11920" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12008:12064" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12154:12215" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12268:12365" ph="UPDATE event... " />
+            <marker date="1513084668853" expanded="true" signature="12723:12791" ph="SELECT users... groups" />
+            <marker date="1513084668853" expanded="true" signature="12932:13040" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="13421:13452" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="13536:13683" ph="INSERT INTO request... " />
+            <marker date="1513084668853" expanded="true" signature="13792:13894" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="14295:14326" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="14509:14656" ph="INSERT INTO request... " />
+            <marker date="1513084668853" expanded="true" signature="14776:14878" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="15258:15279" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="15620:15720" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="16092:16165" ph="SELECT * FRO... request" />
+            <marker date="1513084668853" expanded="true" signature="16535:16630" ph="SELECT idCon... request" />
+            <marker date="1513084668853" expanded="true" signature="16714:16818" ph="SELECT Count... groups" />
+            <marker date="1513084668853" expanded="true" signature="16947:17051" ph="UPDATE groups... " />
+            <marker date="1513084668853" expanded="true" signature="17128:17234" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="17324:17407" ph="SELECT Count... groups" />
+            <marker date="1513084668853" expanded="true" signature="17523:17621" ph="UPDATE request... " />
+            <marker date="1513084668853" expanded="true" signature="18000:18120" ph="INSERT INTO unconfirmedTransaction... " />
+            <marker date="1513084668853" expanded="true" signature="18533:18576" ph="SELECT COUNT... unconfirmedTransaction" />
+            <marker date="1513084668853" expanded="true" signature="18908:18944" ph="SELECT * FRO... unconfirmedTransaction" />
+            <marker date="1513084668853" expanded="true" signature="19273:19366" ph="DELETE FROM unconfirmedTransaction... " />
+            <marker date="1513084668853" expanded="true" signature="19787:19881" ph="SELECT versi... event" />
+            <marker date="1513084668853" expanded="true" signature="20018:20125" ph="SELECT MAX(u... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="20218:20249" ph="SELECT MAX(i... groups" />
+            <marker date="1513084668853" expanded="true" signature="20420:20517" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="20683:20780" ph="INSERT INTO groups... " />
+            <marker date="1513084668853" expanded="true" signature="21049:21270" ph="INSERT INTO eventUpdate... " />
+            <marker date="1513084668853" expanded="true" signature="21758:21901" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="21829:21900" ph="SELECT idUse... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="22253:22398" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="22324:22397" ph="SELECT idExp... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="22735:22760" ph="SELECT * FRO... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23096:23199" ph="SELECT * FRO... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23594:23710" ph="SELECT idExp... eventUpdate" />
+            <marker date="1513084668853" expanded="true" signature="23831:23939" ph="UPDATE groups... " />
+            <marker date="1513084668853" expanded="true" signature="23992:24090" ph="SELECT COUNT... groups" />
+            <marker date="1513084668853" expanded="true" signature="24211:24332" ph="UPDATE eventUpdate... " />
+            <marker date="1513084668853" expanded="true" signature="24714:24785" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="25116:25157" ph="INSERT INTO addres... " />
+            <marker date="1513084668853" expanded="true" signature="25449:25475" ph="SELECT COUNT... Block" />
+            <marker date="1513084668853" expanded="true" signature="25552:25624" ph="SELECT * FRO... Block" />
+            <marker date="1513084668853" expanded="true" signature="25993:26019" ph="SELECT COUNT... Block" />
+            <marker date="1513084668853" expanded="true" signature="26104:26179" ph="SELECT hash Block" />
+            <marker date="1513084668853" expanded="true" signature="26562:26631" ph="SELECT * FRO... Block" />
+            <marker date="1513084668853" expanded="true" signature="27078:27225" ph="INSERT INTO Block... " />
+            <marker date="1513084668853" expanded="true" signature="27638:27660" ph="SELECT hash Block" />
+            <marker date="1513084668853" expanded="true" signature="28050:28176" ph="INSERT INTO transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="28594:28633" ph="SELECT COUNT... transactionInBlock" />
+            <marker date="1513084668853" expanded="true" signature="28962:28994" ph="SELECT * FRO... transactionInBlock" />
+            <marker date="1513084668853" expanded="true" signature="29320:29409" ph="DELETE FROM transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="29763:29787" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29805" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29806" ph="SELECT * FRO... users" />
+            <marker date="1513084668853" expanded="true" signature="29763:29807" ph="SELECT * FRO... usersWHE" />
+            <marker date="1513084668853" expanded="true" signature="29888:29966" ph="SELECT * FRO... groups" />
+            <marker date="1513084668853" expanded="true" signature="29888:29986" ph="SELECT users... groups" />
+            <marker date="1513084668853" expanded="true" signature="30228:30306" ph="SELECT * FRO... event" />
+            <marker date="1513084668853" expanded="true" signature="30236:30306" ph="DELETE FROM transactionInBlock... " />
+            <marker date="1513084668853" expanded="true" signature="30518:30598" ph="SELECT * FRO... event" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/cmd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="452" column="60" lean-forward="false" selection-start-line="452" selection-start-column="53" selection-end-line="452" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="42" />
+          <folding>
+            <marker date="1513147737194" expanded="true" signature="2064:2251" ph="CREATE TABLE... users" />
+            <marker date="1513147737194" expanded="true" signature="2281:2381" ph="CREATE TABLE... addres" />
+            <marker date="1513147737194" expanded="true" signature="2411:2566" ph="CREATE TABLE... groups" />
+            <marker date="1513147737194" expanded="true" signature="2597:2801" ph="CREATE TABLE... request" />
+            <marker date="1513147737194" expanded="true" signature="2847:3048" ph="CREATE TABLE... unconfirmedTransaction" />
+            <marker date="1513147737194" expanded="true" signature="3090:3302" ph="CREATE TABLE... transactionInBlock" />
+            <marker date="1513147737194" expanded="true" signature="3331:3623" ph="CREATE TABLE... event" />
+            <marker date="1513147737194" expanded="true" signature="3658:4016" ph="CREATE TABLE... eventUpdate" />
+            <marker date="1513147737194" expanded="true" signature="4045:4215" ph="CREATE TABLE... Block" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+            <marker date="1513062432427" expanded="true" signature="3200:3241" ph="INSERT INTO addres... " />
+            <marker date="1513062432427" expanded="true" signature="3666:3698" ph="SELECT addre... addres" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="329" column="35" lean-forward="true" selection-start-line="329" selection-start-column="35" selection-end-line="329" selection-end-column="35" />
+          <folding>
+            <element signature="e#46#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -8,6 +8,9 @@ createUserAtt = "Attention. You sent a registration request. Please wait while o
 errorInPath = "Attention. Error in file path"
 errorSomethingWentWrong = "Error Something went wrong"
 erorLoginToNet = "Please login to net"
+addUser = "User added"
+notAddUser = "User not added"
+userNotExpert = "Error. User isn't expert"
 
 usersColumns = {
     'idUser' : 0,

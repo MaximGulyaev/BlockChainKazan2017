@@ -245,16 +245,85 @@ class Cli(cmd.Cmd):
         if (self.isAuth):
             Transaction = {}
             datadict = {}
-            datadict['name'] = input('Enter the name of event')
-            datadict['date'] = input('Enter the date event')
-            datadict['competence'] = input('Enter the competence event')
-            datadict['rating'] = input('Enter the raiting event')
-            datadict['info'] = input('Enter event details')
-            datadict['users'] = self._EventCreateUserList
+            datadict['name'] = input('Enter the name of event : ')
+            datadict['date'] = input('Enter the date event : ')
+            datadict['competence'] = input('Enter the competence event : ')
+            datadict['rating'] = input('Enter the raiting event : ')
+            datadict['info'] = input('Enter event details : ')
             autor = self.dataBaseAdapt.getUser(self.accountSystemClass.account['Address'])
-            if not (autor in self._EventCreateExpertList):
-                self._EventCreateExpertList.append(autor)
-            datadict['experts'] = self._EventCreateExpertList
+            userList = []
+            expertList = []
+            expertList.append(autor)
+
+            symbol = input("Do you want add user?Y/n ")
+            symbol = symbol.upper()
+
+            while symbol == 'Y':
+                userId = input('Please enter userId ')
+                user = self.dataBaseAdapt.getUserById(userId)
+                status = 'User'
+                if (user == None):
+                    print(consts.userNotExist)
+                    symbol = input("Yet add user?Y/n ")
+                    symbol = symbol.upper()
+                else:
+                    if (user[consts.usersColumns.get('isExpert')] == 1):
+                        status = 'Expert'
+                    currentUser = '==================\nUserId : {0}\nUsername : {1}\nBirthday : {2}\nStatus :{3}\nOrganization :{4}\n'\
+                        .format(user[consts.usersColumns.get('idUser')], user[consts.usersColumns.get('name')], user[consts.usersColumns.get('birthday')], status, user[consts.usersColumns.get('organization')] )
+                    print(currentUser)
+                    accept = input('Add this user?Y/n ')
+                    accept = accept.upper()
+                    if (accept == "Y"):
+                        if ((user in userList) or (user in expertList)):
+                             print("User in other list")
+                        else:
+                            print(consts.addUser)
+                            userList.append(user)
+                        symbol = input("Yet add user?Y/n ")
+                        symbol = symbol.upper()
+                    else:
+                        print(consts.notAddUser)
+                        symbol = input("Yet add user?Y/n ")
+                        symbol = symbol.upper()
+
+
+            symbol = input("Do you want add expert?Y/n ")
+            symbol = symbol.upper()
+
+            while symbol == 'Y':
+                userId = input('Please enter expertId ')
+                user = self.dataBaseAdapt.getUserById(userId)
+                if (user == None):
+                    print(consts.userNotExist)
+                    symbol = input("Yet add expert?Y/n ")
+                    symbol = symbol.upper()
+                else:
+                    status = 'Expert'
+                    if (user[consts.usersColumns.get('isExpert')] == 1):
+                        currentUser = '==================\nUserId : {0}\nUsername : {1}\nBirthday : {2}\nStatus :{3}\nOrganization :{4}\n'\
+                            .format(user[consts.usersColumns.get('idUser')], user[consts.usersColumns.get('name')], user[consts.usersColumns.get('birthday')], status, user[consts.usersColumns.get('organization')] )
+                        print(currentUser)
+                        accept = input('Add this expert?Y/n ')
+                        accept = accept.upper()
+                        if (accept == "Y"):
+                            if ((user in userList) or (user in expertList)):
+                                print("User in other list")
+                            else:
+                                print(consts.addUser)
+                                expertList.append(user)
+                        else:
+                            print(consts.notAddUser)
+                        symbol = input("Yet add expert?Y/n ")
+                        symbol = symbol.upper()
+                    else:
+                        currentUser = '==================\nUserId : {0}\nUsername : {1}\nBirthday : {2}\nStatus :{3}\nOrganization :{4}\n'\
+                            .format(user[consts.usersColumns.get('idUser')], user[consts.usersColumns.get('name')], user[consts.usersColumns.get('birthday')], status, user[consts.usersColumns.get('organization')] )
+                        print(currentUser)
+                        print(consts.userNotExpert)
+
+            datadict['users'] = userList
+            datadict['experts'] = expertList
 
             Transaction['data'] = datadict
             Transaction['address'] = self.accountSystemClass.account['Address']
@@ -262,7 +331,7 @@ class Cli(cmd.Cmd):
             Transaction['publicKey'] = self.accountSystemClass.publicKeyToString(
                 self.accountSystemClass.account['PublicKey'])
 
-            string = json.dumps(Transaction, sort_keys=True)
+            string = json.dumps(Transaction, sort_keys = True)
             signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
             Transaction['signature'] = signature
             if not (self.CblockChain.addNewTransactFromUser(Transaction)):
