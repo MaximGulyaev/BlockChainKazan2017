@@ -689,6 +689,15 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     ex = GUI_form()
 
+
+
+    db = dataBaseAdapter.dataBaseAdapter()
+    #db.delEvent(1,1,1,1,1,1,1,1,1,1)
+    #db.delRequestDemot(1,1,1)
+    #db.delEventUpdate(7,1,1,1,1,1,1,1,1)
+    #db.delAccept(6,321)
+    db.delAcceptUpdateEvent(1,3,3)
+
     ex.setWindowFlags(QtCore.Qt.FramelessWindowHint) # без рамки
 
     #по центру

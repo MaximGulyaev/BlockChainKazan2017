@@ -16,6 +16,7 @@ Complexity = {
 
 
 class Blockchain:
+
     PrivateKey = 0
     dataBaseAdapt = dataBaseAdapter.dataBaseAdapter()
     CNetwork = None
@@ -97,7 +98,7 @@ class Blockchain:
         string = json.dumps(jsonTransact, sort_keys=True)
 
         pubKey = CAccountingSystem.CAccountingSystem.stringToPublicKey(Transaction['publicKey'])
-        #if
+
         if not (CAccountingSystem.CAccountingSystem.checkSignature(pubKey, string, signature)):
             return False
 
@@ -199,6 +200,41 @@ class Blockchain:
 
             return True
 
+    def getLastblock(self):
+        return(self.dataBaseAdapt.getLastBlock())
+
+    def resetBlock(self, NumberOfMaxBlock):
+        length = self.dataBaseAdapt.getLastBlock()[consts.BlockColumns.get('idBlock')]
+        for i in range(length,-1,-1):
+            if i > NumberOfMaxBlock:
+                block = self.dataBaseAdapt.getLastBlock()
+                TransactList = self.dataBaseAdapt.getTransactByIdBlock(block[consts.BlockColumns.get('idBlock')])
+                self.dataBaseAdapt.delBlock(block[consts.BlockColumns.get('idBlock')])
+                for element in TransactList:
+                    self.deleteTransact(element)
+
+    def deleteTransact(self, Transact):
+        type =  Transact[consts.transaction.get('type')]
+
+        Transaction = copy.deepcopy(Transact)
+
+        if type == 0:
+            self.delTransaction_registration(Transaction)
+        if type == 1:
+            self.delTransaction_promotion(Transaction)
+        if type == 2:
+            self.delTransaction_reduction(Transaction)
+        if type == 3:
+            self.delTransaction_confirmPromotionOrReduction(Transaction)
+        if type == 4:
+            self.delTransaction_confirmChangeEvent(Transaction)
+        if type == 5:
+            self.delTransaction_CreateEvent(Transaction)
+        if type == 6:
+            self.delTransaction_ChangeEvent(Transaction)
+        if type == 10:
+            self.delTransactionFromTransactionTable(Transaction)
+
 
     def addNewTransaction_registration(self, Transaction):
         address = Transaction['address']
@@ -210,16 +246,32 @@ class Blockchain:
         self.dataBaseAdapt.addUser(address, name, brirthday, isExpert, publicKey, organization)
         self.addTransactionToTransactionTable(Transaction)
 
+    def delTransaction_registration(self, Transaction):
+        address = Transaction['address']
+        self.dataBaseAdapt.delUser(address)
+        self.delTransactionFromTransactionTable(Transaction)
+
     def addNewTransaction_promotion(self, Transaction, CreateTime):
         address = Transaction['address']
         self.dataBaseAdapt.addRequestRise(address, CreateTime)
         self.addTransactionToTransactionTable(Transaction)
+
+    def delTransaction_promotion(self, Transaction, CreateTime):
+        address = Transaction['address']
+        self.dataBaseAdapt.delRequestRise(address, CreateTime)
+        self.delTransactionFromTransactionTable(Transaction)
 
     def addNewTransaction_reduction(self, Transaction, CreateTime):
         addressFrom = Transaction['address']
         addressTo = Transaction['data']['address']
         self.dataBaseAdapt.addRequestDemot(addressFrom, addressTo, CreateTime)
         self.addTransactionToTransactionTable(Transaction)
+
+    def delTransaction_reduction(self, Transaction, CreateTime):
+        addressFrom = Transaction['address']
+        addressTo = Transaction['data']['address']
+        self.dataBaseAdapt.delRequestDemot(addressFrom, addressTo, CreateTime)
+        self.delTransactionFromTransactionTable(Transaction)
 
     def addNewTransaction_confirmPromotionOrReduction(self, Transaction, CreateTime):
         address = Transaction['address']
@@ -236,6 +288,21 @@ class Blockchain:
             if request[consts.requestColumns.get('typeRequest')] == 1:
                 self.dataBaseAdapt.setStudent(address)
 
+    def delTransaction_confirmPromotionOrReduction(self, Transaction, CreateTime):
+        address = Transaction['address']
+        idRequest = Transaction['data']['idRequest']
+        request = self.dataBaseAdapt.getRequestById(idRequest)
+        if (CreateTime - request[consts.requestColumns.get('date')]) / 3600 <= 24:
+            self.dataBaseAdapt.delAccept(idRequest, address)
+        self.delTransactionFromTransactionTable(Transaction)
+
+        request = self.dataBaseAdapt.getRequestById(idRequest)
+        if request[consts.requestColumns.get('quantityAccepted')] < 4:
+            if request[consts.requestColumns.get('typeRequest')] == 1:
+                print(self.dataBaseAdapt.setExpert(address))
+            if request[consts.requestColumns.get('typeRequest')] == 0:
+                self.dataBaseAdapt.setStudent(address)
+
     def addNewTransaction_confirmChangeEvent(self, Transaction, CreateTime):
         addressExpert = Transaction['address']
         updateIndex = Transaction['data']['updateIndex']
@@ -246,14 +313,30 @@ class Blockchain:
             self.dataBaseAdapt.addAcceptUpdateEvent(idEvent, updateIndex, addressExpert)
         self.addTransactionToTransactionTable(Transaction)
 
-        changeEvent = self.dataBaseAdapt.getEventUpdate(idEvent, updateIndex)
-        countOfExpert = len(self.dataBaseAdapt.getEventUpdateExpertList(idEvent))
-        if changeEvent[consts.eventsUpdateColumns.get('numOfExperts')] == countOfExpert:
-            self.dataBaseAdapt.changeEvent(Transaction['data']['idEvent'], Transaction['data']['name'],
-                                           Transaction['data']['info'], Transaction['data']['date'],
-                                           Transaction['data']['competence'], Transaction['data']['rating'],
-                                           len(Transaction['data']['experts']), Transaction['data']['experts'],
-                                           Transaction['data']['users'])
+        listOfAllChangeEvent = self.dataBaseAdapt.getEventUpdateListAtEvent(idEvent)
+
+        for element in listOfAllChangeEvent:
+            countOfExpert = len(self.dataBaseAdapt.getEventUpdateExpertList(element['idEvent']))
+            if element[consts.eventsUpdateColumns.get('numOfExperts')] == countOfExpert:
+                self.eventChange(element)
+
+
+    def eventChange(self, EventChangeTransact):
+        self.dataBaseAdapt.changeEvent(EventChangeTransact['data']['idEvent'], EventChangeTransact['data']['name'],
+                                       EventChangeTransact['data']['info'], EventChangeTransact['data']['date'],
+                                       EventChangeTransact['data']['competence'], EventChangeTransact['data']['rating'],
+                                       len(EventChangeTransact['data']['experts']), EventChangeTransact['data']['experts'],
+                                       EventChangeTransact['data']['users'])
+
+    def delTransaction_confirmChangeEvent(self, Transaction, CreateTime):
+        addressExpert = Transaction['address']
+        updateIndex = Transaction['data']['updateIndex']
+        idEvent = Transaction['data']['idEvent']
+
+        changeEvent = self.dataBaseAdapt.getEvent(idEvent)
+        if (CreateTime - changeEvent[consts.eventsUpdateColumns.get('timestamp')])/3600 <=24:
+            self.dataBaseAdapt.delAcceptUpdateEvent(idEvent, updateIndex, addressExpert)
+        self.delTransactionFromTransactionTable(Transaction)
 
     def addNewTransaction_CreateEvent(self, Transaction, CreateTime):
         name = Transaction['data']['name']
@@ -268,6 +351,21 @@ class Blockchain:
         self.dataBaseAdapt.addEvent(creator, name, date, data, competence, rating, len(ExpertList), ExpertList,
                                     UserList,timestamp)
         self.addTransactionToTransactionTable(Transaction)
+
+    def delTransaction_CreateEvent(self, Transaction, CreateTime):
+        name = Transaction['data']['name']
+        date = Transaction['data']['date']
+        competence = Transaction['data']['competence']
+        rating = Transaction['data']['rating']
+        data = Transaction['data']['info']
+        UserList = Transaction['data']['users']
+        ExpertList = Transaction['data']['experts']
+        creator = Transaction['address']
+        timestamp = CreateTime
+
+        self.dataBaseAdapt.delEvent(creator, name, date, data, competence, rating, len(ExpertList), ExpertList,
+                                    UserList,timestamp)
+        self.delTransactionFromTransactionTable(Transaction)
 
     def addNewTransaction_ChangeEvent(self, Transaction, CreateTime):
         idEvent = Transaction['data']['idEvent']
@@ -284,8 +382,26 @@ class Blockchain:
                                           CreateTime)
         self.addTransactionToTransactionTable(Transaction)
 
+    def delTransaction_ChangeEvent(self, Transaction, CreateTime):
+        idEvent = Transaction['data']['idEvent']
+        name = Transaction['data']['name']
+        date = Transaction['data']['date']
+        competence = Transaction['data']['competence']
+        data = Transaction['data']['info']
+        UserList = Transaction['data']['users']
+        ExpertList = Transaction['data']['experts']
+        lenExpertList = None
+        if ExpertList != None:
+            lenExpertList = len(ExpertList)
+        self.dataBaseAdapt.delEventUpdate(idEvent, name, data, date, competence, lenExpertList, ExpertList, UserList,
+                                          CreateTime)
+        self.delTransactionFromTransactionTable(Transaction)
+
     def addNewTransaction_checkSingatureTransact(self, Transaction):
         self.addTransactionToTransactionTable(Transaction)
+
+    def delTransaction_checkSingatureTransact(self, Transaction):
+        self.delTransactionFromTransactionTable(Transaction)
 
     def newTransaction_registration(self, Transaction):
         L = len(str(Transaction['address']))
@@ -297,6 +413,10 @@ class Blockchain:
 
     def addTransactionToTransactionTable(self, Transaction):
         self.dataBaseAdapt.addTransaction(Transaction['address'], Transaction['type'], json.dumps(Transaction['data']),
+                                          Transaction['publicKey'], Transaction['signature'], Transaction['idBlock'])
+
+    def delTransactionFromTransactionTable(self, Transaction):
+        self.dataBaseAdapt.delTransaction(Transaction['address'], Transaction['type'], json.dumps(Transaction['data']),
                                           Transaction['publicKey'], Transaction['signature'], Transaction['idBlock'])
 
     def newTransaction_promotion(self, Transaction):
