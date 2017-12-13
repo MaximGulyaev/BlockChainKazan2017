@@ -206,14 +206,15 @@ class Blockchain:
     def resetBlock(self, NumberOfMaxBlock):
         length = self.dataBaseAdapt.getLastBlock()[consts.BlockColumns.get('idBlock')]
         for i in range(length,-1,-1):
-            if i > NumberOfMaxBlock:
+            if i >= NumberOfMaxBlock:
                 block = self.dataBaseAdapt.getLastBlock()
+                CreateTime = block[consts.BlockColumns.get('timestamp')]
                 TransactList = self.dataBaseAdapt.getTransactByIdBlock(block[consts.BlockColumns.get('idBlock')])
                 self.dataBaseAdapt.delBlock(block[consts.BlockColumns.get('idBlock')])
                 for element in TransactList:
-                    self.deleteTransact(element)
+                    self.deleteTransact(element, CreateTime)
 
-    def deleteTransact(self, Transact):
+    def deleteTransact(self, Transact, CreateTime):
         type =  Transact[consts.transaction.get('type')]
 
         Transaction = copy.deepcopy(Transact)
@@ -221,17 +222,17 @@ class Blockchain:
         if type == 0:
             self.delTransaction_registration(Transaction)
         if type == 1:
-            self.delTransaction_promotion(Transaction)
+            self.delTransaction_promotion(Transaction, CreateTime)
         if type == 2:
-            self.delTransaction_reduction(Transaction)
+            self.delTransaction_reduction(Transaction, CreateTime)
         if type == 3:
-            self.delTransaction_confirmPromotionOrReduction(Transaction)
+            self.delTransaction_confirmPromotionOrReduction(Transaction, CreateTime)
         if type == 4:
-            self.delTransaction_confirmChangeEvent(Transaction)
+            self.delTransaction_confirmChangeEvent(Transaction, CreateTime)
         if type == 5:
-            self.delTransaction_CreateEvent(Transaction)
+            self.delTransaction_CreateEvent(Transaction, CreateTime)
         if type == 6:
-            self.delTransaction_ChangeEvent(Transaction)
+            self.delTransaction_ChangeEvent(Transaction, CreateTime)
         if type == 10:
             self.delTransactionFromTransactionTable(Transaction)
 
@@ -695,6 +696,8 @@ class Blockchain:
         length = block[consts.BlockColumns.get('idBlock')]
         return length
 
+
+
     def compareBlockChainWithNet(self, hashChain):
         MyHashChainTuple = self.dataBaseAdapt.getHashChain()
         MyHashChain = []
@@ -702,7 +705,7 @@ class Blockchain:
             MyHashChain.append(list(element))
 
         differentHashChain = []
-        for i in range(len(MyHashChain)-1):
+        for i in range(len(MyHashChain)):
             if hashChain[i] == MyHashChain[i]:
                 pass
             if hashChain[i] != MyHashChain[i]:

@@ -40,7 +40,7 @@ class network:
         bytesData = json.dumps(dict)
         sock = socket.socket()
         try:
-            sock.connect((addres, 9091))
+            sock.connect((addres, 9090))
             sock.send(bytesData.encode())
             sock.close()
         except:
@@ -76,7 +76,7 @@ class network:
         '''
         while True:
             sock = socket.socket()
-            sock.bind(('', 9090))
+            sock.bind(('', 9091))
             sock.listen(100)
             while True:
                 conn, addr = sock.accept()
@@ -100,7 +100,7 @@ class network:
                         'data': None
                     }
                     bytesData = json.dumps(dict)
-                    sock.connect((addr[0], 9090))
+                    sock.connect((addr[0], 9091))
                     sock.send(bytesData)
                 finally:
                     conn.close()
@@ -205,10 +205,12 @@ class network:
                 return False
             else:
                 BlockList = data
+
                 self.processingStep = 3
-                len = self.blockchain.getLengthChain()[consts.BlockColumns.get('idBlock')]
-                if len <= BlockList[0][consts.BlockColumns.get('idBlock')]:
-                    self.blockchain.resetBlock(BlockList[0][consts.BlockColumns.get('idBlock')])
+                length = self.blockchain.getLengthChain()
+
+                if length <= BlockList[0]['idBlock']:
+                    self.blockchain.resetBlock(BlockList[0]['idBlock'])
 
                 for element in BlockList:
                     for trans in element['transactionList']:
