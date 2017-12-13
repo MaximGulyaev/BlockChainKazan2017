@@ -78,13 +78,13 @@ eventsUpdateColumns = {
 
 transaction = {
     'idTransaction': 0,
-    'type': 1,
-    'data': 2,
-    'publicKey': 3,
-    'hash': 4,
-    'signature': 5,
-    'address': 6,
-    'idBlock': 7
+    'type': 2,
+    'data': 3,
+    'publicKey': 4,
+    'hash': 5,
+    'signature': 6,
+    'address': 7,
+    'idBlock': 1
 }
 
 BlockColumns = {

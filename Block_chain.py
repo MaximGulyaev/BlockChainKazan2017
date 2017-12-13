@@ -217,7 +217,18 @@ class Blockchain:
     def deleteTransact(self, Transact, CreateTime):
         type =  Transact[consts.transaction.get('type')]
 
-        Transaction = copy.deepcopy(Transact)
+        Transaction = {
+        'idTransaction': Transact[0],
+        'type': Transact[2],
+        'data': Transact[3],
+        'publicKey': Transact[4],
+        'hash': Transact[5],
+        'signature': Transact[6],
+        'address': Transact[7],
+        'idBlock': Transact[1]
+        }
+
+        Transaction['data'] = json.loads(Transaction['data'])
 
         if type == 0:
             self.delTransaction_registration(Transaction)
