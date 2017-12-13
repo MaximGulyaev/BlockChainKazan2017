@@ -618,6 +618,7 @@ class Cli(cmd.Cmd):
             if (len(args) == 0):
                 print("Error", "Needed input arguments. Example : 'confirm -e 9913' or 'confirm -u 1'.\n"
                                "-e is event\n -u is user downgrade or user doExpert\n, numbers is appropriate id")
+                return
             else:
                 Transaction = {}
                 datadict = {}
@@ -641,9 +642,47 @@ class Cli(cmd.Cmd):
                         print("Accepted")
                         if not (self.CblockChain.addNewTransactFromUser(Transaction)):
                             print("Error", "Something went wrong")
+                        return
 
                 if ((args[0] == '-e') and  len(args) == 2 and str(args[1]).isdigit()):
-                    print('fsdfsd')
+                    psevdolist = self.dataBaseAdapt.getEventUpdateForUserUserAsExpert(self.accountSystemClass.account.get('Address'))
+                    if (psevdolist == None):
+                        print(" You have nothing to confirm ")
+                        return False
+                    self.outputEventUpdate(psevdolist)
+                    accept = input("Are you sure you want to confirm update?Y/n ")
+                    accept = accept.upper()
+
+                    if (accept == 'Y'):
+                        searchingValue = int(args[1])
+                        i = 0
+                        j = len(psevdolist) - 1
+                        m = int(j / 2)
+                        while psevdolist[m][consts.eventsUpdateColumns.get('idUnconfirmedUpdate')] != searchingValue and i < j:
+                            if searchingValue > psevdolist[m][consts.eventsUpdateColumns.get('idUnconfirmedUpdate')]:
+                                i = m + 1
+                            else:
+                                j = m - 1
+                            m = int((i + j) / 2)
+                        if i > j:
+                            print('Error. Not found')
+                        else:
+                            Transaction['type'] = 4
+                            datadict['updateIndex'] = psevdolist[m][
+                                consts.eventsUpdateColumns.get('updateIndex')]
+                            datadict['idEvent'] = psevdolist[m][
+                                consts.eventsUpdateColumns.get('idEvent')]
+                            Transaction['data'] = datadict
+                            string = json.dumps(Transaction, sort_keys=True)
+                            signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'],
+                                                                                string)
+                            Transaction['signature'] = signature
+                            if not (self.CblockChain.addNewTransactFromUser(Transaction)):
+                                print(consts.errorSomethingWentWrong)
+                            return
+                    else:
+                        print("Ok. Not accepted")
+                        return
 
                 if ((args[0] == '-v') and (len(args) == 1)):
                     usersReqList = self.dataBaseAdapt.getRequestListNonAccepted(3)
@@ -651,30 +690,6 @@ class Cli(cmd.Cmd):
 
                     eventUpdList = self.dataBaseAdapt.getEventUpdateForUserUserAsExpert(self.accountSystemClass.account.get('Address'))
                     self.outputEventUpdate(eventUpdList)
-
-
-                    typeQuerry = args.split()[0]
-                    id = args.split()[1]
-                    requestMode = 0
-                    if (typeQuerry == '-e') or (typeQuerry == '-u'):
-                        if (typeQuerry == '-e'):
-                            requestMode = 1
-
-                        if (requestMode == 1):
-                            requestList = self.dataBaseAdapt.getEventUpdateList()
-                            if (requestList == None):
-                                return False
-                            Transaction['type'] = 4
-                            datadict['updateIndex'] = requestList[id][
-                                consts.eventsUpdateColumns.get('updateIndex')]
-                            datadict['idEvent'] = requestList[id][
-                                consts.eventsUpdateColumns.get('idEvent')]
-                            Transaction['data'] = datadict
-                            string = json.dumps(Transaction, sort_keys=True)
-                            signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
-                            Transaction['signature'] = signature
-                            if not (self.CblockChain.addNewTransactFromUser(Transaction)):
-                                print(consts.errorSomethingWentWrong)
                 else:
                     print("Error in parametrs","Needed input arguments. Example : 'confirm -e 9913' or 'confirm -u 1'.\n"
                                    "-e is event\n -u is user downgrade or user doExpert\n, numbers is appropriate id")
@@ -704,19 +719,19 @@ class Cli(cmd.Cmd):
 
                 name = evUp[consts.eventsUpdateColumns.get('name')]
                 if(name != None) and (name != ''):
-                    resultPrint += 'Event title : ' + evUp[consts.eventsUpdateColumns.get('name')] + '\n'
+                    resultPrint += 'Event title : ' + str(name)
 
                 data = evUp[consts.eventsUpdateColumns.get('data')]
                 if (data != None) and (data != ''):
-                    resultPrint += 'Data : ' + evUp[consts.eventsUpdateColumns.get('name')] + '\n'
+                    resultPrint += '\nData : ' + str(data)
 
                 date = evUp[consts.eventsUpdateColumns.get('date')]
                 if (date != None) and (date != ''):
-                    resultPrint += 'Date : ' + evUp[consts.eventsUpdateColumns.get('name')] + '\n'
+                    resultPrint += '\nDate : ' + str(date)
 
                 competence = evUp[consts.eventsUpdateColumns.get('competence')]
                 if (competence != None) and (date != ''):
-                    resultPrint += 'Competence :' + evUp[consts.eventsUpdateColumns.get('name')] + '\n'
+                    resultPrint += '\nCompetence :' + str(competence)
                 print(resultPrint)
 
 
