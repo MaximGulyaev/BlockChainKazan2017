@@ -12,6 +12,8 @@ addUser = "User added"
 notAddUser = "User not added"
 userNotExpert = "Error. User isn't expert"
 errorNotPermission = "Not permission for you"
+isYetUsersAdd = 'Yet add user?Y/n'
+isYetUserErase = 'Yet erase user?Y/n'
 
 usersColumns = {
     'idUser' : 0,

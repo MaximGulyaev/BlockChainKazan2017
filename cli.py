@@ -277,7 +277,7 @@ class Cli(cmd.Cmd):
                     status = 'User'
                     if (user == None):
                         print(consts.userNotExist)
-                        symbol = input("Yet add user?Y/n ")
+                        symbol = input(consts.isYetUsersAdd)
                         symbol = symbol.upper()
                     else:
                         if (user[consts.usersColumns.get('isExpert')] == 1):
@@ -293,11 +293,11 @@ class Cli(cmd.Cmd):
                             else:
                                 print(consts.addUser)
                                 userList.append(user)
-                            symbol = input("Yet add user?Y/n ")
+                            symbol = input(consts.isYetUsersAdd)
                             symbol = symbol.upper()
                         else:
                             print(consts.notAddUser)
-                            symbol = input("Yet add user?Y/n ")
+                            symbol = input(consts.isYetUsersAdd)
                             symbol = symbol.upper()
 
 
@@ -354,11 +354,21 @@ class Cli(cmd.Cmd):
         else:
             print(consts.erorLoginToNet)
 
-    def searchExpInList(self,expGroups):
+    def isSearchedExpInList(self,expGroups):
         for exp in expGroups:
             if (self.accountSystemClass.account.get('PrivateKey') == exp[consts.groupColumns.get('addres')]):
                 return True
         return  False
+
+    def searchingUserByIdinList(self,userId,userList):
+        id = -1
+        for user in userList:
+            id += 1
+            if (int(userId) == user[consts.usersColumns.get('idUser')]):
+                return id
+        return  None
+
+
 
 
     def do_changeEvent(self,args):
@@ -371,8 +381,7 @@ class Cli(cmd.Cmd):
                     event = self.dataBaseAdapt.getEvent(index)
                     expGroups = self.dataBaseAdapt.getEventExpertList(index)
 
-                    if(self.searchExpInList):
-
+                    if(self.isSearchedExpInList):
                         showerEvent = 'Creator : {0}\nTitle : {1}\nDate : {2}\nCompetence : {3}' \
                                           '\nRaiting : {4}\nData : {5}\n'.\
                             format(self.dataBaseAdapt.getUser(consts.eventsColumns.get('creator')), event[consts.eventsColumns.get('name')],
@@ -447,7 +456,7 @@ class Cli(cmd.Cmd):
                             status = 'User'
                             if (user == None):
                                 print(consts.userNotExist)
-                                symbol = input("Yet add user?Y/n ")
+                                symbol = input(consts.isYetUsersAdd)
                                 symbol = symbol.upper()
                             else:
                                 if (user[consts.usersColumns.get('isExpert')] == 1):
@@ -465,15 +474,43 @@ class Cli(cmd.Cmd):
                                     else:
                                         print(consts.addUser)
                                         userList.append(user)
-                                    symbol = input("Yet add user?Y/n ")
+                                    symbol = input(consts.isYetUsersAdd)
                                     symbol = symbol.upper()
                                 else:
                                     print(consts.notAddUser)
-                                    symbol = input("Yet add user?Y/n ")
+                                    symbol = input(consts.isYetUsersAdd)
                                     symbol = symbol.upper()
 
                         symbol = input("Do you want erase user?Y/n ")
                         symbol = symbol.upper()
+                        
+                        while symbol == 'Y':
+                            userId = input('Please enter userId ')
+                            status = 'User'
+                            idInList = self.searchingUserByIdinList(userId,userList)
+                            if (idInList == None):
+                                print(consts.userNotExist)
+                                symbol = input(consts.isYetUsersAdd)
+                                symbol = symbol.upper()
+                            else:
+                                if (user[consts.usersColumns.get('isExpert')] == 1):
+                                    status = 'Expert'
+                                currentUser = '==================\nUserId : {0}\nUsername : {1}\nBirthday : {2}\nStatus :{3}\nOrganization :{4}\n' \
+                                    .format(user[consts.usersColumns.get('idUser')], user[consts.usersColumns.get('name')],
+                                            user[consts.usersColumns.get('birthday')], status,
+                                            user[consts.usersColumns.get('organization')])
+                                print(currentUser)
+                                accept = input('Erase this user?Y/n ')
+                                accept = accept.upper()
+                                if (accept == "Y"):
+                                    userList.pop(idInList)
+                                    print("User erased")
+                                    symbol = input(consts.isYetUserErase)
+                                    symbol = symbol.upper()
+                                else:
+                                    print("User not erased")
+                                    symbol = input(consts.isYetUserErase)
+                                    symbol = symbol.upper()
 
                         symbol = input("Do you want add expert?Y/n ")
                         symbol = symbol.upper()
@@ -512,6 +549,38 @@ class Cli(cmd.Cmd):
                                                 user[consts.usersColumns.get('organization')])
                                     print(currentUser)
                                     print(consts.userNotExpert)
+
+                        symbol = input("Do you want erase expert?Y/n ")
+                        symbol = symbol.upper()
+
+                        while symbol == 'Y':
+                            userId = input('Please enter userId')
+                            status = 'User'
+                            idInList = self.searchingUserByIdinList(userId, expertList)
+                            if (idInList == None):
+                                print(consts.userNotExist)
+                                symbol = input(consts.isYetUsersAdd)
+                                symbol = symbol.upper()
+                            else:
+                                if (user[consts.usersColumns.get('isExpert')] == 1):
+                                    status = 'Expert'
+                                currentUser = '==================\nUserId : {0}\nUsername : {1}\nBirthday : {2}\nStatus :{3}\nOrganization :{4}\n' \
+                                    .format(user[consts.usersColumns.get('idUser')],
+                                            user[consts.usersColumns.get('name')],
+                                            user[consts.usersColumns.get('birthday')], status,
+                                            user[consts.usersColumns.get('organization')])
+                                print(currentUser)
+                                accept = input('Erase this user?Y/n ')
+                                accept = accept.upper()
+                                if (accept == "Y"):
+                                    userList.pop(idInList)
+                                    print("User erased")
+                                    symbol = input(consts.isYetUserErase)
+                                    symbol = symbol.upper()
+                                else:
+                                    print("User not erased")
+                                    symbol = input(consts.isYetUserErase)
+                                    symbol = symbol.upper()
 
                         datadict['users'] = userList
                         datadict['experts'] = expertList
