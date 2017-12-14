@@ -300,7 +300,7 @@ class Blockchain:
         self.addTransactionToTransactionTable(Transaction)
 
         request = self.dataBaseAdapt.getRequestById(idRequest)
-        if request[consts.requestColumns.get('quantityAccepted')] == 4:
+        if request[consts.requestColumns.get('quantityAccepted')] == 3:
             if request[consts.requestColumns.get('typeRequest')] == 0:
                 print(self.dataBaseAdapt.setExpert(address))
             if request[consts.requestColumns.get('typeRequest')] == 1:
@@ -315,7 +315,7 @@ class Blockchain:
         self.delTransactionFromTransactionTable(Transaction)
 
         request = self.dataBaseAdapt.getRequestById(idRequest)
-        if request[consts.requestColumns.get('quantityAccepted')] < 4:
+        if request[consts.requestColumns.get('quantityAccepted')] < 3:
             if request[consts.requestColumns.get('typeRequest')] == 1:
                 print(self.dataBaseAdapt.setExpert(address))
             if request[consts.requestColumns.get('typeRequest')] == 0:

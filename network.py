@@ -76,7 +76,6 @@ class network:
             while True:
                 conn, addr = sock.accept()
                 self.addAddres(addr[0])
-                print("New connection from " + addr[0])
                 #try:
                 data = conn.recv(16388)
                 print(data)
@@ -106,7 +105,6 @@ class network:
         :return:
         '''
         try:
-            print(addres)
             conn = sqlite3.connect('resourse/db.sqlite')
             cursor = conn.cursor()
             cursor.execute("INSERT INTO addres (addres) VALUES ('%s')"%(addres))
@@ -145,7 +143,6 @@ class network:
         type = dictionary.get('type')
         data = dictionary.get('data')
         addres = dictionary.get('sender')
-        print(data)
         if (type == consts.typeNetQuery.get('transaction')):
             self.blockchain.addNewTransactFromNet(data)
             return
