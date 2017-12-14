@@ -383,7 +383,7 @@ class Cli(cmd.Cmd):
     def do_changeEvent(self,args):
         '''
         Handler command changeEvent. The expert change event with the help of a question-answer form
-        As a parametr on calling idEvent. Example 'changeEvent 999'
+        As a parametr ondn calling idEvent. Example 'changeEvent 999'
 
         :param args: idEvent
         :return:
@@ -621,12 +621,20 @@ class Cli(cmd.Cmd):
             print(consts.erorLoginToNet)
 
     def do_confirm(self,args):
+        '''
+        Handler command confirm. The expert confirm event, where he's expert with the help of a question-answer form
+        As a parametrs on -u id : confirm users update ryse/downgrade Example 'confirm -u 1'
+                          -e id : confirm event update changes Example 'confirm -e 1'
+                          -v : show all available for transaction confirmation
+        :param args: see higher
+        :return: confirm transaction
+        '''
         command = ('-u','-e','-v')
         if (self.isAuth):
             args = args.split()
             if (len(args) == 0):
                 print("Error", "Needed input arguments. Example : 'confirm -e 9913' or 'confirm -u 1'.\n"
-                               "-e is event\n -u is user downgrade or user doExpert\n, numbers is appropriate id")
+                               "-e is event\n -u is user downgrade or user doExpert\n, numbers is appropriate id \n or -v for show avaliable transactions")
             else:
                 Transaction = {}
                 datadict = {}
