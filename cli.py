@@ -627,14 +627,13 @@ class Cli(cmd.Cmd):
                           -e id : confirm event update changes Example 'confirm -e 1'
                           -v : show all available for transaction confirmation
         :param args: see higher
-        :return: confirm transaction
+        :return: confirm transaction in bd
         '''
         command = ('-u','-e','-v')
         if (self.isAuth):
             args = args.split()
             if (len(args) == 0):
-                print("Error", "Needed input arguments. Example : 'confirm -e 9913' or 'confirm -u 1'.\n"
-                               "-e is event\n -u is user downgrade or user doExpert\n, numbers is appropriate id \n or -v for show avaliable transactions")
+                print("Error", "Needed input arguments. Example : 'confirm -e 9913' or 'confirm -u 1'.\n -e is event\n -u is user downgrade or user doExpert\n, numbers is appropriate id")
             else:
                 Transaction = {}
                 datadict = {}
@@ -724,19 +723,19 @@ class Cli(cmd.Cmd):
         :param numAcceptNeeded: needed accept for accepted
         :return: 
         '''
-            for req in requestList:
-                Offerer = self.dataBaseAdapt.getUser(req[consts.requestColumns.get('addresFrom')])
-                Target = self.dataBaseAdapt.getUser(req[consts.requestColumns.get('addresTo')])
-                accepted = req[consts.requestColumns.get('quantityAccepted')]
-                typeReq = 'Downgrade'
-                if req[consts.requestColumns.get('typeRequest')] == 0:
-                    typeReq = 'Rise'
-                print('=====================================')
-                print('Request id {7}\nOfferer : {0}({1})\nTarget : {2}({3})\nType : {4}\nAccepted {5}/{6}'\
-                    .format(Offerer[consts.usersColumns.get('name')], Offerer[consts.usersColumns.get('idUser')],
-                                                                             Target[consts.usersColumns.get('name')], Target[consts.usersColumns.get('idUser')],
-                            typeReq,accepted,numAcceptNeeded,req[consts.requestColumns.get('idRequest')]
-                            ))
+        for req in requestList:
+            Offerer = self.dataBaseAdapt.getUser(req[consts.requestColumns.get('addresFrom')])
+            Target = self.dataBaseAdapt.getUser(req[consts.requestColumns.get('addresTo')])
+            accepted = req[consts.requestColumns.get('quantityAccepted')]
+            typeReq = 'Downgrade'
+            if req[consts.requestColumns.get('typeRequest')] == 0:
+                typeReq = 'Rise'
+            print('=====================================')
+            print('Request id {7}\nOfferer : {0}({1})\nTarget : {2}({3})\nType : {4}\nAccepted {5}/{6}'\
+                .format(Offerer[consts.usersColumns.get('name')], Offerer[consts.usersColumns.get('idUser')],
+                                                                         Target[consts.usersColumns.get('name')], Target[consts.usersColumns.get('idUser')],
+                        typeReq,accepted,numAcceptNeeded,req[consts.requestColumns.get('idRequest')]
+                        ))
 
     def outputEventUpdate(self, eventUpdateList):
         '''
@@ -746,27 +745,27 @@ class Cli(cmd.Cmd):
         :param eventUpdateList: list with update event(rows of table)
         :return: 
         '''
-            for evUp in eventUpdateList:
-                resultPrint = 'Changes List =========================================\n'
-                resultPrint += 'idUpdateEvent : ' + str(evUp[consts.eventsUpdateColumns.get('idUnconfirmedUpdate')]) + '\n'
-                resultPrint += 'idUpdateEvent : ' + str(evUp[consts.eventsUpdateColumns.get('idEvent')]) + '\n'
+        for evUp in eventUpdateList:
+            resultPrint = 'Changes List =========================================\n'
+            resultPrint += 'idUpdateEvent : ' + str(evUp[consts.eventsUpdateColumns.get('idUnconfirmedUpdate')]) + '\n'
+            resultPrint += 'idUpdateEvent : ' + str(evUp[consts.eventsUpdateColumns.get('idEvent')]) + '\n'
 
-                name = evUp[consts.eventsUpdateColumns.get('name')]
-                if(name != None) and (name != ''):
-                    resultPrint += '\nEvent title : ' + str(name)
+            name = evUp[consts.eventsUpdateColumns.get('name')]
+            if(name != None) and (name != ''):
+                resultPrint += '\nEvent title : ' + str(name)
 
-                data = evUp[consts.eventsUpdateColumns.get('data')]
-                if (data != None) and (data != ''):
-                    resultPrint += '\nData : ' + str(data)
+            data = evUp[consts.eventsUpdateColumns.get('data')]
+            if (data != None) and (data != ''):
+                resultPrint += '\nData : ' + str(data)
 
-                date = evUp[consts.eventsUpdateColumns.get('date')]
-                if (date != None) and (date != ''):
-                    resultPrint += '\nDate : ' + str(date)
+            date = evUp[consts.eventsUpdateColumns.get('date')]
+            if (date != None) and (date != ''):
+                resultPrint += '\nDate : ' + str(date)
 
-                competence = evUp[consts.eventsUpdateColumns.get('competence')]
-                if (competence != None) and (date != ''):
-                    resultPrint += '\nCompetence :' + str(competence)
-                print(resultPrint)
+            competence = evUp[consts.eventsUpdateColumns.get('competence')]
+            if (competence != None) and (date != ''):
+                resultPrint += '\nCompetence :' + str(competence)
+            print(resultPrint)
 
     def outputEventUpdateInGroups(self,eventUpdateList):
         '''

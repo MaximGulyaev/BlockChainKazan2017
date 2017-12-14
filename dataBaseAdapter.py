@@ -7,7 +7,6 @@ from datetime import datetime, date, time
 class dataBaseAdapter:
     def __init__(self):
         creationTableResult = self.rollOut()
-        print(creationTableResult)
 
     def rollOut(self):
         conn = sqlite3.connect('resourse/db.sqlite')
