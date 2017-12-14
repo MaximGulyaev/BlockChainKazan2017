@@ -65,7 +65,6 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         self.pb_menu_lower.clicked.connect(self.change_Menu)
         self.pb_mainLogOut.clicked.connect(self.change_Menu)
         self.pb_menu_UsersInfo.clicked.connect(self.change_Menu)
-        self.pushButton.clicked.connect(self.change_Menu)
 
         self.pb_generatePrivKey.clicked.connect(self.generatePrivateKey)
         self.pb_auth_choseFileWithKey.clicked.connect(self.pb_auth_choseFileWithKey_clicked)
@@ -235,11 +234,11 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
 
     def pb_makeRequestToBeExpert_clicked(self):
         QMessageBox.about(self, "Внимание",
-                          "Вы подали заявку на Смену статуса в состояние 'Эксперта'. \
-                          Заявка будет рассмотрена экспертами в течение 24 часов + \
-                          время, за которое заявка добавится в цепочку.\
-                          Если по истечении этого времени ваш статус не изменится, \
-                          то в заявке вам отказано.")
+                          "Вы подали заявку на Смену статуса в состояние 'Эксперта'. \n" + \
+                          "Заявка будет рассмотрена экспертами в течение 24 часов + " +\
+                          "время, за которое заявка добавится в цепочку.\n" +\
+                          "Если по истечении этого времени ваш статус не изменится, " +
+                          "то в заявке вам отказано.")
         Transaction = {}
         dict = {}
         dict['address'] = self.accountSystemClass.account['Address']
@@ -251,7 +250,7 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
         Transaction['signature'] = signature
         if not (self.CblockChain.addNewTransactFromUser(Transaction)):
-            QMessageBox.about(self, "Внимание", "Артур, что-то не так")
+            QMessageBox.about(self, "Внимание", "Ошибка в обработке транзакции!")
         # ToDo Транзакция добавляется
 
     def pb_lowerRequest_PushRequest_clicked(self):
@@ -404,20 +403,17 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         # ToDo Транзакция добавляется
 
     def cb_eventInfo_ChoseEvent_currentIndexChanged(self):
-        try:
-            self._EventInfochoseIndex = self.cb_eventInfo_ChoseEvent.currentIndex()
-            self.lbl_eventInfo_eventName.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('name')]))
-            self.lbl_eventInfo_eventDate.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('date')]))
-            self.lbl_eventInfo_eventCreator.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('creator')]))
-            self.lbl_eventInfo_EventCompetence.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('competence')]))
-            self.lbl_eventInfo_eventRating.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('raiting')]))
-            self.lbl_eventInfo_idevent.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('idEvent')]))
-            self.lbl_eventInfo_expertCount.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('numOfExperts')]))
-            self.lbl_eventInfo_Version.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('version')]))
-            self.tb_event_info.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('data')]))
-            self.clearTableWdiget(self.tw_eventinfo_userlist)
-        except:
-            pass
+       # try:
+        self._EventInfochoseIndex = self.cb_eventInfo_ChoseEvent.currentIndex()
+        self.lbl_eventInfo_eventName.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('name')]))
+        self.lbl_eventInfo_eventDate.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('date')]))
+        self.lbl_eventInfo_eventCreator.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('creator')]))
+        self.lbl_eventInfo_EventCompetence.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('competence')]))
+        self.lbl_eventInfo_idevent.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('idEvent')]))
+        self.tb_event_info.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('data')]))
+        self.clearTableWdiget(self.tw_eventinfo_userlist)
+      #  except:
+      #      pass
 
     def pb_EventInfo_getExpertList_clicked(self):
         try:
@@ -493,8 +489,7 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         datadict['name'] = self.le_createEvent_name.text()
         datadict['date'] = self.le_createEvent_date.text()
         datadict['competence'] = self.le_createEvent_competence.text()
-        datadict['rating'] = self.le_createEvent_rating.text()
-        datadict['info'] = self.le_createEvent_date.text()
+        datadict['info'] = self.te_createEvent_info.toPlainText()
         datadict['users'] = self._EventCreateUserList
         autor = self.dataBaseAdapt.getUser(self.accountSystemClass.account['Address'])
         if not (autor in self._EventCreateExpertList):
@@ -749,7 +744,7 @@ if __name__ == "__main__":
     #db.delAccept(6,321)
     db.delAcceptUpdateEvent(1,3,3)
 
-    ex.setWindowFlags(QtCore.Qt.FramelessWindowHint) # без рамки
+    #ex.setWindowFlags(QtCore.Qt.FramelessWindowHint) # без рамки
 
     #по центру
     qtRectangle = ex.frameGeometry()

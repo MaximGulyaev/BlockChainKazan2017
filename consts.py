@@ -91,6 +91,15 @@ eventsUpdateColumns = {
   'version': 12,
 }
 
+UncTransaction = {
+    'idTransaction': 0,
+    'type': 1,
+    'data': 2,
+    'publicKey': 3,
+    'hash': 4,
+    'signature': 5,
+    'address': 6
+}
 transaction = {
     'idTransaction': 0,
     'type': 2,

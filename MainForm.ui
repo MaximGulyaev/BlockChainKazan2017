@@ -68,9 +68,9 @@
       <property name="geometry">
        <rect>
         <x>160</x>
-        <y>140</y>
-        <width>331</width>
-        <height>61</height>
+        <y>170</y>
+        <width>441</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
@@ -101,9 +101,9 @@
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>270</x>
+        <x>300</x>
         <y>510</y>
-        <width>231</width>
+        <width>181</width>
         <height>31</height>
        </rect>
       </property>
@@ -120,14 +120,14 @@
      <widget class="QPushButton" name="pb_auth_choseFileWithKey">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>240</y>
-        <width>91</width>
-        <height>31</height>
+        <x>290</x>
+        <y>230</y>
+        <width>141</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>Выбрать</string>
+       <string>Выбрать ключ</string>
       </property>
      </widget>
      <widget class="QLabel" name="lbl_auth_pathToSecretKey">
@@ -242,12 +242,15 @@
        <rect>
         <x>50</x>
         <y>30</y>
-        <width>611</width>
+        <width>681</width>
         <height>131</height>
        </rect>
       </property>
       <property name="text">
        <string>Внимание! После регистрации и принятии транзакции сетью изменить поля будет нельзя, отнеситесь к заполнению этих полей ответственно. Нажмите на кнопку &quot;Генерация&quot;, чтобы создать закрытый ключ. Самому закрытый ключ создать нельзя в целях безопасности. Закрытый ключ необходимо запомнить или спрятать так, чтобы никто не мог иметь к нему доступа. Закрытый ключ в понимании обычного пользователя является одновременно и логином и паролем, восстановить который нельзя.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
@@ -257,7 +260,7 @@
       <property name="geometry">
        <rect>
         <x>470</x>
-        <y>440</y>
+        <y>350</y>
         <width>261</width>
         <height>41</height>
        </rect>
@@ -432,7 +435,7 @@
          </rect>
         </property>
         <property name="text">
-         <string>Если ваш аккаунт в системе должен быть в роли эксперта, то вы должны подать заявку и ожидать подтверждения 3мя экспертами. В протином случае ни в коем случае не подавайте заявку на получение роли эксперта, иначе вы можете быть забанены </string>
+         <string>Если ваш аккаунт в системе должен быть в роли эксперта, то вы должны подать заявку и ожидать подтверждения 2мя экспертами. В противном случае не подавайте заявку на получение роли эксперта. </string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
@@ -575,81 +578,30 @@
           </widget>
          </item>
          <item row="5" column="0">
-          <widget class="QLabel" name="label_57">
-           <property name="text">
-            <string>Рейтинг:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="1">
-          <widget class="QLabel" name="lbl_eventInfo_eventRating">
-           <property name="text">
-            <string>...</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_61">
-           <property name="text">
-            <string>Количество Экспертов:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QLabel" name="lbl_eventInfo_expertCount">
-           <property name="text">
-            <string>...</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="0">
           <widget class="QLabel" name="label_56">
            <property name="text">
             <string>Эксперты:</string>
            </property>
           </widget>
          </item>
-         <item row="7" column="1">
+         <item row="5" column="1">
           <widget class="QPushButton" name="pb_EventInfo_getExpertList">
            <property name="text">
             <string>Список экспертов</string>
            </property>
           </widget>
          </item>
-         <item row="8" column="0">
+         <item row="6" column="0">
           <widget class="QLabel" name="label_63">
            <property name="text">
             <string>Пользователи:</string>
            </property>
           </widget>
          </item>
-         <item row="8" column="1">
+         <item row="6" column="1">
           <widget class="QPushButton" name="pb_EventInfo_getUserList">
            <property name="text">
             <string>Список пользователей</string>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="0">
-          <widget class="QLabel" name="label_64">
-           <property name="text">
-            <string>Версия:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="1">
-          <widget class="QLabel" name="lbl_eventInfo_Version">
-           <property name="text">
-            <string>...</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
@@ -742,19 +694,6 @@
          <string>Описание:</string>
         </property>
        </widget>
-       <widget class="QTextBrowser" name="tb_createEvent_info">
-        <property name="geometry">
-         <rect>
-          <x>300</x>
-          <y>350</y>
-          <width>281</width>
-          <height>201</height>
-         </rect>
-        </property>
-        <property name="mouseTracking">
-         <bool>true</bool>
-        </property>
-       </widget>
        <widget class="QWidget" name="formWidget_4" native="true">
         <property name="geometry">
          <rect>
@@ -796,52 +735,32 @@
           <widget class="QLineEdit" name="le_createEvent_competence"/>
          </item>
          <item row="3" column="0">
-          <widget class="QLabel" name="label_84">
-           <property name="text">
-            <string>Рейтинг:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QLineEdit" name="le_createEvent_rating"/>
-         </item>
-         <item row="4" column="0">
           <widget class="QLabel" name="label_86">
            <property name="text">
             <string>Эксперты:</string>
            </property>
           </widget>
          </item>
-         <item row="4" column="1">
+         <item row="3" column="1">
           <widget class="QPushButton" name="pb_createEvent_getExpertList">
            <property name="text">
             <string>Список экспертов</string>
            </property>
           </widget>
          </item>
-         <item row="5" column="0">
+         <item row="4" column="0">
           <widget class="QLabel" name="label_87">
            <property name="text">
             <string>Пользователи:</string>
            </property>
           </widget>
          </item>
-         <item row="5" column="1">
+         <item row="4" column="1">
           <widget class="QPushButton" name="pb_createEvent_getUserList">
            <property name="text">
             <string>Список пользователей</string>
            </property>
           </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_88">
-           <property name="text">
-            <string>Версия:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QLineEdit" name="le_createEvent_Version"/>
          </item>
         </layout>
        </widget>
@@ -936,6 +855,16 @@
         <column/>
         <column/>
        </widget>
+       <widget class="QTextEdit" name="te_createEvent_info">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>350</y>
+          <width>281</width>
+          <height>211</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="pg_changeEvent">
        <widget class="QLabel" name="label_83">
@@ -992,37 +921,27 @@
           <widget class="QLineEdit" name="le_changeEvent_competence"/>
          </item>
          <item row="3" column="0">
-          <widget class="QLabel" name="label_147">
-           <property name="text">
-            <string>Рейтинг:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QLineEdit" name="le_changeEvent_rating"/>
-         </item>
-         <item row="4" column="0">
           <widget class="QLabel" name="label_149">
            <property name="text">
             <string>Эксперты:</string>
            </property>
           </widget>
          </item>
-         <item row="4" column="1">
+         <item row="3" column="1">
           <widget class="QPushButton" name="pb_changeEvent_getExpertList">
            <property name="text">
             <string>Список экспертов</string>
            </property>
           </widget>
          </item>
-         <item row="5" column="0">
+         <item row="4" column="0">
           <widget class="QLabel" name="label_150">
            <property name="text">
             <string>Пользователи:</string>
            </property>
           </widget>
          </item>
-         <item row="5" column="1">
+         <item row="4" column="1">
           <widget class="QPushButton" name="pb_changeEvent_getUserList">
            <property name="text">
             <string>Список пользователей</string>
@@ -1512,7 +1431,7 @@
           </size>
          </property>
          <property name="text">
-          <string>Меню</string>
+          <string>  Меню</string>
          </property>
         </widget>
        </item>
@@ -1574,13 +1493,6 @@
            <widget class="QPushButton" name="pb_menu_UsersInfo">
             <property name="text">
              <string>Пользователи</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton">
-            <property name="text">
-             <string>Прошедшие мероприятия</string>
             </property>
            </widget>
           </item>

@@ -329,11 +329,11 @@ class Blockchain:
         self.addTransactionToTransactionTable(Transaction)
 
         listOfAllChangeEvent = self.dataBaseAdapt.getEventUpdateListAtEvent(idEvent)
-
-        for element in listOfAllChangeEvent:
-            countOfExpert = len(self.dataBaseAdapt.getEventUpdateExpertList(element['idEvent']))
-            if element[consts.eventsUpdateColumns.get('numOfExperts')] == countOfExpert:
-                self.eventChange(element)
+        if listOfAllChangeEvent != None:
+            for element in listOfAllChangeEvent:
+                countOfExpert = len(self.dataBaseAdapt.getEventUpdateExpertList(element['idEvent']))
+                if element[consts.eventsUpdateColumns.get('numOfExperts')] == countOfExpert:
+                    self.eventChange(element)
 
 
     def eventChange(self, EventChangeTransact):
@@ -469,8 +469,7 @@ class Blockchain:
             return False
         if not (self.dataBaseAdapt.getIsExpert(Transaction['address']) == 1):
             return False
-        if not (self.dataBaseAdapt.getEventUpdate(Transaction['data']['idEvent'],
-                                                  Transaction['data']['updateIndex']) == None):
+        if (self.dataBaseAdapt.getEventUpdate(Transaction['data']['idEvent'],Transaction['data']['updateIndex']) == None):
             return False
         return (True)
 
@@ -516,11 +515,11 @@ class Blockchain:
         UncTransactList = self.dataBaseAdapt.getUncTransactionList()
         if UncTransactList != None:
             for element in UncTransactList:
-                if (Transaction['address'] == element[consts.transaction.get('address')]) & \
-                   (Transaction['type'] == element[consts.transaction.get('type')]) & \
-                   (json.dumps(Transaction['data']) == element[consts.transaction.get('data')]) & \
-                   (Transaction['publicKey'] == element[consts.transaction.get('publicKey')]) & \
-                   (Transaction['signature'] == element[consts.transaction.get('signature')]):
+                if (Transaction['address'] == element[consts.UncTransaction.get('address')]) & \
+                   (Transaction['type'] == element[consts.UncTransaction.get('type')]) & \
+                   (json.dumps(Transaction['data']) == element[consts.UncTransaction.get('data')]) & \
+                   (Transaction['publicKey'] == element[consts.UncTransaction.get('publicKey')]) & \
+                   (Transaction['signature'] == element[consts.UncTransaction.get('signature')]):
                     return False
         self.dataBaseAdapt.addUncTransaction(Transaction['address'], Transaction['type'], json.dumps(Transaction['data']),
                                              Transaction['publicKey'], Transaction['signature'])

@@ -386,7 +386,11 @@ class dataBaseAdapter:
             conn = sqlite3.connect('resourse/db.sqlite')
             cursor = conn.cursor()
             cursor.execute("SELECT MAX(idGroup) FROM groups")
-            idExpertGroup = cursor.fetchone()[0] + 1
+            idExpertGroup = cursor.fetchone()[0]
+            if idExpertGroup == None:
+                idExpertGroup = 0
+            else:
+                idExpertGroup +=1
             cursor.execute("INSERT INTO request (addresFrom,addresTo,idConfirmExpertGroup,typeRequest,quantityAccepted,date) "
                            "VALUES (?,?,?,?,?,?)"
                             ,(addrFrom, addrTo, idExpertGroup,1,1,Createtime))
