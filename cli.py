@@ -4,6 +4,7 @@ import cmd
 import os
 import json
 import rsa
+import threading
 
 
 import Block_chain
@@ -44,6 +45,12 @@ class Cli(cmd.Cmd):
         self.CblockChain = Block_chain.Blockchain()
         self.Cnetwork = network.network(self.CblockChain)
         self.CblockChain.InitAddNetWork(self.Cnetwork)
+        _threadListener = threading.Thread(name="Listen", target=self.Cnetwork.receiveMessage)
+        _threadListener.start()
+        _threadMiner = threading.Thread(name="Miner", target=self.CblockChain.startMine)
+        _threadMiner.start()
+        _threadLenChecker = threading.Thread(name="LebChecker", target=self.Cnetwork.lenCheckerNeighbourhood)
+        _threadLenChecker.start()
         self.prompt = "(not auth)> "
         self.intro  = "Welcome\nFor help enter 'help'"
         self.doc_header ="Available (for help on a specific command, enter 'help _command')"
@@ -79,6 +86,7 @@ class Cli(cmd.Cmd):
             self.isAuth = True
             name = self.accountSystemClass.account.get('Name')
             print("Hello ", name)
+            self.CblockChain._MineStat = 1
         else:
             print(consts.userNotExist)
 
@@ -89,6 +97,7 @@ class Cli(cmd.Cmd):
         :param args: no usable(but it's features cmd lib)
         :return: user out from account
         '''
+        self.CblockChain._MineStat = 0
         self.accountSystemClass.logout()
         print(consts.userLogoutAtt)
         self.prompt = "(not auth)> "
@@ -374,7 +383,7 @@ class Cli(cmd.Cmd):
     def do_changeEvent(self,args):
         '''
         Handler command changeEvent. The expert change event with the help of a question-answer form
-        As a parametr on calling idEvent. Example 'changeEvent 999'
+        As a parametr ondn calling idEvent. Example 'changeEvent 999'
 
         :param args: idEvent
         :return:
@@ -612,12 +621,19 @@ class Cli(cmd.Cmd):
             print(consts.erorLoginToNet)
 
     def do_confirm(self,args):
+        '''
+        Handler command confirm. The expert confirm event, where he's expert with the help of a question-answer form
+        As a parametrs on -u id : confirm users update ryse/downgrade Example 'confirm -u 1'
+                          -e id : confirm event update changes Example 'confirm -e 1'
+                          -v : show all available for transaction confirmation
+        :param args: see higher
+        :return: confirm transaction in bd
+        '''
         command = ('-u','-e','-v')
         if (self.isAuth):
             args = args.split()
             if (len(args) == 0):
-                print("Error", "Needed input arguments. Example : 'confirm -e 9913' or 'confirm -u 1'.\n"
-                               "-e is event\n -u is user downgrade or user doExpert\n, numbers is appropriate id")
+                print("Error", "Needed input arguments. Example : 'confirm -e 9913' or 'confirm -u 1'.\n -e is event\n -u is user downgrade or user doExpert\n, numbers is appropriate id")
             else:
                 Transaction = {}
                 datadict = {}
@@ -643,38 +659,56 @@ class Cli(cmd.Cmd):
                             print("Error", "Something went wrong")
 
                 if ((args[0] == '-e') and  len(args) == 2 and str(args[1]).isdigit()):
-                    print('fsdfsd')
+
+                    psevdolist = self.dataBaseAdapt.getEventUpdateForUserUserAsExpert(self.accountSystemClass.account.get('Address'))
+
+                    if (psevdolist == None):
+                        print(" You have nothing to confirm ")
+                        return False
+
+                    self.outputEventUpdate(psevdolist)
+                    accept = input("Are you sure you want to confirm update?Y/n ")
+                    accept = accept.upper()
+
+                    if (accept == 'Y'):
+                        searchingValue = int(args[1])
+                        i = 0
+                        j = len(psevdolist) - 1
+                        m = int(j / 2)
+                        while psevdolist[m][consts.eventsUpdateColumns.get('idUnconfirmedUpdate')] != searchingValue and i < j:
+                            if searchingValue > psevdolist[m][consts.eventsUpdateColumns.get('idUnconfirmedUpdate')]:
+                                i = m + 1
+                            else:
+                                j = m - 1
+                                m = int((i + j) / 2)
+                        if i > j:
+                            print('Error. Not found')
+                        else:
+                            Transaction['type'] = 4
+                            datadict['updateIndex'] = psevdolist[m][
+                            consts.eventsUpdateColumns.get('updateIndex')]
+                            datadict['idEvent'] = psevdolist[m][consts.eventsUpdateColumns.get('idEvent')]
+                            Transaction['data'] = datadict
+                            string = json.dumps(Transaction, sort_keys=True)
+                            signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'],string)
+                            Transaction['signature'] = signature
+                            if not (self.CblockChain.addNewTransactFromUser(Transaction)):
+                                print(consts.errorSomethingWentWrong)
+                            return
+                    else:
+                        print("Ok. Not accepted")
+                        return
 
                 if ((args[0] == '-v') and (len(args) == 1)):
                     usersReqList = self.dataBaseAdapt.getRequestListNonAccepted(3)
                     self.outputRequest(usersReqList,3)
 
                     eventUpdList = self.dataBaseAdapt.getEventUpdateForUserUserAsExpert(self.accountSystemClass.account.get('Address'))
-                    self.outputEventUpdate(eventUpdList)
-
-
-                    typeQuerry = args.split()[0]
-                    id = args.split()[1]
-                    requestMode = 0
-                    if (typeQuerry == '-e') or (typeQuerry == '-u'):
-                        if (typeQuerry == '-e'):
-                            requestMode = 1
-
-                        if (requestMode == 1):
-                            requestList = self.dataBaseAdapt.getEventUpdateList()
-                            if (requestList == None):
-                                return False
-                            Transaction['type'] = 4
-                            datadict['updateIndex'] = requestList[id][
-                                consts.eventsUpdateColumns.get('updateIndex')]
-                            datadict['idEvent'] = requestList[id][
-                                consts.eventsUpdateColumns.get('idEvent')]
-                            Transaction['data'] = datadict
-                            string = json.dumps(Transaction, sort_keys=True)
-                            signature = self.accountSystemClass.createSingature(self.accountSystemClass.account['PrivateKey'], string)
-                            Transaction['signature'] = signature
-                            if not (self.CblockChain.addNewTransactFromUser(Transaction)):
-                                print(consts.errorSomethingWentWrong)
+                    if(len(eventUpdList)!=0):
+                        self.outputEventUpdate(eventUpdList)
+                        self.outputEventUpdateInGroups(eventUpdList)
+                    else:
+                        print('No updates for you ')
                 else:
                     print("Error in parametrs","Needed input arguments. Example : 'confirm -e 9913' or 'confirm -u 1'.\n"
                                    "-e is event\n -u is user downgrade or user doExpert\n, numbers is appropriate id")
@@ -682,42 +716,76 @@ class Cli(cmd.Cmd):
             print(consts.erorLoginToNet)
 
     def outputRequest(self,requestList, numAcceptNeeded):
-            for req in requestList:
-                Offerer = self.dataBaseAdapt.getUser(req[consts.requestColumns.get('addresFrom')])
-                Target = self.dataBaseAdapt.getUser(req[consts.requestColumns.get('addresTo')])
-                accepted = req[consts.requestColumns.get('quantityAccepted')]
-                typeReq = 'Downgrade'
-                if req[consts.requestColumns.get('typeRequest')] == 0:
-                    typeReq = 'Rise'
-
-                print('Request id {7}\nOfferer : {0}({1})\nTarget : {2}({3})\nType : {4}\nAccepted {5}/{6}'\
-                    .format(Offerer[consts.usersColumns.get('name')], Offerer[consts.usersColumns.get('idUser')],
-                                                                             Target[consts.usersColumns.get('name')], Target[consts.usersColumns.get('idUser')],
-                            typeReq,accepted,numAcceptNeeded,req[consts.requestColumns.get('idRequest')]
-                            ))
+        '''
+        output in console request in pretty view
+        
+        :param requestList: list with requests
+        :param numAcceptNeeded: needed accept for accepted
+        :return: 
+        '''
+        for req in requestList:
+            Offerer = self.dataBaseAdapt.getUser(req[consts.requestColumns.get('addresFrom')])
+            Target = self.dataBaseAdapt.getUser(req[consts.requestColumns.get('addresTo')])
+            accepted = req[consts.requestColumns.get('quantityAccepted')]
+            typeReq = 'Downgrade'
+            if req[consts.requestColumns.get('typeRequest')] == 0:
+                typeReq = 'Rise'
+            print('=====================================')
+            print('Request id {7}\nOfferer : {0}({1})\nTarget : {2}({3})\nType : {4}\nAccepted {5}/{6}'\
+                .format(Offerer[consts.usersColumns.get('name')], Offerer[consts.usersColumns.get('idUser')],
+                                                                         Target[consts.usersColumns.get('name')], Target[consts.usersColumns.get('idUser')],
+                        typeReq,accepted,numAcceptNeeded,req[consts.requestColumns.get('idRequest')]
+                        ))
 
     def outputEventUpdate(self, eventUpdateList):
-            for evUp in eventUpdateList:
-                resultPrint = 'Changes List =========================================\n'
-                resultPrint += 'idUpdateEvent : ' + str(evUp[consts.eventsUpdateColumns.get('idUnconfirmedUpdate')]) + '\n'
-                resultPrint += 'idUpdateEvent : ' + str(evUp[consts.eventsUpdateColumns.get('idEvent')]) + '\n'
+        '''
+        Output in console eventUpdate(only info about Event( no print changes Exp))
+        
+        :param self: 
+        :param eventUpdateList: list with update event(rows of table)
+        :return: 
+        '''
+        for evUp in eventUpdateList:
+            resultPrint = 'Changes List =========================================\n'
+            resultPrint += 'idUpdateEvent : ' + str(evUp[consts.eventsUpdateColumns.get('idUnconfirmedUpdate')]) + '\n'
+            resultPrint += 'idUpdateEvent : ' + str(evUp[consts.eventsUpdateColumns.get('idEvent')]) + '\n'
 
-                name = evUp[consts.eventsUpdateColumns.get('name')]
-                if(name != None) and (name != ''):
-                    resultPrint += 'Event title : ' + evUp[consts.eventsUpdateColumns.get('name')] + '\n'
+            name = evUp[consts.eventsUpdateColumns.get('name')]
+            if(name != None) and (name != ''):
+                resultPrint += '\nEvent title : ' + str(name)
 
-                data = evUp[consts.eventsUpdateColumns.get('data')]
-                if (data != None) and (data != ''):
-                    resultPrint += 'Data : ' + evUp[consts.eventsUpdateColumns.get('name')] + '\n'
+            data = evUp[consts.eventsUpdateColumns.get('data')]
+            if (data != None) and (data != ''):
+                resultPrint += '\nData : ' + str(data)
 
-                date = evUp[consts.eventsUpdateColumns.get('date')]
-                if (date != None) and (date != ''):
-                    resultPrint += 'Date : ' + evUp[consts.eventsUpdateColumns.get('name')] + '\n'
+            date = evUp[consts.eventsUpdateColumns.get('date')]
+            if (date != None) and (date != ''):
+                resultPrint += '\nDate : ' + str(date)
 
-                competence = evUp[consts.eventsUpdateColumns.get('competence')]
-                if (competence != None) and (date != ''):
-                    resultPrint += 'Competence :' + evUp[consts.eventsUpdateColumns.get('name')] + '\n'
-                print(resultPrint)
+            competence = evUp[consts.eventsUpdateColumns.get('competence')]
+            if (competence != None) and (date != ''):
+                resultPrint += '\nCompetence :' + str(competence)
+            print(resultPrint)
+
+    def outputEventUpdateInGroups(self,eventUpdateList):
+        '''
+        Output in console eventUpdate(print only with user lust changes)
+
+        :param self:
+        :param eventUpdateList:list with event update
+        :return:
+        '''
+        for eventUpdate in eventUpdateList:
+            newGroup = self.dataBaseAdapt.getUsersByGroup(eventUpdate[consts.eventsUpdateColumns.get('idExpertsGroup')])
+            oldGroup = self.dataBaseAdapt.getUsersByGroup(eventUpdate[consts.eventsUpdateColumns.get('idConfirmExpertGroup')])
+            for key in newGroup.keys():
+                if oldGroup.get(key) == None:
+                    print('+ {0}(id{1})\n'.format(newGroup.get(key)[consts.usersColumns.get('name')] ,newGroup.get(key)[consts.usersColumns.get('idUser')]))
+            for key in oldGroup.keys():
+                if newGroup.get(key) == None:
+                    print('- {0}(id{1})\n'.format(oldGroup.get(key)[consts.usersColumns.get('name')] ,oldGroup.get(key)[consts.usersColumns.get('idUser')]))
+        return 
+
 
 
 

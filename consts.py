@@ -87,8 +87,8 @@ eventsUpdateColumns = {
   'idUsersGroup': 8,
   'updateIndex': 9,
   'timestamp': 10,
-  'idConfirmExpertGroup': 11,
-  'version': 12,
+  'idConfirmExpertGroup': 12,
+  'version': 13,
 }
 
 UncTransaction = {
