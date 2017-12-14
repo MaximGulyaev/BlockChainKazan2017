@@ -302,9 +302,9 @@ class Blockchain:
         request = self.dataBaseAdapt.getRequestById(idRequest)
         if request[consts.requestColumns.get('quantityAccepted')] == 3:
             if request[consts.requestColumns.get('typeRequest')] == 0:
-                print(self.dataBaseAdapt.setExpert(address))
+                self.dataBaseAdapt.setExpert(Transaction['data']['address'])
             if request[consts.requestColumns.get('typeRequest')] == 1:
-                self.dataBaseAdapt.setStudent(address)
+                self.dataBaseAdapt.setStudent(Transaction['data']['address'])
 
     def delTransaction_confirmPromotionOrReduction(self, Transaction, CreateTime):
         address = Transaction['address']
