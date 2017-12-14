@@ -2,7 +2,6 @@ import rsa
 import hashlib
 import base64
 import consts
-import Miner
 
 class CAccountingSystem:
     account = {
@@ -21,7 +20,6 @@ class CAccountingSystem:
 
     def __init__(self, DBA):
         self.dataBaseAdapt = DBA
-        self.Cminer = Miner
         return None
 
     def authorization(self, PrivateKey):

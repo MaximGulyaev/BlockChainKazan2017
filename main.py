@@ -4,7 +4,7 @@ import MainForm
 import CAccountingSystem
 import dataBaseAdapter
 import Block_chain
-import  network
+import network
 import PyQt5
 from PyQt5.QtWidgets import QMainWindow, QMessageBox, QLabel, QGridLayout, QWidget, QDesktopWidget, QFileDialog
 from PyQt5 import QtCore
