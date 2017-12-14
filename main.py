@@ -404,7 +404,10 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
 
     def cb_eventInfo_ChoseEvent_currentIndexChanged(self):
        # try:
+        if len(self._EventInfoShownListTuple) == 0:
+            return False
         self._EventInfochoseIndex = self.cb_eventInfo_ChoseEvent.currentIndex()
+
         self.lbl_eventInfo_eventName.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('name')]))
         self.lbl_eventInfo_eventDate.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('date')]))
         self.lbl_eventInfo_eventCreator.setText(str(self._EventInfoShownListTuple[self._EventInfochoseIndex][consts.eventsColumns.get('creator')]))
