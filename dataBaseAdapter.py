@@ -1020,7 +1020,7 @@ class dataBaseAdapter:
             for group in groups:
                 cursor.execute("SELECT Count(*) FROM groups WHERE idGroup = (?)", (group[consts.groupColumns.get('idGroup')],))
                 count = cursor.fetchone()[0]
-                cursor.execute("SELECT * FROM eventUpdate WHERE idExpertsGroup = (?) and numOfExperts < (?)", (group[consts.groupColumns.get('idGroup')],count))
+                cursor.execute("SELECT * FROM eventUpdate WHERE idExpertsGroup = (?) and numOfExperts < (?)", (group[consts.groupColumns.get('usersGroup')],count))
                 eventUpd = cursor.fetchone()
                 if(eventUpd != None):
                     listUpdate.append(eventUpd)
@@ -1030,5 +1030,25 @@ class dataBaseAdapter:
         except Exception as e:
             print(e)
             return None
+
+    def getUsersByGroup(self,group):
+        try:
+            conn = sqlite3.connect('resourse/db.sqlite')
+            cursor = conn.cursor()
+            cursor.execute("SELECT addres FROM groups WHERE usersGroup = (?)",(group,))
+            users = cursor.fetchall()
+            mapWithUsers = {}
+            for user in users:
+                cursor.execute("SELECT * FROM users WHERE addres = (?)", (user[0],))
+                curUser = cursor.fetchone()
+                if(curUser != None):
+                    mapWithUsers.update({curUser[consts.usersColumns.get('idUser')]: curUser})
+            cursor.close()
+            conn.close()
+            return mapWithUsers
+        except Exception as e:
+            print(e)
+            return None
+
 
 
