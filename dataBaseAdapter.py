@@ -563,7 +563,7 @@ class dataBaseAdapter:
         #    return None
 
     def getCountOfUncTransaction(self):
-        try:
+
             conn = sqlite3.connect('resourse/db.sqlite')
             cursor = conn.cursor()
             cursor.execute("SELECT COUNT(*) FROM unconfirmedTransaction")
@@ -571,7 +571,7 @@ class dataBaseAdapter:
             cursor.close()
             conn.close()
             return count
-        except:
+
             return None
 
     def getUncTransactionList(self):

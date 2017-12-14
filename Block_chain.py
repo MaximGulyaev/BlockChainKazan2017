@@ -80,6 +80,8 @@ class Blockchain:
             if self.addBlockToChain(block):
                 self.sendBlock(block)
                 return True
+        else:
+            return False
             
     def addNewBlockFromNet(self, block):
         if self.blockVerification(block):
@@ -260,6 +262,7 @@ class Blockchain:
         publicKey = Transaction['publicKey']
         self.dataBaseAdapt.addUser(address, name, brirthday, isExpert, publicKey, organization)
         self.addTransactionToTransactionTable(Transaction)
+        return True
 
     def delTransaction_registration(self, Transaction):
         address = Transaction['address']
