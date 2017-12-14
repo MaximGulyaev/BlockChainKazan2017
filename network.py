@@ -33,9 +33,6 @@ class network:
             'type' : type,
             'data' : data
         }
-        print('send:')
-        print(addres)
-        print(dict)
 
         bytesData = json.dumps(dict)
         sock = socket.socket()
@@ -59,8 +56,6 @@ class network:
         :return:
         '''
         #try:
-        print('send:')
-        print(data)
         addreses = self.getNetwork()
         for addr in addreses:
             self.sendMessage(data,type,addr[0])
@@ -88,13 +83,10 @@ class network:
                 dict = json.loads(data)
                 sender = {'sender' : addr[0]}
                 dict.update(sender)
-                print('prinyal:')
-                print(dict)
                 self.parserAndRunQuery(dict)
                 try:
                     pass
                 except Exception as e:
-                    print(e)
                     dict = {
                         'type': consts.typeNetQuery.get('error'),
                         'data': None
@@ -252,7 +244,3 @@ class network:
                     pass
         return False
 
-
-#receiveMessage()
-#sendMessage('2312312314215',1,'10.121.6.179')
-#network('dsfsdf')
