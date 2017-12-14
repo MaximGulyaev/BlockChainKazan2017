@@ -71,7 +71,7 @@ class network:
         '''
         while True:
             sock = socket.socket()
-            sock.bind(('', 9091))
+            sock.bind(('', 9090))
             sock.listen(100)
             while True:
                 conn, addr = sock.accept()
@@ -79,7 +79,7 @@ class network:
                 print("New connection from " + addr[0])
                 #try:
                 data = conn.recv(16388)
-
+                print(data)
                 dict = json.loads(data)
                 sender = {'sender' : addr[0]}
                 dict.update(sender)
@@ -92,7 +92,7 @@ class network:
                         'data': None
                     }
                     bytesData = json.dumps(dict)
-                    sock.connect((addr[0], 9091))
+                    sock.connect((addr[0], 9090))
                     sock.send(bytesData)
                 finally:
                     conn.close()
@@ -145,6 +145,7 @@ class network:
         type = dictionary.get('type')
         data = dictionary.get('data')
         addres = dictionary.get('sender')
+        print(data)
         if (type == consts.typeNetQuery.get('transaction')):
             self.blockchain.addNewTransactFromNet(data)
             return

@@ -140,6 +140,8 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         if (btn_name == 'pb_menu_aboutAccount' and True):
             self.SW_menu.setCurrentIndex(0)
             return True
+        if (btn_name == 'pb_mainLogOut'):
+            self.MainPages.setCurrentIndex(0)
         if (btn_name == 'pb_menu_eventInfo' and True):
             self.SW_menu.setCurrentIndex(1)
             return True
@@ -309,13 +311,10 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
                 QMessageBox.about(self, "Внимание", "АФИПКА")
 
     def cb_changeEvent_ChoseEvent_currentIndexChanged(self):
-        try:
             self._ChangeEventChoseEventIndex = self.cb_changeEvent_ChoseEvent.currentIndex()
             self.le_changeEvent_name.setText(str(self._EventInfoShownListTuple[self._ChangeEventChoseEventIndex][consts.eventsColumns.get('name')]))
             self.le_changeEvent_date.setText(str(self._EventInfoShownListTuple[self._ChangeEventChoseEventIndex][consts.eventsColumns.get('date')]))
-            self.le_changeEvent_Creator.setText(str(self._EventInfoShownListTuple[self._ChangeEventChoseEventIndex][consts.eventsColumns.get('creator')]))
             self.le_changeEvent_competence.setText(str(self._EventInfoShownListTuple[self._ChangeEventChoseEventIndex][consts.eventsColumns.get('competence')]))
-            self.le_changeEvent_rating.setText(str(self._EventInfoShownListTuple[self._ChangeEventChoseEventIndex][consts.eventsColumns.get('raiting')]))
             self.te_changeEvent_Info.setText(str(self._EventInfoShownListTuple[self._ChangeEventChoseEventIndex][consts.eventsColumns.get('data')]))
             self._ChangeEventUserList = []
             self._ChangeEventExpertsList = []
@@ -334,8 +333,6 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
                 FullUser = self.dataBaseAdapt.getUser(element[consts.groupColumns.get('addres')])
                 if (FullUser != None):
                     self._ChangeEventUserList.append(FullUser)
-        except:
-            pass
 
     def pb_changeEvent_deleteUser_clicked(self):
         self.tw_changeEvent_addedUserList.currentRow()
@@ -385,7 +382,7 @@ class GUI_form(QMainWindow, MainForm.Ui_MainWindow):
         datadict['name'] = self.le_changeEvent_name.text()
         datadict['date'] = self.le_changeEvent_date.text()
         datadict['competence'] = self.le_changeEvent_competence.text()
-        datadict['rating'] = self.le_changeEvent_rating.text()
+        datadict['rating'] = 0
         datadict['info'] = self.le_changeEvent_date.text()
         datadict['users'] = self._ChangeEventUserList
         datadict['experts'] = self._ChangeEventExpertsList

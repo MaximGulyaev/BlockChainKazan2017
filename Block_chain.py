@@ -360,12 +360,12 @@ class Blockchain:
         name = Transaction['data']['name']
         date = Transaction['data']['date']
         competence = Transaction['data']['competence']
-        rating = Transaction['data']['rating']
         data = Transaction['data']['info']
         UserList = Transaction['data']['users']
         ExpertList = Transaction['data']['experts']
         creator = Transaction['address']
         timestamp = CreateTime
+        rating = 0
         self.dataBaseAdapt.addEvent(creator, name, date, data, competence, rating, len(ExpertList), ExpertList,
                                     UserList,timestamp)
         self.addTransactionToTransactionTable(Transaction)
@@ -374,7 +374,7 @@ class Blockchain:
         name = Transaction['data']['name']
         date = Transaction['data']['date']
         competence = Transaction['data']['competence']
-        rating = Transaction['data']['rating']
+        rating = 0
         data = Transaction['data']['info']
         UserList = Transaction['data']['users']
         ExpertList = Transaction['data']['experts']
@@ -639,8 +639,9 @@ class Blockchain:
 
         i = 0
         for element in TransactInBlockCheckList:
-            if (element in UncTransactList):
-                self.dataBaseAdapt.deleteUncTransaction(listOfIdUncTransact[i])
+            for element2 in UncTransactList:
+                if (element.get('signature') == element2.get('signature')):
+                    self.dataBaseAdapt.deleteUncTransaction(listOfIdUncTransact[i])
             i += 1
 
         CreateTime = blockOrig['time']

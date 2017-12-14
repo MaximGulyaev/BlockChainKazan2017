@@ -234,7 +234,7 @@ CREATE TABLE Block(
   hash VARCHAR,
   timestamp datetime,
   count INT,
-  complexity INT,
+  complexity VARCHAR,
   nonce datetime
 )
 '''
